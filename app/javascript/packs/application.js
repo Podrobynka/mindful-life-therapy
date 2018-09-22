@@ -9,6 +9,18 @@
 
 console.log('Hello World from Webpacker')
 
+// setup rails-ujs
+import Rails from "rails-ujs"
+Rails.start()
+
+// setup turbolinks
+import Turbolinks from "turbolinks"
+Turbolinks.start()
+
+// setup activestorage
+import * as ActiveStorage from "activestorage"
+ActiveStorage.start()
+
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
