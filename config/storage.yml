@@ -14,9 +14,6 @@ local:
 #   region: us-east-1
 #   bucket: your_own_bucket
 
-# Remember not to checkin your GCS keyfile to a repository
-  credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-
 google:
   service: GCS
   project: <%= Rails.application.credentials.dig(:gcs, :project) %>
