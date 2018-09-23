@@ -1,0 +1,7 @@
+- if flash.any?
+  - user_facing_flashes.each do |key, value|
+    .flash.primary-background.mpt.mpb
+      .row.column
+        .flash-message.relative
+          %span.strong= value
+          = fa_icon 'window-close', class: 'close-flash nmr'
