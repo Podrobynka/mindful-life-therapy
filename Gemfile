@@ -15,6 +15,7 @@ gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'haml-rails'
 gem 'kaminari'
+gem "google-cloud-storage", "~> 1.11", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
