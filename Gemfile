@@ -13,6 +13,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'font-awesome-rails'
 gem 'foundation-rails'
+gem 'haml-rails'
 gem 'kaminari'
 
 group :development, :test do
@@ -30,7 +31,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
-  gem 'simplecov'
+  gem 'simplecov', require: false
 end
 
 group :production do
