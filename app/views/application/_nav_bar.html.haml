@@ -1,10 +1,30 @@
--# .row.column
--#   %nav#nav-bar.flex
--#     = render 'application/nav_bar/radios'
--#
--#     = link_to root_path, id: 'nav-bar-logo' do
--#       = image_tag "header/logo.svg", secure: true
--#
--#     = render 'application/nav_bar/buttons'
--#     = render 'application/nav_bar/main'
--#     = render 'application/nav_bar/admin'
+%nav.nav-bar.row.column
+  %h1.nav-bar-title
+    = link_to root_path, class: 'nav-bar-logo-link' do
+      = image_tag 'header/mindful-life-therapy-logo.png', class: 'nav-bar-logo-img', title: t('colophon.image.caption'), alt: t('colophon.image.caption')
+
+  %input#nav-bar-burger-checkbox{ type: "checkbox" }
+
+  %label.nav-bar-burger-label{for: 'nav-bar-burger-checkbox'}
+    = fa_icon 'bars', text: 'MENU'
+
+  %ul.nav-bar-main-menu.no-bullet{ role: "menubar" }
+    %li.nav-bar-item
+      = link_to root_path, class: css_class_for_controller('home_page') do
+        Home
+
+    %li.nav-bar-item
+      = link_to about_path, class: css_class_for_controller('about') do
+        About
+
+    %li.nav-bar-item
+      = link_to counselling_path, class: css_class_for_controller('counselling') do
+        Counselling & Psychotherapy
+
+    %li.nav-bar-item
+      = link_to mindfulness_path, class: css_class_for_controller('mindfulness') do
+        Mindfulness
+
+    %li.nav-bar-item
+      = link_to contact_path, class: css_class_for_controller('contact') do
+        Contact

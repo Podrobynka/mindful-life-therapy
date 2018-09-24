@@ -1,8 +1,47 @@
-%footer.footer
-  .row.column
+%footer.footer.black-background
+  .row.lpt.mpb.column
+    %ul.no-bullet.nmb.text-center
+      %li.inline-block.sma
+        %span
+          = fa_icon 'phone'
+          %strong.medium-gray 07933446549
 
-    .nav-links.flex-1
-      = link_to 'Home', root_path
-      = link_to 'About', '#'
-      = link_to 'Data Protection Policy', '#'
-      = link_to 'Terms of Use', '#'
+      %li.inline-block.sma
+        %span
+          = fa_icon 'envelope'
+          %strong.medium-gray
+            = mail_to 'info@mindfullifetherapy.co.uk', 'info@mindfullifetherapy.co.uk', class: 'medium-gray-link'
+
+      %li.inline-block.sma
+        %span
+          = fa_icon 'map-marker'
+          %strong.medium-gray
+            10 Newton Place,
+            Glasgow,
+            G3 7PR
+
+  .row.lpt
+    .column.large-6.lmb
+      %h2.strong.lead.white
+        Do you need help with a sensitive issue?
+
+      %p.nmb.medium-gray
+        My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
+        %br
+        = link_to 'More on Counselling.', counselling_path, class: 'secondary-link'
+
+    .column.large-6.lmb
+      %h2.strong.lead.white
+        Do you want to learn mindfulness?
+
+      %p.nmb.medium-gray
+        I host regular mindfulness events, meditation retreats and stress reduction courses, where you can learn to ease the pressures of everyday life.
+        %br
+        = link_to 'More on Mindfulness.', mindfulness_path, class: 'secondary-link'
+
+  .row.mpt.lpb.column.text-center
+    = link_to 'Home', root_path, class: 'inline-block sma border-link'
+    = link_to 'About', about_path, class: 'inline-block sma border-link'
+    = link_to 'Counselling & Psychotherapy', counselling_path, class: 'inline-block sma border-link'
+    = link_to 'Mindfulness', mindfulness_path, class: 'inline-block sma border-link'
+    = link_to 'Contact', contact_path, class: 'inline-block sma border-link'

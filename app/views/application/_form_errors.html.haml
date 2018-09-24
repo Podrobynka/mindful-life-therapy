@@ -1,0 +1,10 @@
+- if target.errors.any?
+  .form-errors.lpa.lmb
+    %p.black.strong
+      = pluralize target.errors.count, "error" 
+      prohibited this record from being saved:
+
+    %ul.nmb.black
+      - target.errors.full_messages.each do |msg|
+        %li
+          %span.black= msg
