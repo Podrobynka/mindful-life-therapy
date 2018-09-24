@@ -1,11 +1,10 @@
 class SettingsController < ApplicationController
-  before_action :set_setting, only: [:show, :edit, :update]
 
-  # GET /settings/1
+  # GET /settings
   def show
   end
 
-  # GET /settings/1/edit
+  # GET /settings/edit
   def edit
   end
 
@@ -19,11 +18,6 @@ class SettingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_setting
-      @setting = Setting.first
-    end
-
     # Only allow a trusted parameter "white list" through.
     def setting_params
       params.require(:setting).permit(:telephone, :contact_email, :office_address, :hourly_rate)

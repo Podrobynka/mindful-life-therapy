@@ -1,21 +1,27 @@
 .row.lpb
-  .column.medium-offset-1.medium-10
-    %h1.page-title Site Settings
+  .column.medium-centered.medium-8.large-6
+    %h1.mmb Site Settings
 
-    %p
-      %b Telephone:
-      = @setting.telephone
+    .callout.secondary
+      %p
+        %b Telephone:
+        %br
+        = @setting.telephone
 
-    %p
-      %b Contact email:
-      = @setting.contact_email
+      %p
+        %b Contact email:
+        %br
+        = @setting.contact_email
 
-    %p
-      %b Office address:
-      = @setting.office_address
+      %p
+        %b Office address:
+        %br
+        = @setting.office_address
 
-    %p
-      %b Hourly rate:
-      = @setting.hourly_rate
+      %p
+        %b Hourly rate:
+        %br
+        = @setting.hourly_rate
 
-    = link_to 'Edit site settings', edit_settings_path, class: 'button secondary'
+    %p.text-right
+      = link_to 'Edit Site Settings', edit_settings_path, class: 'button large strong'

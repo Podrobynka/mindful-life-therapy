@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  telephone: MyString
-  contact_email: MyString
-  office_address: MyString
-  hourly_rate: MyString
-
-two:
-  telephone: MyString
-  contact_email: MyString
-  office_address: MyString
-  hourly_rate: MyString
+  telephone: 07933446549
+  contact_email: info@mindfullifetherapy.co.uk
+  office_address: 10 Newton Place, Glasgow, G3 7PR
+  hourly_rate: £50

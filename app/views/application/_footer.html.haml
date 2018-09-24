@@ -4,21 +4,19 @@
       %li.inline-block.sma
         %span
           = fa_icon 'phone'
-          %strong.medium-gray 07933446549
+          %strong.medium-gray= @setting.telephone
 
       %li.inline-block.sma
         %span
           = fa_icon 'envelope'
           %strong.medium-gray
-            = mail_to 'info@mindfullifetherapy.co.uk', 'info@mindfullifetherapy.co.uk', class: 'medium-gray-link'
+            = mail_to @setting.contact_email, @setting.contact_email, class: 'medium-gray-link'
 
       %li.inline-block.sma
         %span
           = fa_icon 'map-marker'
           %strong.medium-gray
-            10 Newton Place,
-            Glasgow,
-            G3 7PR
+            = @setting.office_address
 
   .row.lpt
     .column.large-5.large-offset-1.lmb
