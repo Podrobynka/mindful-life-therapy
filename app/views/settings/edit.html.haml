@@ -1,0 +1,24 @@
+.row
+  .column.medium-centered.medium-8.large-6
+    %h1.page-title Edit Site Settings
+    %p.lmb.text-center.medium-gray
+      Please note that these settings are used in various places throughout this website, and all of the fields are required.
+
+    = form_with model: @setting, url: settings_path, data: { validate: true }, class: 'remote-form lmb' do |f|
+
+      %fieldset.lmb
+        = render 'form_errors', target: @setting
+
+        = f.label :telephone, 'What is your telephone number?', class: 'required', title: 'Your telephone number is required'
+        = f.text_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb'
+
+        = f.label :contact_email, 'What is your preferred contact email address?', class: 'required', title: 'Your contact email address is required'
+        = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', required: true, class: 'smb'
+
+        = f.label :office_address, 'What is your office address?', class: 'required', title: 'Your office address is required'
+        = f.text_field :office_address, placeholder: 'i.e. 123, Awesome Stree, Glasgow, G1 1AA', required: true, class: 'smb'
+
+        = f.label :hourly_rate, 'What is your hourly rate?', class: 'required', title: 'Your hourly rate is required'
+        = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true, class: 'smb'
+
+        .actions.text-right= f.submit 'Save Settings', class: 'button large strong'

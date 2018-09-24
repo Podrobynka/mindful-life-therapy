@@ -1,0 +1,21 @@
+.row.lpb
+  .column.medium-offset-1.medium-10
+    %h1.page-title Site Settings
+
+    %p
+      %b Telephone:
+      = @setting.telephone
+
+    %p
+      %b Contact email:
+      = @setting.contact_email
+
+    %p
+      %b Office address:
+      = @setting.office_address
+
+    %p
+      %b Hourly rate:
+      = @setting.hourly_rate
+
+    = link_to 'Edit site settings', edit_settings_path, class: 'button secondary'

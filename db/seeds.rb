@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Setting.create(telephone: '07933446549', contact_email: 'info@mindfullifetherapy.co.uk', office_address: '10 Newton Place, Glasgow, G3 7PR', hourly_rate: '£50')
