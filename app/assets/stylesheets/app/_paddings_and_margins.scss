@@ -1,0 +1,96 @@
+$length-prefixes: (
+  'n': 0,
+  'xs': 0.125rem,
+  'vs': 0.25rem,
+  's': 0.5rem,
+  'm': 1rem,
+  'l': 2rem
+);
+
+$type-prefixes: (
+  'p': padding,
+  'm': margin
+);
+
+$direction-prefixes: (
+  'l': left,
+  'r': right,
+  't': top,
+  'b': bottom
+);
+
+@each $length-prefix, $length in $length-prefixes {
+  @each $type-prefix, $type in $type-prefixes {
+    @each $direction-prefix, $direction in $direction-prefixes {
+      .#{$length-prefix}#{$type-prefix}#{$direction-prefix} {
+        #{$type}-#{$direction}: $length;
+      }
+    }
+  }
+}
+
+.spa { padding: 0.5rem; }
+.mpa { padding: 1rem; }
+.lpa { padding: 2rem; }
+
+.sma { margin: 0.5rem; }
+.mma { margin: 1rem; }
+.lma { margin: 2rem; }
+
+.mptb { 
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
+}
+
+.lptb { 
+  padding-top: 2rem; 
+  padding-bottom: 2rem; 
+}
+
+.mpl-on-medium { 
+  @include breakpoint(medium up) { 
+    padding-left: 1rem; 
+  } 
+}
+
+.mpr-on-medium { 
+  @include breakpoint(medium up) { 
+    padding-right: 1rem; 
+  } 
+}
+
+.lpl-on-medium { 
+  @include breakpoint(medium up) { 
+    padding-left: 2rem; 
+  } 
+}
+
+.lpr-on-medium { 
+  @include breakpoint(medium up) { 
+    padding-right: 2rem; 
+  } 
+}
+
+.mml-on-medium { 
+  @include breakpoint(medium up) { 
+    margin-left: 1rem; 
+  } 
+}
+
+.mmr-on-medium { 
+  @include breakpoint(medium up) { 
+    margin-right: 1rem; 
+  } 
+}
+
+.lml-on-medium { 
+  @include breakpoint(medium up) { 
+    margin-left: 2rem; 
+  } 
+}
+
+.lmr-on-medium { 
+  @include breakpoint(medium up) { 
+    margin-right: 2rem; 
+  } 
+}

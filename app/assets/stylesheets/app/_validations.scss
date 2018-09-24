@@ -1,0 +1,46 @@
+.valid {
+  margin-bottom: 2.5rem;
+
+  @include form-focus {
+    color: $black;
+    border-color: rgb(250, 255, 189) !important;
+    background: rgb(250, 255, 189) !important;
+  }
+
+  &::placeholder { color: $body-font-color !important; }
+}
+
+.error {
+  margin-bottom: 0.5rem;
+  
+  @include form-focus {
+    border-color: $warning-color !important;
+    background: lighten($warning-color, 20%) !important;
+  }
+
+  &::placeholder { color: $body-font-color !important; }
+}
+
+.error-message {
+  color: $warning-color;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+  line-height: 1rem;
+  font-size: 0.9rem;
+}
+
+/* This helps keep inputs 
+   aligned vertically when
+   there are error messages */
+
+input, textarea { 
+  & + label, & + .actions {
+    margin-top: 2.5rem;
+  }
+}
+
+.error-message {
+  & + label, & + .actions {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,33 @@
+@mixin icons-in-line {
+  i {
+    width: 1.5rem; 
+    text-align: center; 
+    display: inline-block; 
+  }
+}
+
+@mixin anchor($link, $hover) {
+  color: $link;
+
+  &:visited { color: $link; }
+  &:hover { color: $hover; }
+  &:active { color: $hover; }
+}
+
+@mixin hover {
+  &:hover,
+  &:active {
+    @content;
+  }
+}
+
+@mixin form-focus {
+  @content;
+  box-shadow: inset 0 0 1px rgba($black, 0.25) !important;
+
+  &:focus, 
+  &:hover {
+    @content;
+    box-shadow: inset 0 0 1px rgba($black, 0.75) !important;
+  }
+}

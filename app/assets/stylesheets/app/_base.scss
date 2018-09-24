@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+
+  i { margin-right: 0.5rem; }
+}
+
+abbr { border-bottom: none; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $body-font-family;
+}
+
+button, .button { 
+  i { margin-right: 0.25rem; }
+}
+
+form label[title].required:after {
+  content: '\002a';
+  padding-left: 0.25rem;
+  color: $body-font-color;
+  cursor: pointer;
+}
+
+textarea { min-height: 200px; }
+
+cite { font-style: normal; }
+
+::selection {
+  background: $primary-color;
+  color: $white;
+  text-shadow: none !important;
+}
+
+::-moz-selection {
+  background: $primary-color;
+  color: $white;
+  text-shadow: none !important;  
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;  
+}
+
+.button {
+  &.primary,
+  &.secondary,
+  &.success,
+  &.warning,
+  &.alert { @include anchor($white, $white); }
+}

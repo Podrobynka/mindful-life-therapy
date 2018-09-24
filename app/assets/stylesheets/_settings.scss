@@ -65,23 +65,36 @@
 // 1. Global
 // ---------
 
+$blue: #6ecccb;
+$brown: #cd9d70;
+$red: #cd7071;
+$purple: #cd70a0;
+$green: #cdcb70;
+$f4: #f4f4f4;
+$base-black: #0b1414;
+$heading-black: #232b2b;
+$text-black: #3b4242;
+$dark-gray: #545a5a;
+$dark-medium-gray: #6c7272;
+$medium-gray: #9da1a1;
+$light-medium-gray: #b5b8b8;
+$light-gray: #e6e7e7;
+
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
+  primary: $blue,
+  secondary: $brown,
+  success: $green,
+  warning: $purple,
+  alert: $red,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$black: $base-black;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
+$body-font-color: $text-black;
 $body-font-family: Quicksand, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
