@@ -108,10 +108,7 @@
 
 .rounded { border-radius: 100%; }
 
-.form-errors {
-  background: $primary-color;
-  box-shadow: inset 0 0 1px rgba($black, 0.2);
-}
+.form-errors { box-shadow: inset 0 0 1px rgba($black, 0.2); }
 
 .block { display: block; }
 .inline { display: inline; }

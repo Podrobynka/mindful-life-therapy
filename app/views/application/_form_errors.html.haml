@@ -1,7 +1,7 @@
 - if target.errors.any?
-  .form-errors.lpa.lmb
+  .callout.warning.form-errors.lpa.lmb
     %p.black.strong
-      = pluralize target.errors.count, "error" 
+      = pluralize target.errors.count, "error"
       prohibited this record from being saved:
 
     %ul.nmb.black

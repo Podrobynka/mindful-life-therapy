@@ -1,0 +1,10 @@
+var form = document.querySelectorAll('.remote-form')[0];
+
+<% if @settings.errors.any? %>
+  form.innerHTML = "<%= j render 'settings/form' %>";
+<% else %>
+  form.reset();
+  Turbolinks.visit("<%= settings_path %>");
+<% end %>
+
+window.scrollTo(0,0);

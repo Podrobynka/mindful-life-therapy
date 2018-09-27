@@ -27,3 +27,11 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
+
+import "../app/flash"
+
+import validate from "../app/validate"
+
+document.addEventListener('turbolinks:load', function() {
+  validate.init();
+});
