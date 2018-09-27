@@ -10,7 +10,7 @@
         %span
           = fa_icon 'envelope'
           %strong.medium-gray
-            = mail_to @setting.contact_email, @setting.contact_email, class: 'medium-gray-link alt'
+            = mail_to @setting.contact_email, @setting.contact_email, class: 'medium-gray-link alt border-link'
 
       %li.inline-block.sma
         %span
@@ -19,14 +19,14 @@
             = @setting.office_address
 
   .row
-    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-1.text-center-on-medium-down.lmb.lpt
+    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-1.text-center-on-medium-down.lmb.mpt
       %h2.strong.lead.white
         Do you need help with a sensitive issue?
 
       %p.nmb.medium-gray
         My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
 
-    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-0.end.text-center-on-medium-down.lmb.lpt
+    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-0.end.text-center-on-medium-down.lmb.mpt
       %h2.strong.lead.white
         Do you want to learn mindfulness?
 
@@ -34,8 +34,8 @@
         I host regular mindfulness events, meditation retreats and stress reduction courses, where you can learn to ease the pressures of everyday life.
 
   .row.mpt.lpb.column.text-center
-    = link_to 'Home', root_path, class: 'inline-block sma border-link'
-    = link_to 'About', about_path, class: 'inline-block sma border-link'
-    = link_to 'Counselling & Psychotherapy', counselling_path, class: 'inline-block sma border-link'
-    = link_to 'Mindfulness', mindfulness_path, class: 'inline-block sma border-link'
-    = link_to 'Contact', contact_path, class: 'inline-block sma border-link'
+    = link_to 'Home', root_path, class: 'inline-block sma hover-white'
+    = link_to 'About', about_path, class: 'inline-block sma hover-white'
+    = link_to 'Counselling & Psychotherapy', counselling_path, class: 'inline-block sma hover-white'
+    = link_to 'Mindfulness', mindfulness_path, class: 'inline-block sma hover-white'
+    = link_to 'Contact', contact_path, class: 'inline-block sma hover-white'
