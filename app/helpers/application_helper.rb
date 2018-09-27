@@ -1,13 +1,17 @@
 module ApplicationHelper
   def css_class_for_controller(kontroller_name)
     if request.path.match(kontroller_name) || (controller_name == kontroller_name)
-      'active'
+      'active-link'
+    else
+      'inactive-link'
     end
   end
 
   def css_class_for_path(path)
     if request.path.match(path)
-      'active'
+      'active-link'
+    else
+      'inactive-link'
     end
   end
 
