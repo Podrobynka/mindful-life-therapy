@@ -4,19 +4,19 @@
       %li.inline-block.sma
         %span
           = fa_icon 'phone'
-          %strong.primary-color= @setting.telephone
+          %strong.primary-color= @settings.telephone
 
       %li.inline-block.sma
         %span
           = fa_icon 'envelope'
           %strong.primary-color
-            = mail_to @setting.contact_email, @setting.contact_email, class: 'hover-white border-link'
+            = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-white border-link'
 
       %li.inline-block.sma
         %span
           = fa_icon 'map-marker'
           %strong.primary-color
-            = @setting.office_address
+            = @settings.office_address
 
   .row
     .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-1.text-center-on-medium-down.lmb.mpt

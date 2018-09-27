@@ -1,13 +1,14 @@
 .row
   .column.medium-centered.medium-8.large-6
     %h1.page-title Edit Site Settings
+
     %p.lmb.text-center.medium-gray
       Please note that these settings are used in various places throughout this website, and all of the fields are required.
 
-    = form_with model: @setting, url: settings_path, data: { validate: true }, class: 'remote-form lmb' do |f|
+    = form_with model: @settings, url: settings_path, data: { validate: true }, class: 'remote-form lmb' do |f|
 
       %fieldset.lmb
-        = render 'form_errors', target: @setting
+        = render 'form_errors', target: @settings
 
         = f.label :telephone, 'What is your telephone number?', class: 'required', title: 'Your telephone number is required'
         = f.text_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb'

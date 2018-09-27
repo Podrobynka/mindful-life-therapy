@@ -10,7 +10,7 @@ class SettingsController < ApplicationController
 
   # PATCH/PUT /settings/1
   def update
-    if @setting.update(setting_params)
+    if @settings.update(setting_params)
       redirect_to settings_path, notice: 'Site settings were successfully updated.'
     else
       render :edit

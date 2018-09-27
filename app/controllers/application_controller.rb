@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   # Use callbacks to share common setup or constraints between actions.
   def set_site_settings
-    @setting = Setting.first
+    @settings = Setting.first
   end
 end

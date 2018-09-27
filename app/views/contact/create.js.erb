@@ -1,0 +1,11 @@
+var form = document.querySelectorAll('.remote-form')[0];
+
+<% if @message.errors.any? %>
+  form.innerHTML = "<%= j render 'contact/form' %>";
+  validate.init();
+<% else %>
+  form.reset();
+  form.innerHTML = "<%= j render 'contact/thankyou' %>";
+<% end %>
+
+window.scrollTo(0,0);

@@ -1,0 +1,20 @@
+= form_with model: @message, url: create_contact_url, data: { validate: true }, class: 'remote-form' do |f|
+  -# %h1.page-title Contact Zoe
+  %h1.mmb Contact Zoe
+
+  %fieldset.lmb.callout.primary
+    = render 'form_errors', target: @message
+
+    = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
+    = f.text_field :name, placeholder: 'What is your name?', required: true, id: 'message_name', class: 'smb', tabindex: '1', autofocus: true
+
+    = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
+    = f.email_field :email, placeholder: 'What is your email address?', required: true, id: 'message_email', class: 'smb', tabindex: '2'
+
+    = f.label :subject, 'Subject of your message', class: 'required strong', title: 'Please briefly outline the nature of your message'
+    = f.text_field :subject, placeholder: 'What is your message about?', required: true, id: 'message_subject', class: 'smb', tabindex: '3'
+
+    = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
+    = f.text_area :body, placeholder: 'Type your message here', required: true, id: 'message_body', class: 'smb', tabindex: '4'
+
+    .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large nmb', data: { disable_with: t('contact.disable_with_text').html_safe }, tabindex: '5'
