@@ -7,7 +7,7 @@
 .flex-1 { flex: 1; }
 
 .flex-1-on-large {
-  @include breakpoint(large up) { flex: 1; }  
+  @include breakpoint(large up) { flex: 1; }
 }
 
 .font-1 {
@@ -42,12 +42,10 @@
 
 .white-link {
   @include anchor($white, $white);
-  @include hover { border-bottom: 1px dotted $white; }
 }
 
 .secondary-link {
   @include anchor($secondary-color, $white);
-  @include hover { border-bottom: 1px dotted $white; }
 }
 
 .light-gray-link {
@@ -59,13 +57,14 @@
 }
 
 .medium-gray-link.alt {
-  @include anchor($medium-gray, $white);
-  @include hover { border-bottom: 1px dotted $white; }
+  @include anchor($medium-gray, $primary-color);
 }
 
 .border-link {
   @include hover { border-bottom: 1px dotted $white; }
 }
+
+.hover-white { @include hover { color: $white; } }
 
 .nowrap { white-space: nowrap; }
 .big-heading { font-size: 2rem; }
