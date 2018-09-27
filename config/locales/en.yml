@@ -112,14 +112,18 @@ en:
 
   seo:
     title:
+      home_page: "Welcome"
       about: "About"
       counselling: "Counselling and Psychotherapy in Glasgow"
       mindfulness: "Mindfulness in Glasgow"
-      appointments: "Appointments"
-      contact: "Contact"
-
+      appointments: "Counselling & Psychotherapy Appointments in Glasgow"
+      contact: "Contact Zoe"
+      settings:
+        show: "Site Settings"
+        edit: "Edit Site Settings"
+        
     meta_description:
-      home: "Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield."
+      home_page: "Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield."
       about: "Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield."
       counselling: "Our aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
       mindfulness: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."

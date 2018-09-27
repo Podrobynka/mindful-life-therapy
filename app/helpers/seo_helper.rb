@@ -5,19 +5,15 @@ module SeoHelper
     end
   end
 
-  def meta_description(meta_description)
-    if meta_description.present?
-      "<meta name='description' content='#{meta_description}' />".html_safe
-    end
+  def meta_description description
+    "<meta name='description' content='#{description}' />".html_safe if description.present?
   end
 
-  def canonical_link(canonical_url)
-    if canonical_url.present?
-      "<link rel='canonical' href='#{canonical_url}' />".html_safe
-    end
+  def canonical_link url
+    "<link rel='canonical' href='#{url}' />".html_safe if url.present?
   end
 
-  def no_index(no_index)
+  def no_index no_index
     if no_index.present?
       "<meta name='robots' content='noindex, follow' />".html_safe
     end
