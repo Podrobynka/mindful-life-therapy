@@ -7,19 +7,19 @@
 
     = form_with model: @settings, url: settings_path, data: { validate: true }, class: 'remote-form lmb' do |f|
 
-      %fieldset.lmb
+      %fieldset.fieldset.callout.success.lmb
         = render 'form_errors', target: @settings
 
-        = f.label :telephone, 'What is your telephone number?', class: 'required', title: 'Your telephone number is required'
+        = f.label :telephone, 'What is your telephone number?', class: 'required strong', title: 'Your telephone number is required'
         = f.text_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb'
 
-        = f.label :contact_email, 'What is your preferred contact email address?', class: 'required', title: 'Your contact email address is required'
+        = f.label :contact_email, 'What is your preferred contact email address?', class: 'required strong', title: 'Your contact email address is required'
         = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', required: true, class: 'smb'
 
-        = f.label :office_address, 'What is your office address?', class: 'required', title: 'Your office address is required'
+        = f.label :office_address, 'What is your office address?', class: 'required strong', title: 'Your office address is required'
         = f.text_field :office_address, placeholder: 'i.e. 123, Awesome Stree, Glasgow, G1 1AA', required: true, class: 'smb'
 
-        = f.label :hourly_rate, 'What is your hourly rate?', class: 'required', title: 'Your hourly rate is required'
-        = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true, class: 'smb'
+        = f.label :hourly_rate, 'What is your hourly rate?', class: 'required strong', title: 'Your hourly rate is required'
+        = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true
 
-        .actions.text-right= f.submit 'Save Settings', class: 'button large strong'
+      .actions.text-right= f.submit 'Save Settings', class: 'button large strong'

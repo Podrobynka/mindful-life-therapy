@@ -1,8 +1,11 @@
-= form_with model: @message, url: create_contact_url, data: { validate: true }, class: 'remote-form' do |f|
+= form_with model: @message, url: create_contact_url, data: { validate: true }, class: 'remote-form lmb' do |f|
 
-  %h1.mmb Contact Zoe
+  %h1.page-title Contact Zoe
 
-  %fieldset.lmb.callout.primary
+  %p.lmb.text-center.medium-gray
+    Please note that your message will be handled with the utmost care, and your contact details will not be stored or sold.
+
+  %fieldset.lmb.callout.success.lmb
     = render 'form_errors', target: @message
 
     = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
@@ -17,4 +20,4 @@
     = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
     = f.text_area :body, placeholder: 'Type your message here', required: true, id: 'message_body', class: 'smb', tabindex: '4'
 
-    .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large nmb', data: { disable_with: t('contact.disable_with_text').html_safe }, tabindex: '5'
+  .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', data: { disable_with: t('contact.disable_with_text').html_safe }, tabindex: '5'
