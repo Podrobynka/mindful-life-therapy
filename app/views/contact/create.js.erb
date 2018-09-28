@@ -1,4 +1,4 @@
-var form = document.querySelectorAll('.remote-form')[0];
+var form = document.querySelectorAll('form[data-controller=form]')[0];
 
 <% if @message.errors.any? %>
   form.innerHTML = "<%= j render 'contact/form' %>";

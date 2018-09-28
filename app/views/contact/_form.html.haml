@@ -1,27 +1,27 @@
-= form_with model: @message, url: create_contact_url, data: { validate: true }, class: 'remote-form lmb' do |f|
+= form_with model: @message, url: create_contact_url, data: { controller: 'form' }, class: 'lmb' do |f|
 
   %h1.page-title Contact Zoe
 
   %p.lmb.text-center.medium-gray
     Please note that your message will be handled with the utmost care, and your contact details will not be stored or sold.
 
-  %fieldset.lmb.callout.success.lmb
+  %fieldset.fieldset.callout.success.lmb
     = render 'form_errors', target: @message
 
     .field.lmb
       = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
-      = f.text_field :name, placeholder: 'What is your name?', required: true, class: 'smb', tabindex: '1', autofocus: true
+      = f.text_field :name, placeholder: 'i.e. Jane Doe', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.required field.required", controller: 'field', action: "blur->field#validatePresence keyup->field#validatePresence" }
 
     .field.lmb
       = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
-      = f.email_field :email, placeholder: 'What is your email address?', required: true, class: 'smb', tabindex: '2'
+      = f.email_field :email, placeholder: 'i.e. hello@world.io', required: true, class: 'smb', tabindex: '2', data: { target: "form.required form.email field.email", controller: 'field', action: "blur->field#validateEmail keyup->field#validateEmail" }
 
     .field.lmb
       = f.label :subject, 'Subject of your message', class: 'required strong', title: 'Please briefly outline the nature of your message'
-      = f.text_field :subject, placeholder: 'What is your message about?', required: true, class: 'smb', tabindex: '3'
+      = f.text_field :subject, placeholder: 'i.e. I need your help', required: true, class: 'smb', tabindex: '3', data: { target: "form.required field.required", controller: 'field', action: "blur->field#validatePresence keyup->field#validatePresence" }
 
     .field.lmb
       = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
-      = f.text_area :body, placeholder: 'Type your message here', required: true, class: 'smb', tabindex: '4'
+      = f.text_area :body, placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', required: true, class: 'smb', tabindex: '4', data: { target: "form.required field.required", controller: 'field', action: "blur->field#validatePresence keyup->field#validatePresence" }
 
-  .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', data: { disable_with: t('contact.disable_with_text').html_safe }, tabindex: '5'
+  .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe, action: 'click->form#validate' }

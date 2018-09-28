@@ -9,15 +9,12 @@
 
 console.log('Hello World from Webpacker')
 
-// setup rails-ujs
 import Rails from "rails-ujs"
 Rails.start()
 
-// setup turbolinks
 import Turbolinks from "turbolinks"
 Turbolinks.start()
 
-// setup activestorage
 import * as ActiveStorage from "activestorage"
 ActiveStorage.start()
 
@@ -27,9 +24,3 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
-
-import validate from "../app/validate"
-
-document.addEventListener('turbolinks:load', function() {
-  validate.init();
-});
