@@ -58,7 +58,7 @@ export default class extends Controller {
   }
 
   isEmail(field) {
-    return /^.+@.+\..+$/.test(field.value.trim())
+    return /^\S+@\S+\.\S+$/.test(field.value.trim())
   }
 
   toggleField(field, validity) {
