@@ -1,29 +1,10 @@
-.valid:not(.button) {
-  @include form-focus {
-    color: $black;
-    border-color: rgb(250, 255, 189) !important;
-    background: rgb(250, 255, 189) !important;
-  }
-
-  &::placeholder { color: $body-font-color !important; }
-}
-
-.field_with_errors input, .field_with_errors textarea, .error:not(.button) {
+.field_with_errors input, .field_with_errors textarea {
   margin-bottom: 0.5rem;
 
   @include form-focus {
-    border-color: $warning-color !important;
-    background: lighten($warning-color, 20%) !important;
+    border-color: lighten($warning-color, 20%) !important;
+    background: lighten($warning-color, 30%) !important;
   }
 
   &::placeholder { color: $body-font-color !important; }
-}
-
-.error-message {
-  color: $warning-color;
-  font-style: normal;
-  font-weight: $global-weight-bold;
-  margin-bottom: 0.5rem;
-  line-height: 1rem;
-  font-size: 1rem;
 }

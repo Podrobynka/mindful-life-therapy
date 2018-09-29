@@ -2,66 +2,45 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  validate(event) {
-    let allPresent = this.validatePresence()
-    let allValid   = this.validateEmail()
+  static targets = ['field']
 
-    this.valid = allPresent && allValid
+  connect() { this.element.setAttribute('novalidate', true) }
 
-    if (!this.valid) event.preventDefault()
+  get formValid() { return this.data.formValid }
+  set formValid(value) { this.data.formValid = value }
+
+  validateForm(event) {
+    this.validateFields()
+    this.preventSubmissionIfFormIsInvalid(event)
   }
 
-  private
-
-  get required_fields() {
-    return this.targets.findAll("required")
+  validateFields() {
+    this.formValid = true
+    this.fieldTargets.forEach(field => this.checkField(field))
   }
 
-  get email_fields() {
-    return this.targets.findAll('email')
+  validateField(event) {
+    this.tabKeyPressed(event) ? this.doNothing() : this.checkField(event.target)
   }
 
-  get valid() {
-    return this.data.valid
+  checkField(field) {
+    this.toggleField(field, field.checkValidity())
   }
 
-  set valid(value) {
-    this.data.valid = value
+  toggleField(field, valid) {
+    if (!valid) this.formValid = false
+    field.parentElement.classList.toggle("field_with_errors", !valid)
   }
 
-  validatePresence() {
-    let allValid = true
-
-    this.required_fields.forEach((field) => {
-      let present = this.isPresent(field)
-      this.toggleField(field, present)
-      if (!present) allValid = false
-    })
-
-    return allValid
+  preventSubmissionIfFormIsInvalid(event) {
+    if (!this.formValid) event.preventDefault()
   }
 
-  validateEmail() {
-    let allValid = true
-
-    this.email_fields.forEach((field) => {
-      let correct = this.isEmail(field)
-      this.toggleField(field, correct)
-      if (!correct) allValid = false
-    })
-
-    return allValid
+  doNothing() {
+    return
   }
 
-  isPresent(field) {
-    return /^.+$/.test(field.value.trim())
-  }
-
-  isEmail(field) {
-    return /^\S+@\S+\.\S+$/.test(field.value.trim())
-  }
-
-  toggleField(field, validity) {
-    field.parentElement.classList.toggle("field_with_errors", !validity)
+  tabKeyPressed(event) {
+    return event.key === 'Tab' || event.keyCode === 9 || event.which === 9
   }
 }
