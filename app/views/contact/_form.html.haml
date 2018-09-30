@@ -8,20 +8,24 @@
   %fieldset.fieldset.callout.success.lmb.lpt
     = render 'form_errors', target: @message
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
-      = f.text_field :name, required: true, title: 'Your name is required', placeholder: 'i.e. Jane Doe', class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.text_field :name, required: true, title: 'Your name is required', placeholder: 'i.e. Jane Doe', class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
-      = f.email_field :email, required: true, title: 'Please enter a valid email address', placeholder: 'i.e. hello@world.io', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.email_field :email, required: true, title: 'Please enter a valid email address', placeholder: 'i.e. hello@world.io', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :subject, 'Subject of your message', class: 'required strong', title: 'Please briefly outline the nature of your message'
-      = f.text_field :subject, required: true, title: 'Please briefly outline the nature of your message', placeholder: 'i.e. I need your help', class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.text_field :subject, required: true, title: 'Please briefly outline the nature of your message', placeholder: 'i.e. I need your help', class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
-      = f.text_area :body, required: true, title: 'Please type your message here', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.text_area :body, required: true, title: 'Please type your message here', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
   .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }

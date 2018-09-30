@@ -8,20 +8,24 @@
   %fieldset.fieldset.callout.success.lmb.lpt
     = render 'form_errors', target: @settings
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :telephone, 'What is your telephone number?', class: 'required strong', title: 'Your telephone number is required'
-      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :contact_email, 'What is your preferred contact email address?', class: 'required strong', title: 'Your contact email address is required'
-      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', required: true, class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', required: true, class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :office_address, 'What is your office address?', class: 'required strong', title: 'Your office address is required'
-      = f.text_field :office_address, placeholder: 'i.e. 123, Awesome Stree, Glasgow, G1 1AA', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.text_field :office_address, placeholder: 'i.e. 123, Awesome Stree, Glasgow, G1 1AA', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
-    .field.lmb
+    .field{ data: { controller: 'errors' } }
       = f.label :hourly_rate, 'What is your hourly rate?', class: 'required strong', title: 'Your hourly rate is required'
-      = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true, class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateField keyup->form#validateField" }
+      = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true, class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
 
   .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('settings.disable_with_text').html_safe }
