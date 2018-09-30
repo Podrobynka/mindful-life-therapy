@@ -117,7 +117,9 @@ en:
   seo:
     title:
       home_page: "Welcome"
-      about: "About"
+      about_page:
+        show: "About"
+        edit: "Edit the About Page"
       counselling: "Counselling and Psychotherapy in Glasgow"
       mindfulness: "Mindfulness in Glasgow"
       appointments: "Counselling & Psychotherapy Appointments in Glasgow"

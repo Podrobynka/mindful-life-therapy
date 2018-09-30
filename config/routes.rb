@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resource :about_page, only: [:show, :edit, :update], controller: 'about_page'
   resource :settings, only: [:show, :edit, :update]
-  get '/about', to: 'home_page#show', as: 'about'
+
+  get '/about', to: 'about_page#show', as: 'about'
   get '/counselling-and-psychotherapy', to: 'home_page#show', as: 'counselling'
   get '/mindfulness', to: 'home_page#show', as: 'mindfulness'
   get '/contact', to: 'contact#new', as: 'contact'
