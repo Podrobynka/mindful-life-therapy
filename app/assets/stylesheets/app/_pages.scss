@@ -7,16 +7,16 @@
   margin: 2rem 0 1rem;
 }
 
-.page-body { 
-  font-size: 1.25rem; 
+.page-body {
+  font-size: 1.25rem;
 }
 
 .paragraph-photo {
   width: 159px;
 }
 
-.about-figure {  
-  @include breakpoint(large up) {
+.about-figure {
+  @include breakpoint(medium up) {
     text-align: center;
   }
 }

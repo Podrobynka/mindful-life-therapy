@@ -25,14 +25,14 @@ textarea {
   font-family: $body-font-family;
 }
 
-button, .button { 
+button, .button {
   i { margin-right: 0.25rem; }
 }
 
 form label[title].required:after {
   content: '\002a';
   padding-left: 0.25rem;
-  color: $body-font-color;
+  color: $warning-color;
   cursor: pointer;
 }
 
@@ -49,12 +49,12 @@ cite { font-style: normal; }
 ::-moz-selection {
   background: $primary-color;
   color: $white;
-  text-shadow: none !important;  
+  text-shadow: none !important;
 }
 
 select {
   -webkit-appearance: none;
-  -moz-appearance: none;  
+  -moz-appearance: none;
 }
 
 .button {
