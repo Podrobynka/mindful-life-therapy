@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class SeoHelperTest < ActionView::TestCase
+
   test 'title when page_title is set' do
     @view_flow = ActionView::OutputFlow.new
     @view_flow.set(:page_title, 'Hello')
