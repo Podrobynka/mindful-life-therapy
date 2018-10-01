@@ -1,8 +1,10 @@
 class Setting < ApplicationRecord
-  validates_presence_of :telephone, :contact_email, :office_address, :hourly_rate
-
-  validates :telephone, presence: true, length: { maximum: 20 }
+  validates :telephone, presence: true, length: { maximum: 30 }
   validates :contact_email, presence: true, length: { maximum: 50 }
-  validates :office_address, presence: true, length: { maximum: 50 }
-  validates :hourly_rate, presence: true, length: { maximum: 5 }
+  validates :office_address_line_1, presence: true, length: { maximum: 50 }
+  validates :office_address_line_2, length: { maximum: 50 }
+  validates :office_address_line_3, length: { maximum: 50 }
+  validates :office_address_city, presence: true, length: { maximum: 50 }
+  validates :office_address_postcode, presence: true, length: { maximum: 50 }
+  validates :session_rate, presence: true, length: { maximum: 50 }
 end
