@@ -21,6 +21,6 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
   test "should show error message when update fails" do
     @about_page = about_pages(:one)
     patch about_page_url, params: { about_page: { title: '' } }
-    assert_match /1 error prohibited this page from being saved/, response.body
+    assert_match /1 error prohibited this record from being saved/, response.body
   end
 end
