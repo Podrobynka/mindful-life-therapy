@@ -35,17 +35,14 @@
 
   .column.medium-12.large-3
     .xplr-on-large
-      %p
-        %span.block.strong.success-color Rates:
-        %span.block= @settings.session_rate
+      .mmb
+        .block.strong.success-color Rates:
+        .block= @settings.session_rate
 
-      %p
-        %span.block.strong.success-color Phone:
-        %span.block= @settings.telephone
+      .mmb
+        .block.strong.success-color Phone:
+        .block= @settings.telephone
 
-      %p.lmb
-        %span.block.strong.success-color Office:
-        %span.block Mindful Life Therapy
-        %span.block 10 Newton Place
-        %span.block Glasgow
-        %span.block G3 7PR
+      .mmb
+        .block.strong.success-color Office:
+        = office_address @settings
