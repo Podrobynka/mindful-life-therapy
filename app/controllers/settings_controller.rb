@@ -1,14 +1,11 @@
 class SettingsController < ApplicationController
 
-  # GET /settings
   def show
   end
 
-  # GET /settings/edit
   def edit
   end
 
-  # PATCH/PUT /settings/1
   def update
     if @settings.update(setting_params)
       redirect_to settings_path, notice: 'Site settings were successfully updated.'
@@ -18,8 +15,8 @@ class SettingsController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
+
     def setting_params
-      params.require(:setting).permit(:telephone, :contact_email, :office_address, :hourly_rate)
+      params.require(:setting).permit(:telephone, :contact_email, :office_address_line_1, :office_address_line_2, :office_address_line_3, :office_address_city, :office_address_postcode, :session_rate)
     end
 end
