@@ -32,11 +32,11 @@
   @include breakpoint(large up) { display: none; }
 }
 
-.inactive-link {
+.inactive {
   @include anchor($medium-gray, $dark-gray);
 }
 
-.active-link {
+.active {
   @include anchor($black, $black);
 }
 

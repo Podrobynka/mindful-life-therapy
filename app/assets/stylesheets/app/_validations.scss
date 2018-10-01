@@ -8,8 +8,8 @@
 
   input, textarea {
     @include form-focus {
-      border-color: lighten($warning-color, 10%) !important;
-      background: lighten($warning-color, 20%) !important;
+      border-color: lighten($alert-color, 10%) !important;
+      background: lighten($alert-color, 20%) !important;
     }
 
     &::placeholder { color: $body-font-color !important; }
@@ -17,9 +17,9 @@
 }
 
 .error-message {
-  color: $warning-color;
-  font-weight: $global-weight-bold;
-  line-height: 1;
+  color: $alert-color;
+  font-weight: $global-weight-normal;
+  line-height: 1.5;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }

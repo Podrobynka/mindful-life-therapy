@@ -32,11 +32,9 @@ button, .button {
 form label[title].required:after {
   content: '\002a';
   padding-left: 0.25rem;
-  color: $warning-color;
+  color: red;
   cursor: pointer;
 }
-
-textarea { min-height: 200px; }
 
 cite { font-style: normal; }
 
