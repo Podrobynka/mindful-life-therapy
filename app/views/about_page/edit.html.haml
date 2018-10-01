@@ -1,7 +1,5 @@
-%h1 Editing the About Page
+- provide :page_title, t('seo.title.about_page.edit')
 
-= render 'form'
-
-= link_to 'Show', @about_page
-\|
-= link_to 'Back', about_page_path
+.row
+  .column.medium-centered.medium-8.large-6
+    = render 'form'

@@ -7,7 +7,6 @@
     %h1.page-title.lpb= @about_page.title
 
   .column.small-12.medium-3
-    -# .column.medium-3.lpr-on-medium
     %figure.about-figure.lmb.mpr-on-medium.xplr-on-large.smt-on-medium
       = image_tag 'about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg', title: t('zoe.image.caption'), alt: t('zoe.image.caption'), class: 'about-img smb'
 
@@ -17,7 +16,8 @@
 
   .column.medium-9.large-6
     .page-body.lmb
-      =# simple_format @about_page.body
+      = simple_format @about_page.body
+
       %p
         Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield.
 
@@ -37,11 +37,11 @@
     .xplr-on-large
       %p
         %span.block.strong.success-color Rates:
-        %span.block £45 per 50 minutes
+        %span.block= @settings.session_rate
 
       %p
         %span.block.strong.success-color Phone:
-        %span.block 07933446549
+        %span.block= @settings.telephone
 
       %p.lmb
         %span.block.strong.success-color Office:
