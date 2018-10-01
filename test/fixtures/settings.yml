@@ -3,5 +3,7 @@
 one:
   telephone: 07933446549
   contact_email: info@mindfullifetherapy.co.uk
-  office_address: 10 Newton Place, Glasgow, G3 7PR
-  hourly_rate: £50
+  office_address_line_1: 10 Newton Place
+  office_address_city: Glasgow
+  office_address_postcode: G3 7PR
+  session_rate: £50 per 50 minutes
