@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class HomePageControllerTest < ActionDispatch::IntegrationTest
+
   test "should root to show action" do
     get root_url
     assert_response :success
