@@ -16,14 +16,36 @@
         = @settings.contact_email
 
       %p
-        %b Office address:
+        %b Office address line 1:
         %br
-        = @settings.office_address
+        = @settings.office_address_line_1
+
+      - if @settings.office_address_line_2.present?
+        %p
+          %b Office address line 2:
+          %br
+          = @settings.office_address_line_2
+
+      - if @settings.office_address_line_3.present?
+        %p
+          %b Office address line 3:
+          %br
+          = @settings.office_address_line_3
 
       %p
-        %b Hourly rate:
+        %b Office address city:
         %br
-        = @settings.hourly_rate
+        = @settings.office_address_city
+
+      %p
+        %b Office address postcode:
+        %br
+        = @settings.office_address_postcode
+
+      %p
+        %b Session rate:
+        %br
+        = @settings.session_rate
 
     %p.text-right
       = link_to 'Edit Site Settings', edit_settings_path, class: 'button large strong'

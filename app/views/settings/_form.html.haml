@@ -3,29 +3,60 @@
   %h1.page-title Edit Site Settings
 
   %p.lpb.text-center.medium-gray
-    Please note that these settings are used in various places throughout this website, and all of the fields are required.
+    Please note that these settings are used in various places throughout this website. Fields marked with an asterisk are required.
 
   %fieldset.fieldset.callout.success.lmb.lpt
     = render 'form_errors', target: @settings
 
     .field{ data: { controller: 'errors' } }
       = f.label :telephone, 'What is your telephone number?', class: 'required strong', title: 'Your telephone number is required'
-      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.smb 30 characters max
+      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', maxlength: '30', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
       = f.label :contact_email, 'What is your preferred contact email address?', class: 'required strong', title: 'Your contact email address is required'
-      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', required: true, class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.nmb 50 characters max
+      %p.smb Visitor messages will be sent to this address
+      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', maxlength: '50', required: true, class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
-      = f.label :office_address, 'What is your office address?', class: 'required strong', title: 'Your office address is required'
-      = f.text_field :office_address, placeholder: 'i.e. 123, Awesome Stree, Glasgow, G1 1AA', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.label :office_address_line_1, class: 'required strong', title: 'Office address line 1 is required'
+      %p.smb 50 characters max
+      = f.text_field :office_address_line_1, placeholder: 'i.e. 10 Newton Place', maxlength: '50', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
-      = f.label :hourly_rate, 'What is your hourly rate?', class: 'required strong', title: 'Your hourly rate is required'
-      = f.text_field :hourly_rate, placeholder: 'i.e. £50', required: true, class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.label :office_address_line_2, class: 'strong'
+      %p.smb 50 characters max
+      = f.text_field :office_address_line_2, placeholder: 'Leave blank if not applicable', maxlength: '50', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-  .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('settings.disable_with_text').html_safe }
+    .field{ data: { controller: 'errors' } }
+      = f.label :office_address_line_3, class: 'strong'
+      %p.smb 50 characters max
+      = f.text_field :office_address_line_3, placeholder: 'Leave blank if not applicable', maxlength: '50', class: 'smb', tabindex: '5', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
+
+    .field{ data: { controller: 'errors' } }
+      = f.label :office_address_city, class: 'required strong', title: 'Office address city is required'
+      %p.smb 50 characters max
+      = f.text_field :office_address_city, placeholder: 'i.e. Glasgow', required: true, maxlength: '50', class: 'smb', tabindex: '6', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
+
+    .field{ data: { controller: 'errors' } }
+      = f.label :office_address_postcode, class: 'required strong', title: 'Office address postcode is required'
+      %p.smb 50 characters max
+      = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '50', required: true, class: 'smb', tabindex: '7', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
+
+    .field{ data: { controller: 'errors' } }
+      = f.label :session_rate, 'What is your session rate?', class: 'required strong', title: 'Your session rate is required'
+      %p.nmb 50 characters max
+      %p.nmb Please include the £ symbol and session length too
+      %p.smb i.e. £55 per 50 minutes
+      = f.text_field :session_rate, placeholder: 'i.e. £55 per 50 minutes', maxlength: '50', required: true, class: 'smb', tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = error_message target: 'errors.message'
+
+  .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '9', data: { disable_with: t('settings.disable_with_text').html_safe }
