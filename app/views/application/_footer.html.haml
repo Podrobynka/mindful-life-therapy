@@ -16,7 +16,7 @@
         %span
           = fa_icon 'map-marker'
           %strong.primary-color
-            = @settings.office_address
+            = footer_office_address @settings
 
   .row
     .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-1.text-center-on-medium-down.lmb.mpt
@@ -35,7 +35,7 @@
 
   .row.mpt.lpb.column.text-center
     = link_to 'Home', root_path, class: 'strong inline-block sma hover-white'
-    = link_to 'About', about_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Counselling & Psychotherapy', counselling_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Mindfulness', mindfulness_path, class: 'strong inline-block sma hover-white'
+    = link_to 'About', about_page_path, class: 'strong inline-block sma hover-white'
+    -# = link_to 'Counselling & Psychotherapy', counselling_path, class: 'strong inline-block sma hover-white'
+    -# = link_to 'Mindfulness', mindfulness_path, class: 'strong inline-block sma hover-white'
     = link_to 'Contact', contact_path, class: 'strong inline-block sma hover-white'
