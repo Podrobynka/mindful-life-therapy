@@ -1,5 +1,4 @@
 class ContactController < ApplicationController
-  # skip_before_action :login_required
 
   def new
     @message = Message.new
