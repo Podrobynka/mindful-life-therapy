@@ -10,22 +10,30 @@
 
     .field{ data: { controller: 'errors' } }
       = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
-      = f.text_field :name, required: true, title: 'Your name is required', placeholder: 'i.e. Jane Doe', class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.nmb 100 characters max
+      %p.smb Your personal details will remain private and confidential
+      = f.text_field :name, required: true, maxlength: '100', placeholder: 'i.e. Jane Doe', class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
       = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
-      = f.email_field :email, required: true, title: 'Please enter a valid email address', placeholder: 'i.e. hello@world.io', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.nmb 100 characters max
+      %p.smb Required so that I can reply to your message
+      = f.email_field :email, required: true, maxlength: '100', placeholder: 'i.e. name@example.org', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
       = f.label :subject, 'Subject of your message', class: 'required strong', title: 'Please briefly outline the nature of your message'
-      = f.text_field :subject, required: true, title: 'Please briefly outline the nature of your message', placeholder: 'i.e. I need your help', class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.nmb 50 characters max
+      %p.smb Please briefly outline the nature of your message
+      = f.text_field :subject, required: true, maxlength: '50', placeholder: 'i.e. I would like to book a session', class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
       = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
-      = f.text_area :body, required: true, title: 'Please type your message here', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.nmb 1000 characters max
+      %p.smb Anything you write here will remain confidential
+      = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '10'
       = error_message target: 'errors.message'
 
   .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
