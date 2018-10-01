@@ -2,10 +2,11 @@
 
   %h1.page-title Contact Zoe
 
-  %p.lpb.text-center.medium-gray
-    Please note that your message will be handled with the utmost care, and your contact details will not be stored or sold.
+  %fieldset.fieldset.callout.lmb.npt
 
-  %fieldset.fieldset.callout.success.lmb.lpt
+    %p.lpb.text-center.medium-gray
+      Please note that your message will be handled with the utmost care, and your contact details will not be stored or sold.
+
     = render 'form_errors', target: @message
 
     .field{ data: { controller: 'errors' } }
@@ -36,4 +37,4 @@
       = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '10'
       = error_message target: 'errors.message'
 
-  .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
+    .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }

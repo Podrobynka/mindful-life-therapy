@@ -2,10 +2,11 @@
 
   %h1.page-title Edit About Page
 
-  %p.lpb.text-center.medium-gray
-    Fields marked with an asterisk are required.
+  %fieldset.fieldset.callout.lmb.npt
 
-  %fieldset.fieldset.callout.success.lmb.lpt
+    %p.lpb.text-center.medium-gray
+      Fields marked with an asterisk are required.
+
     = render 'form_errors', target: @about_page
 
     .field{ data: { controller: 'errors' } }
@@ -17,7 +18,7 @@
     .field{ data: { controller: 'errors' } }
       = f.label :body, class: 'required strong', title: 'Body is required'
       %p.smb 100,000 characters max
-      = f.text_area :body, placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield.', required: true, maxlength: '100000', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '8'
+      = f.text_area :body, placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', required: true, maxlength: '100000', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '8'
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
@@ -27,4 +28,4 @@
       = f.text_area :meta_description, placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', maxlength: '150', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '2'
       = error_message target: 'errors.message'
 
-  .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '4', data: { disable_with: t('settings.disable_with_text').html_safe }
+    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '4', data: { disable_with: t('settings.disable_with_text').html_safe }
