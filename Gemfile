@@ -33,6 +33,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'simplecov', require: false
+  gem 'mocha'
 end
 
 group :production do
