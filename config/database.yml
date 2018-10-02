@@ -13,6 +13,7 @@ test:
 
 production:
   <<: *default
-  database: mlt_production
-  username: mlt
-  password: <%= ENV['MLT_DATABASE_PASSWORD'] %>
+  # database: mlt_production
+  # username: mlt
+  # password: <%= ENV['MLT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
