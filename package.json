@@ -1,9 +1,6 @@
 {
   "name": "mindful_life_therapy",
   "private": true,
-  "engines": {
-    "yarn": "1.10.1"
-  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "activestorage": "^5.2.1",
