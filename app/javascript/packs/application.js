@@ -18,6 +18,10 @@ Turbolinks.start()
 import * as ActiveStorage from "activestorage"
 ActiveStorage.start()
 
+import "trix/dist/trix.css"
+const Trix = require("trix")
+Trix.config.blockAttributes.heading1.tagName = "h2"
+
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
