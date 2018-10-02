@@ -16,42 +16,8 @@
             %small.block.medium-gray BA (Hons), PGDip, MBACP
 
       .column.medium-9.large-6
-        .page-body.lmb
-          = simple_format @about_page.body
-
-          %p
-            Mindful Life Therapy offers individual counselling and psychotherapy, as well as both group and individual mindfulness training in Glasgow and further afield.
-
-          %p
-            Services are provided by Zoe Zalavary BA (Hons), PGDip, MBACP, a BACP registered Counsellor and Psychotherapist, and qualified Mindfulness teacher (trained through Bangor University and the Mindfulness Association).
-
-          %p
-            Zoe's therapeutic work integrates Person-centred, Compassion Focused Therapy and Mindfulness and helps address a wide range of issues including:
-
-          %p
-            Abuse, Addictions, Anxiety, Bereavement, Depression, Eating Disorders, Identity Problems, Loss, Personal Development, Relationships, Self Esteem, Spirituality, Stress and Work related issues.
-
-          %p
-            Working with depression, anxiety and shame based issues as well as identity, spirituality and existential issues are areas of speciality.
-
-        %h2.page-subtitleOnline Counselling & International Clients
-        %p I counsel several international clients via video chat, and would love to work with you wherever you are based.
-
-        %h2.page-subtitle Sessions and Appointments
-        %p Sessions usually take place once a week and last 50 minutes. Making a regular commitment gives you a better chance of finding out why you are having difficulties and working out what you want to do about them.
-        %p Our initial appointment will be an opportunity to explore issues and assess what is needed. This can be done in person or over the phone. There is no obligation to commit at this point but if it feels good to pursue a working relationship we would usually start by contracting for six sessions. This is a standard starting point and may be extended if longer term therapy is needed.
-
-        %h2.page-subtitle Payments
-        %p Payment can be made in cash or bank transfer. If you are being funded by an organisation, the necessary arrangements for payment of fees should be made in advance.
-        %p
-          The rate for individual counselling is
-          %strong
-            = succeed ',' do
-              = @settings.session_rate
-          which should be paid at the end of each session.
-
-        %h2.page-subtitle Cancellations & Missed Appointments
-        %p As with most professional services whose practitioners are self-employed and need to manage their diaries efficiently, we operate a strict cancellation and missed session policy. Clients are required to give a minimum of two business days’ (48 hours) notice of any cancelled session. The full fee is due if adequate notice is not given.
+        .lmb.trix-content= @about_page.body.html_safe
+        = link_to 'Edit this Page', edit_about_page_path, class: 'button strong'
 
       .column.medium-9.medium-offset-3.large-3.large-offset-0
         .lpl-on-large
