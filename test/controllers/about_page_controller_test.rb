@@ -18,9 +18,21 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to about_page_url
   end
 
+  test "should update about_page via :xhr" do
+    @about_page = about_pages(:one)
+    patch about_page_url, xhr: true, params: { about_page: { body: @about_page.body, meta_description: @about_page.meta_description, title: @about_page.title } }
+    assert_match 'Turbolinks.visit("http://www.example.com/about", {"action":"replace"})', response.body
+  end
+
   test "should show error message when update fails" do
     @about_page = about_pages(:one)
     patch about_page_url, params: { about_page: { title: '' } }
+    assert_match /1 error prohibited this record from being saved/, response.body
+  end
+
+  test "should show error message when update via :xhr fails" do
+    @about_page = about_pages(:one)
+    patch about_page_url, xhr: true, params: { about_page: { title: '' } }
     assert_match /1 error prohibited this record from being saved/, response.body
   end
 end
