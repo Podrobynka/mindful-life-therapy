@@ -1,14 +1,17 @@
 require 'test_helper'
 
 class MessageMailerJobTest < ActiveJob::TestCase
-  setup do
-    @message = Message.new name: 'hi', email: 'hello@world.com', subject: 'hi', body: 'hello world'
-    @recipient = 'zoe@example.com'
+  test 'queues work as expected' do
+    assert_no_enqueued_jobs
+    MessageMailerJob.perform_later 'stephen', 'stephen@example.com', 'hi zoe', 'i would like to sign up for your mindfulness course'
+    assert_enqueued_jobs 1
   end
 
-  test 'queues work as expected' do
-    assert_enqueued_jobs 0
-    MessageMailerJob.perform_later(@message.to_json, @recipient)
-    assert_enqueued_jobs 1
+  test 'email is sent' do
+    perform_enqueued_jobs do
+      assert_difference 'ActionMailer::Base.deliveries.count' do
+        MessageMailerJob.perform_later 'stephen', 'stephen@example.com', 'hi zoe', 'i would like to sign up for your mindfulness course'
+      end
+    end
   end
 end
