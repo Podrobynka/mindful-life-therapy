@@ -1,6 +1,14 @@
-.trix-content, .trix-editor {
-  h2, blockquote, ul, ol { margin-bottom: 0rem; }
-  h2 { font-weight: $global-weight-bold; }
+// specificity is required to override trix's own CSS
+body {
+  .trix-content, .trix-editor {
+    h2, blockquote, ul, ol { margin-bottom: 0rem; }
+    h2 { font-weight: $global-weight-bold; }
+    blockquote {
+      margin: 0;
+      padding: rem-calc(9 20 9 19);
+      border-left: 3px solid $light-gray;
+    }
+  }
 }
 
 .trix-editor {
