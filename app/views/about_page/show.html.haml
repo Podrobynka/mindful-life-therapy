@@ -16,7 +16,7 @@
             %small.block.medium-gray BA (Hons), PGDip, MBACP
 
       .column.medium-9.large-6
-        .lmb.trix-content= @about_page.body.html_safe
+        .lmb.trix-content= sanitize @about_page.body
         = link_to 'Edit this Page', edit_about_page_path, class: 'button strong'
 
       .column.medium-9.medium-offset-3.large-3.large-offset-0
