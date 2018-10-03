@@ -1,4 +1,3 @@
 var form = document.querySelectorAll('form[data-controller=form]')[0];
-form.reset();
-form.innerHTML = "<%= j render 'contact/thankyou' %>";
+form.innerHTML = "<%= j render 'contact/form' %>";
 window.scrollTo(0,0);
