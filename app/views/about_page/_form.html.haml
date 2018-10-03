@@ -17,30 +17,7 @@
       = f.label :body, class: 'required strong', title: 'Body is required'
       %p.smb 100,000 characters max
       = f.text_field :body, type: 'hidden'
-      %trix-toolbar#trix-toolbar-1
-        .trix-button-row
-          %span.trix-button-group.trix-button-group--text-tools{"data-trix-button-group" => "text-tools"}
-            %button.trix-button.trix-button--icon.trix-button--icon-bold{"data-trix-attribute" => "bold", "data-trix-key" => "b", :tabindex => "-1", :title => "Bold", :type => "button"} Bold
-            %button.trix-button.trix-button--icon.trix-button--icon-italic{"data-trix-attribute" => "italic", "data-trix-key" => "i", :tabindex => "-1", :title => "Italic", :type => "button"} Italic
-            %button.trix-button.trix-button--icon.trix-button--icon-link.trix-active{"data-trix-action" => "link", "data-trix-active" => "", "data-trix-attribute" => "href", "data-trix-key" => "k", :tabindex => "-1", :title => "Link", :type => "button"} Link
-          %span.trix-button-group.trix-button-group--block-tools{"data-trix-button-group" => "block-tools"}
-            %button.trix-button.trix-button--icon.trix-button--icon-heading-1{"data-trix-attribute" => "heading1", :tabindex => "-1", :title => "Heading", :type => "button"} Heading
-            %button.trix-button.trix-button--icon.trix-button--icon-quote{"data-trix-attribute" => "quote", :tabindex => "-1", :title => "Quote", :type => "button"} Quote
-            %button.trix-button.trix-button--icon.trix-button--icon-code{"data-trix-attribute" => "code", :tabindex => "-1", :title => "Code", :type => "button"} Code
-            %button.trix-button.trix-button--icon.trix-button--icon-bullet-list{"data-trix-attribute" => "bullet", :tabindex => "-1", :title => "Bullets", :type => "button"} Bullets
-            %button.trix-button.trix-button--icon.trix-button--icon-number-list{"data-trix-attribute" => "number", :tabindex => "-1", :title => "Numbers", :type => "button"} Numbers
-          %span.trix-button-group-spacer
-          %span.trix-button-group.trix-button-group--history-tools{"data-trix-button-group" => "history-tools"}
-            %button.trix-button.trix-button--icon.trix-button--icon-undo{"data-trix-action" => "undo", "data-trix-key" => "z", :disabled => "disabled", :tabindex => "-1", :title => "Undo", :type => "button"} Undo
-            %button.trix-button.trix-button--icon.trix-button--icon-redo{"data-trix-action" => "redo", "data-trix-key" => "shift+z", :disabled => "disabled", :tabindex => "-1", :title => "Redo", :type => "button"} Redo
-        .trix-dialogs{"data-trix-dialogs" => ""}
-          .trix-dialog.trix-dialog--link.trix-active{"data-trix-active" => "", "data-trix-dialog" => "href", "data-trix-dialog-attribute" => "href"}
-            .trix-dialog__link-fields
-              %input.trix-input.trix-input--dialog{"aria-label" => "URL", "data-trix-input" => "", :name => "href", :placeholder => "Enter a URL…", :required => "", :type => "url"}/
-              .trix-button-group
-                %input.trix-button.trix-button--dialog{"data-trix-method" => "setAttribute", :type => "button", :value => "Link"}/
-                %input.trix-button.trix-button--dialog{"data-trix-method" => "removeAttribute", :type => "button", :value => "Unlink"}/
-      %trix-editor{ input: 'about_page_body', placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', class: 'smb trix-editor', tabindex: '2', toolbar: 'trix-toolbar-1' }
+      %trix-editor{ input: 'about_page_body', placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', class: 'smb trix-editor', tabindex: '2' }
 
     .field{ data: { controller: 'errors' } }
       = f.label :meta_description, 'Page description', class: 'required strong', title: 'Page description is required'
