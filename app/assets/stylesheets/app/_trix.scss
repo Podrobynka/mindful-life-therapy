@@ -1,0 +1,13 @@
+.trix-content, .trix-editor {
+  h2, blockquote, ul, ol { margin-bottom: 0rem; }
+  h2 { font-weight: $global-weight-bold; }
+}
+
+.trix-editor {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.trix-button--icon-strike { display: none; }
+.trix-button--icon-increase-nesting-level { display: none; }
+.trix-button--icon-decrease-nesting-level { display: none; }

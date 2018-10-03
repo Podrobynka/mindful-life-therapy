@@ -25,13 +25,3 @@
   width: 100%;
   box-shadow: 0 0 1px rgba($black, 0.2);
 }
-
-.trix-content, .trix-editor {
-  h2, blockquote, ul, ol { margin-bottom: 0rem; }
-  h2 { font-weight: $global-weight-bold; }
-}
-
-.trix-editor {
-  max-height: 500px;
-  overflow-y: auto;
-}
