@@ -17,7 +17,7 @@ class ContactController < ApplicationController
   private
 
     def queue_email message
-      MessageMailerJob.perform_later(message.to_json, @settings.contact_email)
+      MessageMailerJob.perform_later(message.name, message.email, message.subject, message.body)
     end
 
     def message_params
