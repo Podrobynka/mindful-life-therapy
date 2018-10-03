@@ -1,7 +1,7 @@
 class MessageMailerJob < ApplicationJob
   queue_as :default
 
-  def perform(message, recipient)
-    MessagesMailer.send_email(message, recipient).deliver_later
+  def perform(name, email, subject, body)    
+    MessagesMailer.send_email(name, email, subject, body).deliver
   end
 end
