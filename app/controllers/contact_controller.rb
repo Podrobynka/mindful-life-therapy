@@ -8,13 +8,19 @@ class ContactController < ApplicationController
     @message = Message.new message_params
 
     if @message.valid?
-      MessagesMailer.send_email(@message, @settings.contact_email).deliver
+      queue_email @message
+    else
+      render :new
     end
   end
 
   private
 
-  def message_params
-    params.require(:message).permit(:name, :email, :subject, :body)
-  end
+    def queue_email message
+      MessageMailerJob.perform_later(message.to_json, @settings.contact_email)
+    end
+
+    def message_params
+      params.require(:message).permit(:name, :email, :subject, :body)
+    end
 end
