@@ -8,6 +8,9 @@ require 'rails/test_help'
 require 'mocha/minitest'
 
 class ActiveSupport::TestCase
+  # allows us to perform enqueued jobs in controller tests
+  include ActiveJob::TestHelper
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
