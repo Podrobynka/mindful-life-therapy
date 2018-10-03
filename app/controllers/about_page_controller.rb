@@ -16,6 +16,7 @@ class AboutPageController < ApplicationController
   end
 
   private
+  
     def set_about_page
       @about_page = AboutPage.first
     end
