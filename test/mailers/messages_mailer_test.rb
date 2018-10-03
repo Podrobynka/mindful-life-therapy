@@ -7,7 +7,7 @@ class MessagesMailerTest < ActionMailer::TestCase
   end
 
   test "send_email" do
-    mail = MessagesMailer.send_email(@message, 'info@mindfullifetherapy.co.uk')
+    mail = MessagesMailer.send_email(@message.to_json, 'info@mindfullifetherapy.co.uk')
 
     assert_equal ["info@mindfullifetherapy.co.uk"], mail.to
     assert_equal ["zoe@abc.com"], mail.from
