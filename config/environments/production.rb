@@ -68,9 +68,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'www.mindfullifetherapy.co.uk' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV.fetch('smtp.sendgrid.net'),
+    address: 'smtp.sendgrid.net',
     authentication: :plain,
-    domain: ENV.fetch('heroku.com'),
+    domain: 'www.mindfullifetherapy.co.uk',
     enable_starttls_auto: true,
     password: ENV.fetch('SENDGRID_PASSWORD'),
     port: '587',
