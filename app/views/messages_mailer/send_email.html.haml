@@ -2,16 +2,16 @@
   %strong Hello Zoe,
 
 %p
-  %strong= @message['name']
+  %strong= @name
   sent you a message on
   %strong Mindful Life Therapy
 
 %p
   %strong Email:
-  = @message['email']
+  = @email
 
 %p
   %strong Subject:
-  = @message['subject']
+  = @subject
 
-= @message['body']
+= @body

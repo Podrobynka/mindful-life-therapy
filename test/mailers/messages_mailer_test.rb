@@ -2,18 +2,19 @@ require 'test_helper'
 
 class MessagesMailerTest < ActionMailer::TestCase
 
-  def setup
-    @message = Message.new name: 'zoe', email: 'zoe@abc.com', subject: 'hi', body: 'awesome sauce'
-  end
-
   test "send_email" do
-    mail = MessagesMailer.send_email(@message.to_json, 'info@mindfullifetherapy.co.uk')
+    mail = MessagesMailer.send_email('stephen murdoch', 'stephen@example.com', 'hi zoe', 'i would like to sign up for your mindfulness course')
+
+    assert_emails 1 do
+      mail.deliver_now
+    end
 
     assert_equal ["info@mindfullifetherapy.co.uk"], mail.to
-    assert_equal ["zoe@abc.com"], mail.from
-    assert_equal "hi", mail.subject
-    assert_match "zoe", mail.body.encoded
-    assert_match "zoe@abc.com", mail.body.encoded
-    assert_match "awesome sauce", mail.body.encoded
+    assert_equal ["stephen@example.com"], mail.from
+    assert_equal "hi zoe", mail.subject
+    assert_match "stephen murdoch", mail.body.encoded
+    assert_match "stephen@example.com", mail.body.encoded
+    assert_match "hi zoe", mail.body.encoded
+    assert_match "i would like to sign up for your mindfulness course", mail.body.encoded
   end
 end

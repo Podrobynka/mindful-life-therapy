@@ -1,18 +1,8 @@
 class MessagesMailer < ApplicationMailer
 
-  def send_email message, contact_email
-    # incoming message will be json format
-    # because active job does not accept
-    # an unpersisted active model as an argument
-    @message = JSON.parse(message)
+  def send_email name, email, subject, body
+    @name, @email, @subject, @body = name, email, subject, body
 
-    mail(
-      to: contact_email,
-      subject: @message['subject'],
-      from: @message['email'],
-      reply_to: @message['email'],
-      sender: @message['email'],
-      return_path: @message['email']
-    )
+    mail subject: @subject, from: @email, reply_to: @email, sender: @email, return_path: @email
   end
 end

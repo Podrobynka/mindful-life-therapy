@@ -3,8 +3,7 @@ class MessagesMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/messages_mailer/send_email
   def send_email
-    message = Message.new name: 'awesome person', email: 'awe@some.com', subject: 'awesome subject', body: 'awesome body'
-    MessagesMailer.send_email message, 'info@mindfullifetherapy.co.uk'
+    MessagesMailer.send_email 'stephen', 'stephen@example.com', 'hi zoe', 'i would like to sign up for your mindfulness course'
   end
 
 end
