@@ -1,0 +1,10 @@
+- provide :page_title, 'Not Authorised'
+- provide :no_index, true
+
+.row
+  .column.medium-8.medium-centered.lpt.lpb.text-center
+    %h1.strong Not Authorised
+    %p.dark-gray
+      The page you were looking for: 
+      %span.emph.block= request.original_url
+      requires authorisation.
