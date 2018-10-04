@@ -14,7 +14,7 @@ Setting.first_or_create({
   office_address_line_3: '',
   office_address_city: 'Glasgow',
   office_address_postcode: 'G3 7PR',
-  session_rate: '£55 per 50 minutes'
+  session_rate: '£55 per 50 minute session'
 })
 
 AboutPage.first_or_create({
