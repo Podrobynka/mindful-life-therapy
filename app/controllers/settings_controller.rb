@@ -1,14 +1,11 @@
 class SettingsController < ApplicationController
 
-  def show
-  end
-
   def edit
   end
 
   def update
     if @settings.update(setting_params)
-      redirect_to settings_path, notice: 'Site settings were successfully updated.'
+      redirect_to admin_path, notice: 'Site settings were successfully updated.'
     else
       render :edit
     end
