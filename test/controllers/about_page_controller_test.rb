@@ -19,7 +19,7 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should update about_page via :xhr" do
     patch about_page_url, xhr: true, params: { about_page: { body: about_pages(:one).body } }
-    assert_match 'Turbolinks.visit("http://www.example.com/about", {"action":"replace"})', response.body
+    assert_match 'Turbolinks.visit("http://www.example.com/about-mindful-life-therapy", {"action":"replace"})', response.body
   end
 
   test "should show error message when update fails" do
