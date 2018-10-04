@@ -6,8 +6,8 @@
 
 .row.lpb
   .column.medium-8.medium-offset-2.large-6.large-offset-3
-    .callout.success.lmb
-      %h2.page-subtitle Admin Links
+    .callout.success.nmb.dark-border-bottom.no-bottom-border-radius
+      %h2.page-subtitle.strong Admin Links
       %p Use the following links to edit the content of the site.
       %ul
         %li= link_to 'Edit the Site Settings', edit_settings_url
@@ -15,58 +15,33 @@
         %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
         %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url
 
-    .callout.success.lmb
-      %h2.page-subtitle Site Settings
-      %p
+    .callout.success.lmb.light-border-top.no-top-border-radius
+      %h2.page-subtitle.strong Site Settings
+      %p.lmb
         The following settings are used throughout the site, and you can edit them
         = succeed '.' do
           = link_to 'here', edit_settings_url
 
-      %hr
-
       %p
-        %b Session rate:
+        %strong Session rate:
         %br
         = @settings.session_rate
 
       %p
-        %b Telephone:
+        %strong Telephone:
         %br
         = @settings.telephone
 
       %p
-        %b Contact email:
+        %strong Contact email:
         %br
         = @settings.contact_email
 
-      %p
-        %b Office address line 1:
-        %br
-        = @settings.office_address_line_1
+      %p.nmb
+        %strong Office address:
+      = office_address @settings
 
-      - if @settings.office_address_line_2.present?
-        %p
-          %b Office address line 2:
-          %br
-          = @settings.office_address_line_2
-
-      - if @settings.office_address_line_3.present?
-        %p
-          %b Office address line 3:
-          %br
-          = @settings.office_address_line_3
-
-      %p
-        %b Office address city:
-        %br
-        = @settings.office_address_city
-
-      %p.lmb
-        %b Office address postcode:
-        %br
-        = @settings.office_address_postcode
-
-      %p
+      %p.mpt
         = link_to 'Edit Site Settings', edit_settings_path, class: 'button strong nmb'
 
 = render 'colophon'
