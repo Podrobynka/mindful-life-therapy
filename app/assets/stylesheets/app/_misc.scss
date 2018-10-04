@@ -67,6 +67,8 @@
 .hover-white { @include hover { color: $white; } }
 
 .nowrap { white-space: nowrap; }
+.word-wrap { @include word-wrap(); }
+
 .big-heading { font-size: 2rem; }
 
 .white { color: $white; }
