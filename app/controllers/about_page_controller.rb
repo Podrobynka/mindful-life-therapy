@@ -16,12 +16,12 @@ class AboutPageController < ApplicationController
   end
 
   private
-  
+
     def set_about_page
       @about_page = AboutPage.first
     end
 
     def about_page_params
-      params.require(:about_page).permit(:title, :body, :meta_description)
+      params.require(:about_page).permit(:body)
     end
 end

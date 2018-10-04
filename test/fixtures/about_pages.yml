@@ -1,6 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: About Mindful Life Therapy
   body: Hello this is the body of the page
-  meta_description: This is the meta description of the page

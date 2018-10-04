@@ -1,29 +1,14 @@
-= form_with model: @about_page, url: about_page_path, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
-  %h1.page-title Edit About Page
-  %p.lpb.text-center.medium-gray
-    Fields marked with an asterisk are required.
+= form_with model: @about_page, url: about_page_path, class: 'lmb' do |f|
+  %h1.text-center.lmb.lpb Edit the About Page
 
   %fieldset.fieldset.callout.lmb.npt
 
     = render 'form_errors', target: @about_page
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :title, class: 'required strong', title: 'Title is required'
-      %p.smb 100 characters max
-      = f.text_field :title, placeholder: 'i.e. About Mindful Life Therapy', maxlength: '100', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
-      = error_message target: 'errors.message'
-
     .field
       = f.label :body, class: 'required strong', title: 'Body is required'
       %p.smb 100,000 characters max
       = f.text_field :body, type: 'hidden'
-      %trix-editor{ input: 'about_page_body', placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', class: 'smb trix-editor', tabindex: '2' }
+      %trix-editor{ input: 'about_page_body', placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', class: 'smb trix-editor', tabindex: '1'}
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :meta_description, 'Page description', class: 'required strong', title: 'Page description is required'
-      %p.nmb 150 characters max
-      %p.smb Used by search engines to describe pages in their search results
-      = f.text_area :meta_description, placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', maxlength: '150', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '2'
-      = error_message target: 'errors.message'
-
-    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '4', data: { disable_with: t('settings.disable_with_text').html_safe }
+    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '2', data: { disable_with: t('settings.disable_with_text').html_safe }
