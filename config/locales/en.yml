@@ -55,6 +55,7 @@ en:
           attributes:
             password:
               invalid: "is incorrectly formatted, should contain 1 digit, 1 lowercase english letter, 1 uppercase english letter and 1 symbol (i.e !@#$%^&amp;*?)"
+
   contact:
     button_text: "Send"
     disable_with_text: "Sending..."
@@ -66,17 +67,6 @@ en:
   login:
     button_text: "<i class='fa fa-lock'></i> Login"
     disable_with_text: "<i class='fa fa-lock'></i> Authenticating..."
-
-  password_reset:
-    button_text: "<i class='fa fa-lock'></i> Send"
-    disable_with_text: "<i class='fa fa-lock'></i> Sending..."
-
-  registration:
-    button_text: "<i class='fa fa-user'></i> Join"
-    edit_button_text: "<i class='fa fa-user'></i> Update"
-    disable_with_text: "<i class='fa fa-user'></i> Joining..."
-    edit_disable_with_text: "<i class='fa fa-user'></i> Updating..."
-    edit_password_button_text: "<i class='fa fa-lock'></i> Update"
 
   home:
     image:
@@ -118,12 +108,15 @@ en:
     title:
       home_page: "Welcome"
       about_page:
-        show: "About"
+        show: "About Mindfulness Life Therapy"
         edit: "Edit the About Page"
-      counselling: "Counselling and Psychotherapy in Glasgow"
-      mindfulness: "Mindfulness in Glasgow"
-      appointments: "Counselling & Psychotherapy Appointments in Glasgow"
-      contact: "Contact Zoe"
+      counselling_page:
+        show: "Counselling and Psychotherapy in Glasgow"
+        edit: "Edit the Counselling & Psychotherapy Page"
+      mindfulness_page:
+        show: "Mindfulness in Glasgow"
+        edit: "Edit the Mindfulness Page"
+      contact: "Contact Mindful Life Therapy"
       settings:
         show: "Site Settings"
         edit: "Edit Site Settings"
@@ -131,7 +124,6 @@ en:
     meta_description:
       home_page: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
       about: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
-      counselling: "Our aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
+      counselling: "My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
       mindfulness: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
-      appointments: "Book a counselling or psychotherapy appointment with Mindful Life Therapy in Glasgow."
       contact: "If you are going through a tough time and seek counselling in Glasgow then please contact Zoe at Mindful Life Therapy."

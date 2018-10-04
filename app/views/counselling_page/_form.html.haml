@@ -1,0 +1,14 @@
+= form_with model: @counselling_page, url: counselling_page_path, class: 'lmb' do |f|
+  %h1.text-center.lmb.lpb Edit the Counselling Page
+
+  %fieldset.fieldset.callout.lmb.npt
+
+    = render 'form_errors', target: @counselling_page
+
+    .field
+      = f.label :body, class: 'required strong', title: 'Body is required'
+      %p.smb 100,000 characters max
+      = f.text_field :body, type: 'hidden'
+      %trix-editor{ input: 'counselling_page_body', placeholder: 'i.e. My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment.', class: 'smb trix-editor', tabindex: '1'}
+
+    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '2', data: { disable_with: t('settings.disable_with_text').html_safe }

@@ -1,0 +1,35 @@
+- provide :page_title, t('seo.title.mindfulness_page.show')
+- provide :meta_description, t('seo.meta_description.mindfulness_page.show')
+- provide :canonical_url, mindfulness_page_url(protocol: 'https')
+
+%h1.page-title.lpb Mindfulness in Glasgow
+
+.row
+  .column.large-10.large-offset-1
+    .row
+      .column.small-12.medium-3
+        %figure.about-figure.lmb.mpr-on-medium.lpr-on-large.smt-on-medium
+          = image_tag 'about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg', title: t('zoe.image.caption'), alt: t('zoe.image.caption'), class: 'about-img smb'
+
+          %figcaption.about-caption
+            %strong.block.body-font-color Zoe Zalavary
+            %small.block.medium-gray BA (Hons), PGDip, MBACP
+
+      .column.medium-9.large-6
+        .lmb.trix-content= sanitize @mindfulness_page.body
+
+      .column.medium-9.medium-offset-3.large-3.large-offset-0
+        .lpl-on-large
+          .mmb
+            .block.strong.success-color Rates:
+            .block= @settings.session_rate
+
+          .mmb
+            .block.strong.success-color Phone:
+            .block= @settings.telephone
+
+          .mmb
+            .block.strong.success-color Office:
+            = office_address @settings
+
+= render 'colophon'

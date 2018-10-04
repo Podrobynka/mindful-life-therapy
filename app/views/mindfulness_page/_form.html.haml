@@ -1,0 +1,14 @@
+= form_with model: @mindfulness_page, url: mindfulness_page_path, class: 'lmb' do |f|
+  %h1.text-center.lmb.lpb Edit the Mindfulness Page
+
+  %fieldset.fieldset.callout.lmb.npt
+
+    = render 'form_errors', target: @mindfulness_page
+
+    .field
+      = f.label :body, class: 'required strong', title: 'Body is required'
+      %p.smb 100,000 characters max
+      = f.text_field :body, type: 'hidden'
+      %trix-editor{ input: 'mindfulness_page_body', placeholder: 'i.e. Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings.', class: 'smb trix-editor', tabindex: '1'}
+
+    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '2', data: { disable_with: t('settings.disable_with_text').html_safe }
