@@ -95,6 +95,10 @@ Rails.application.configure do
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
+
+    # dont log sensitive arguments passed to action mailer or active job
+    config.action_mailer.logger = nil
+    config.active_job.logger = nil
   end
 
   # Do not dump schema after migrations.
