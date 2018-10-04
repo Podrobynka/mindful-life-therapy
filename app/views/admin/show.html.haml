@@ -8,7 +8,7 @@
   .column.medium-8.medium-offset-2.large-6.large-offset-3
     .callout.success.lmb
       %h2.page-subtitle Admin Links
-      %p Use the following links to edit the content for individual pages.
+      %p Use the following links to edit the content of the site.
       %ul
         %li= link_to 'Edit the About Page', edit_about_page_url
         %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
@@ -17,8 +17,11 @@
 
     .callout.success.lmb
       %h2.page-subtitle Site Settings
-      %p The site settings are as follows, and are used throughout the site.
-
+      %p
+        The following settings are used throughout the site, and you can edit them
+        = succeed '.' do
+          = link_to 'here', edit_settings_url
+      %hr
       %p
         %b Telephone:
         %br
@@ -56,12 +59,12 @@
         %br
         = @settings.office_address_postcode
 
-      %p
+      %p.lmb
         %b Session rate:
         %br
         = @settings.session_rate
 
-    %p.text-right
-      = link_to 'Edit Site Settings', edit_settings_path, class: 'button large strong'
+      %p
+        = link_to 'Edit Site Settings', edit_settings_path, class: 'button strong nmb'
 
 = render 'colophon'
