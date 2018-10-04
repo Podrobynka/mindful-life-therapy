@@ -1,0 +1,67 @@
+- provide :page_title, t('seo.title.admin.show')
+- provide :meta_description, t('seo.meta_description.admin')
+- provide :canonical_url, admin_url(protocol: 'https')
+
+%h1.page-title.xpb.xmb Admin
+
+.row.lpb
+  .column.medium-8.medium-offset-2.large-6.large-offset-3
+    .callout.success.lmb
+      %h2.page-subtitle Admin Links
+      %p Use the following links to edit the content for individual pages.
+      %ul
+        %li= link_to 'Edit the About Page', edit_about_page_url
+        %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
+        %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url
+        %li= link_to 'Edit the Site Settings', edit_settings_url
+
+    .callout.success.lmb
+      %h2.page-subtitle Site Settings
+      %p The site settings are as follows, and are used throughout the site.
+
+      %p
+        %b Telephone:
+        %br
+        = @settings.telephone
+
+      %p
+        %b Contact email:
+        %br
+        = @settings.contact_email
+
+      %p
+        %b Office address line 1:
+        %br
+        = @settings.office_address_line_1
+
+      - if @settings.office_address_line_2.present?
+        %p
+          %b Office address line 2:
+          %br
+          = @settings.office_address_line_2
+
+      - if @settings.office_address_line_3.present?
+        %p
+          %b Office address line 3:
+          %br
+          = @settings.office_address_line_3
+
+      %p
+        %b Office address city:
+        %br
+        = @settings.office_address_city
+
+      %p
+        %b Office address postcode:
+        %br
+        = @settings.office_address_postcode
+
+      %p
+        %b Session rate:
+        %br
+        = @settings.session_rate
+
+    %p.text-right
+      = link_to 'Edit Site Settings', edit_settings_path, class: 'button large strong'
+
+= render 'colophon'
