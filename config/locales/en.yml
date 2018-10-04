@@ -120,10 +120,13 @@ en:
       settings:
         show: "Site Settings"
         edit: "Edit Site Settings"
+      admin:
+        show: "Admin Page"
 
     meta_description:
       home_page: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
-      about: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
-      counselling: "My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
-      mindfulness: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
+      about_page: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
+      counselling_page: "My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
+      mindfulness_page: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
       contact: "If you are going through a tough time and seek counselling in Glasgow then please contact Zoe at Mindful Life Therapy."
+      admin: "This is the admin page for Mindful Life Threapy"
