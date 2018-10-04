@@ -6,7 +6,7 @@
 
 .row.lpb
   .column.medium-8.medium-offset-2.large-6.large-offset-3
-    .callout.success.nmb.dark-border-bottom.no-bottom-border-radius
+    .callout.success.dark-border-bottom
       %h2.page-subtitle.strong Admin Links
       %p Use the following links to edit the content of the site.
       %ul
@@ -15,7 +15,7 @@
         %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
         %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url
 
-    .callout.success.lmb.light-border-top.no-top-border-radius
+    .callout.success.lmb.dark-border-bottom
       %h2.page-subtitle.strong Site Settings
       %p.lmb
         The following settings are used throughout the site, and you can edit them
@@ -42,6 +42,6 @@
       = office_address @settings
 
       %p.mpt
-        = link_to 'Edit Site Settings', edit_settings_path, class: 'button strong nmb'
+        = link_to 'Edit Site Settings', edit_settings_path, class: 'button strong nmb dark-border-bottom'
 
 = render 'colophon'

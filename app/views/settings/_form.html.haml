@@ -60,4 +60,4 @@
       = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '50', required: true, class: 'smb', tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large', tabindex: '9', data: { disable_with: t('settings.disable_with_text').html_safe }
+    .actions.text-right= f.button t('settings.button_text').html_safe, class: 'button strong large dark-border-bottom', tabindex: '9', data: { disable_with: t('settings.disable_with_text').html_safe }
