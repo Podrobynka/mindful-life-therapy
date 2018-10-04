@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#show', as: 'admin'
 
   root 'home_page#show'
+  get '*unmatched_route', to: 'application#raise_routing_error'
 end
