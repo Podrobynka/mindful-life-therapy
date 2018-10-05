@@ -6,6 +6,11 @@
     = render 'form_errors', target: @about_page
 
     .field
+      = f.label :page_photo, class: 'required strong', title: 'Page photo is required'
+      %p.smb 10MB max size
+      = f.file_field :page_photo, direct_upload: true
+
+    .field
       = f.label :body, class: 'required strong', title: 'Body is required'
       %p.smb 100,000 characters max
       = f.text_field :body, type: 'hidden'
