@@ -1,7 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: 'page_photo'
-  record_type: 'AboutPage'
-  record_id: 1
-  blob_id: 1
