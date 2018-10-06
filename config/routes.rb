@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#show', as: 'admin'
 
   root 'home_page#show'
-  get '*unmatched_route', to: 'application#raise_routing_error'
+
+  get '*unmatched_route', to: 'application#raise_routing_error', constraints: lambda { |req| req.path.exclude? 'rails/active_storage' }
 end
