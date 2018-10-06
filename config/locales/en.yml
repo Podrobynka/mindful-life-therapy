@@ -48,57 +48,27 @@ en:
       short:
         "%b %Y"
 
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            password:
-              invalid: "is incorrectly formatted, should contain 1 digit, 1 lowercase english letter, 1 uppercase english letter and 1 symbol (i.e !@#$%^&amp;*?)"
-
   contact:
     button_text: "Send"
     disable_with_text: "Sending..."
 
-  settings:
+  form:
     button_text: "Save"
     disable_with_text: "Saving..."
 
-  login:
-    button_text: "<i class='fa fa-lock'></i> Login"
-    disable_with_text: "<i class='fa fa-lock'></i> Authenticating..."
-
-  home:
-    image:
-      caption: "Mindful Life Therapy, Counselling, Psychotherapy and Mindfulness Training in Glasgow"
-
-  zoe:
-    image:
+  page_photo:
+    about_page:
+      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
       caption: "Zoe Zalavary, Glasgow-based Psychotherapist, Counsellor and Mindfulness Teacher"
-
-  office:
-    image:
-      caption: "Mindful Life Therapy Office in Glasgow"
-
-  counselling:
-    image:
+      variant: "210"
+    counselling_page:
+      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
       caption: "I would like to help you unblock the path to happiness and fulmilment"
-
-  mindfulness:
-    image:
+      variant: "640"
+    mindfulness_page:
+      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
       caption: "Lady practicing mindful meditation"
-
-  landscape:
-    image:
-      caption: "Spacious landscape, the mind is vast"
-
-  beach:
-    image:
-      caption: "Lady practicing mindfulness meditation on the beach"
-
-  spring:
-    image:
-      caption: "Flowers in springtime"
+      variant: "640"
 
   colophon:
     image:
@@ -116,7 +86,8 @@ en:
       mindfulness_page:
         show: "Mindfulness in Glasgow"
         edit: "Edit the Mindfulness Page"
-      contact: "Contact Mindful Life Therapy"
+      contact:
+        new: "Contact Mindful Life Therapy"
       settings:
         show: "Site Settings"
         edit: "Edit Site Settings"
