@@ -22,6 +22,6 @@ class AboutPageController < ApplicationController
     end
 
     def about_page_params
-      params.require(:about_page).permit(:body)
+      params.require(:about_page).permit(:body, :page_photo)
     end
 end
