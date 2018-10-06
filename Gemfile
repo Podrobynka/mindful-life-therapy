@@ -8,12 +8,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'mini_magick', '~> 4.8'
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'haml-rails'
-gem 'kaminari'
-gem 'google-cloud-storage', '~> 1.11', require: false
 gem 'sucker_punch'
 
 group :development, :test do
