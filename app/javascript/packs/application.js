@@ -16,6 +16,7 @@ import Turbolinks from "turbolinks"
 Turbolinks.start()
 
 import * as ActiveStorage from "activestorage"
+import "../src/direct_uploads"
 ActiveStorage.start()
 
 import "trix/dist/trix.css"
