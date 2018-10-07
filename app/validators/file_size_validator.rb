@@ -1,8 +1,8 @@
 class FileSizeValidator < ActiveModel::EachValidator
 
   def validate_each record, attribute, value
-    return unless value.blob.present? && value.attached?
-    purge_file(record, attribute, value) if value.blob.byte_size > allowed_file_size
+    return unless value.attached? && value.blob.present?
+    purge_file(record, attribute, value) if value.byte_size > allowed_file_size
   end
 
   private
@@ -12,9 +12,7 @@ class FileSizeValidator < ActiveModel::EachValidator
   end
 
   def purge_file record, attribute, value
-    value.detach
-    # value.purge
-    # record.new_record? ? value.purge : record.reload.send(value).purge
+    value.purge
     record.errors.add attribute, :file_size
   end
 end
