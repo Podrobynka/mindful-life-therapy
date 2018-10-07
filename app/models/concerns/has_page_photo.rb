@@ -7,7 +7,7 @@ module HasPagePhoto
   end
 
   def display_photo
-    page_photo.blob.present? && page_photo.attached? ? stored_photo : fallback_photo
+    page_photo.attached? && page_photo.blob.present? ? stored_photo : fallback_photo
   end
 
   def stored_photo
@@ -32,12 +32,11 @@ module HasPagePhoto
 
   class_methods do
     def allowed_content_types
-      ['cun', 'to']
-      # ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
+      ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
     end
 
     def allowed_size
-      10.megabytes
+      20.megabytes
     end
   end
 
