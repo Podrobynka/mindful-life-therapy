@@ -48,6 +48,12 @@ en:
       short:
         "%b %Y"
 
+  activerecord:
+    errors:
+      messages:
+        content_type: is the wrong format, it must be png, gif or jpeg
+        file_size: is too big, the maximum filesize is 10MB
+
   contact:
     button_text: "Send"
     disable_with_text: "Sending..."
