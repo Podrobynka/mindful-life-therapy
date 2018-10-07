@@ -19,4 +19,8 @@ class ActiveSupport::TestCase
     fixture = Rails.root.join('test', 'fixtures', 'files', 'logo.png')
     fixture_file_upload(fixture, 'image/png')
   end
+
+  def pdf_fixture
+    File.join(Rails.root, 'test', 'fixtures', 'files', 'dummy.pdf')
+  end
 end
