@@ -16,8 +16,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def photo_fixture
-    fixture = Rails.root.join('test', 'fixtures', 'files', 'logo.png')
-    fixture_file_upload(fixture, 'image/png')
+    File.join(Rails.root, 'test', 'fixtures', 'files', 'logo.png')
   end
 
   def pdf_fixture
