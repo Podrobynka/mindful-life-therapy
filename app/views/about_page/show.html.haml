@@ -2,18 +2,21 @@
 - provide :meta_description, t('seo.meta_description.about_page')
 - provide :canonical_url, about_page_url(protocol: 'https')
 
-%h1.page-title.lpb About
+.row.column
+  %h1.page-title.lpb About Mindful Life Therapy
 
 .row
   .column.large-10.large-offset-1
     .row
       .column.small-12.medium-3
-        %figure.text-center.about-figure.lmb.mpr-on-medium.lpr-on-large.vsmt-on-medium
+        %figure.text-center.lmb.mpr-on-medium.lpr-on-large.vsmt-on-medium
           = page_photo_for @about_page
 
-          -# %figcaption.about-caption.smt
-          -#   %strong.block.body-font-color Zoe Zalavary
-          -#   %small.block.medium-gray BA (Hons), PGDip, MBACP
+          %figcaption.about-caption.mpt.mmb
+            %strong.block.body-font-color.smb Zoe Zalavary
+            %small.block.medium-gray BA (Hons), PGDip, MBACP
+
+          = link_to 'Contact', contact_path, class: 'button smt strong dark-border-bottom'
 
       .column.medium-9.large-6
         .lmb.trix-content= sanitize @about_page.body
@@ -21,7 +24,7 @@
       .column.medium-9.medium-offset-3.large-3.large-offset-0
         .lpl-on-large.sidebar
           .mmb
-            .block.strong.success-color Rates:
+            .block.strong.success-color Counselling Rates:
             .block= @settings.session_rate
 
           .mmb
