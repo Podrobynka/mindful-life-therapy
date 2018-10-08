@@ -1,4 +1,4 @@
-= form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
+= form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'mmb' do |f|
 
   %h1.text-center.mmb Contact Mindful Life Therapy
 
@@ -14,9 +14,6 @@
     %li.inline-block.sma
       = fa_icon 'map-marker', class: 'smr'
       %span.medium-gray= footer_office_address @settings
-
-  -# %p.lpb.text-center.dark-gray
-  -#   Please note that your message will be handled with the utmost care, and your contact details will not be stored.
 
   %fieldset.fieldset.callout.primary.dark-border-bottom.lmb
 

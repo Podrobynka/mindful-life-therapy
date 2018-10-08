@@ -1,7 +1,8 @@
-= form_with model: @counselling_page, url: counselling_page_path, class: 'lmb' do |f|
+= form_with model: @counselling_page, url: counselling_page_path, class: 'mmb' do |f|
+
   %h1.text-center.lmb.lpb Edit the Counselling Page
 
-  %fieldset.fieldset.callout.lmb.npt
+  %fieldset.fieldset.callout.success.dark-border-bottom.lmb
 
     = render 'form_errors', target: @counselling_page
 
@@ -11,4 +12,4 @@
       = f.text_field :body, type: 'hidden'
       %trix-editor{ input: 'counselling_page_body', placeholder: 'i.e. My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment.', class: 'smb trix-editor', tabindex: '1'}
 
-    .actions.text-right= f.button t('form.button_text').html_safe, class: 'button strong large dark-border-bottom', tabindex: '2', data: { disable_with: t('form.disable_with_text').html_safe }
+  .actions.text-right= f.button t('form.button_text').html_safe, class: 'button strong large dark-border-bottom nmb', tabindex: '2', data: { disable_with: t('form.disable_with_text').html_safe }
