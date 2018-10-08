@@ -64,16 +64,16 @@ en:
 
   page_photo:
     about_page:
-      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
-      caption: "Mindful Life Therapy, Counselling and Psychotherapy in Glasgow"
+      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow-2.jpeg"
+      caption: "Chinese mindfulness symbol"
       variant: "210"
     counselling_page:
-      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
-      caption: "I would like to help you unblock the path to happiness and fulmilment"
+      fallback: "logos/mindfulness-symbol.png"
+      caption: "Chinese mindfulness symbol"
       variant: "640"
     mindfulness_page:
-      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg"
-      caption: "Lady practicing mindful meditation"
+      fallback: "logos/mindfulness-symbol.png"
+      caption: "Chinese mindfulness symbol"
       variant: "640"
 
   colophon:
