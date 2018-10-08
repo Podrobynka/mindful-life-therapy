@@ -65,7 +65,7 @@ class AboutPageTest < ActiveSupport::TestCase
   end
 
   test 'display_photo defaults to fallback_photo' do
-    fallback = 'about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpg'
+    fallback = 'about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpeg'
     assert_equal fallback, @about_page.display_photo
     assert_equal fallback, @about_page.fallback_photo
   end
@@ -77,7 +77,7 @@ class AboutPageTest < ActiveSupport::TestCase
   end
 
   test "photo_title" do
-    expected = "Mindful Life Therapy, Counselling and Psychotherapy in Glasgow"
+    expected = "Zoe Zalavary, Glasgow based Counsellor, Psychotherapist and Mindfulness Instructor"
     assert_equal expected, about_pages(:one).photo_title
   end
 
