@@ -52,7 +52,7 @@ en:
     errors:
       messages:
         content_type: is the wrong format, it must be png, gif or jpeg
-        file_size: is too big, the maximum filesize is 10MB
+        file_size: is too big, the maximum filesize is 20MB
 
   contact:
     button_text: "Send"
