@@ -1,8 +1,5 @@
 = form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
 
-  %figure.text-center.lpb
-    = image_tag 'logos/mindfulness-symbol', class: 'mindfulness-symbol thin lmb', alt: 'mindfulness symbol', title: 'mindfulness symbol'
-
   %h1.text-center.mmb Contact Mindful Life Therapy
 
   %ul.no-bullet.text-center.lmb
@@ -55,5 +52,5 @@
 
     .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large dark-border-bottom smb', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
 
-  %figure.text-center.xpt.xmt
-    = image_tag 'logos/mindfulness-symbol-bw', class: 'mindfulness-symbol thin', alt: 'mindfulness symbol', title: 'mindfulness symbol'
+  %figure.text-center.lpt.lmt
+    = image_tag 'logos/mindfulness-symbol', class: 'mindfulness-symbol thin', alt: 'mindfulness symbol', title: 'mindfulness symbol'
