@@ -1,11 +1,27 @@
 = form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
 
-  %h1.page-title Contact Mindful Life Therapy
+  %figure.text-center.lpb
+    = image_tag 'logos/mindfulness-symbol', class: 'mindfulness-symbol thin lmb', alt: 'mindfulness symbol', title: 'mindfulness symbol'
 
-  %fieldset.fieldset.callout.lmb.npt
+  %h1.text-center.mmb Contact Mindful Life Therapy
 
-    %p.lpb.text-center.medium-gray
-      Please note that your message will be handled with the utmost care, and your contact details will not be stored.
+  %ul.no-bullet.text-center.lmb
+    %li.inline-block.sma
+      = fa_icon 'phone', class: 'smr'
+      %span.medium-gray= @settings.telephone
+
+    %li.inline-block.sma
+      = fa_icon 'envelope', class: 'smr'
+      %span.medium-gray= mail_to @settings.contact_email, @settings.contact_email, class: 'medium-gray'
+
+    %li.inline-block.sma
+      = fa_icon 'map-marker', class: 'smr'
+      %span.medium-gray= footer_office_address @settings
+
+  -# %p.lpb.text-center.dark-gray
+  -#   Please note that your message will be handled with the utmost care, and your contact details will not be stored.
+
+  %fieldset.fieldset.callout.primary.dark-border-bottom.lmb
 
     = render 'form_errors', target: @message
 
@@ -37,4 +53,7 @@
       = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '10'
       = error_message target: 'errors.message'
 
-    .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large dark-border-bottom', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
+    .actions.text-right= f.button t('contact.button_text').html_safe, class: 'button strong large dark-border-bottom smb', tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
+
+  %figure.text-center.xpt.xmt
+    = image_tag 'logos/mindfulness-symbol-bw', class: 'mindfulness-symbol thin', alt: 'mindfulness symbol', title: 'mindfulness symbol'
