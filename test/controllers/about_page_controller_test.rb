@@ -14,6 +14,8 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should update about_page" do
     file = fixture_file_upload('files/logo.png', 'image/png')
+
+    # make the file appear to be 20MB
     ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(20.megabytes)
 
     assert_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
@@ -25,6 +27,8 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should update about_page via :xhr" do
     file = fixture_file_upload('files/logo.png', 'image/png')
+
+    # make the file appear to be 20MB
     ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(20.megabytes)
 
     assert_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
@@ -36,6 +40,8 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should show error message when update fails" do
     file = fixture_file_upload('files/logo.png', 'image/png')
+
+    # make the file appear to be 21MB - which is too big and should cause a validation error
     ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(21.megabytes)
 
     assert_no_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
@@ -47,7 +53,7 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show error message when update via :xhr fails" do
-    # lets try a pdf this time
+    # lets try a pdf this time - this should also cause a validation error
     file = fixture_file_upload('files/dummy.pdf', 'application/pdf')
 
     assert_no_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
