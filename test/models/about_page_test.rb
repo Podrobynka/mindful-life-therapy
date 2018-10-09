@@ -44,7 +44,7 @@ class AboutPageTest < ActiveSupport::TestCase
   end
 
   test 'display_photo defaults to fallback_photo' do
-    fallback = 'about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpeg'
+    fallback = 'about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpg'
     assert_display_photo_defaults_to_fallback_photo @about_page, fallback
   end
 
