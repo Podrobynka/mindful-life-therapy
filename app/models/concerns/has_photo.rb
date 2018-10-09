@@ -11,14 +11,14 @@ module HasPhoto
   end
 
   def stored_photo
-    photo.variant(resize: variant_size)
+    photo.variant(resize: photo_variant_size)
   end
 
   def fallback_photo
     translation_for 'photo', 'fallback'
   end
 
-  def variant_size
+  def photo_variant_size
     translation_for 'photo', 'variant'
   end
 
