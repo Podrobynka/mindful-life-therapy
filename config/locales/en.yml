@@ -62,7 +62,7 @@ en:
     button_text: "Save"
     disable_with_text: "Saving..."
 
-  page_photo:
+  photo:
     about_page:
       fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpeg"
       caption: "Zoe Zalavary, Glasgow based Counsellor, Psychotherapist and Mindfulness Instructor"

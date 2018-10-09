@@ -22,6 +22,6 @@ class MindfulnessPageController < ApplicationController
     end
 
     def mindfulness_page_params
-      params.require(:mindfulness_page).permit(:body)
+      params.require(:mindfulness_page).permit(:body, :photo)
     end
 end

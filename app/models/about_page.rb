@@ -1,3 +1,3 @@
 class AboutPage < ApplicationRecord
-  include HasPagePhoto, HasBody, HasTranslations
+  include HasPhoto, HasBody, HasTranslations
 end

@@ -22,6 +22,6 @@ class CounsellingPageController < ApplicationController
     end
 
     def counselling_page_params
-      params.require(:counselling_page).permit(:body)
+      params.require(:counselling_page).permit(:body, :photo)
     end
 end
