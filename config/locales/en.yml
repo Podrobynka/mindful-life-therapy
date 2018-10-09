@@ -64,16 +64,16 @@ en:
 
   photo:
     about_page:
-      fallback: "about/zoe-zalavary-psychotherapist-mindful-life-therapy-glasgow.jpeg"
+      fallback: "about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpeg"
       caption: "Zoe Zalavary, Glasgow based Counsellor, Psychotherapist and Mindfulness Instructor"
       variant: "210"
     counselling_page:
-      fallback: "logos/mindfulness-symbol.png"
-      caption: "Chinese mindfulness symbol"
+      fallback: "counselling-and-psychotherapy/home-psychotherapy.png"
+      caption: "Counselling and Psychotherapy in Glasgow"
       variant: "640"
     mindfulness_page:
-      fallback: "logos/mindfulness-symbol.png"
-      caption: "Chinese mindfulness symbol"
+      fallback: "mindfulness/mindfulness-meditation.jpg"
+      caption: "Mindfulness in Glasgow"
       variant: "640"
 
   colophon:
