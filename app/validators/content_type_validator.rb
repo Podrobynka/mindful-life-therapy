@@ -2,12 +2,12 @@ class ContentTypeValidator < ActiveModel::EachValidator
 
   def validate_each record, attribute, value
     return unless value.attached? && value.blob.present?
-    purge_file(record, attribute, value) if allowed_content_types.exclude?(value.content_type)
+    purge_file(record, attribute, value) if allowed_photo_content_types.exclude?(value.content_type)
   end
 
   private
 
-  def allowed_content_types
+  def allowed_photo_content_types
     options.fetch(:in)
   end
 
