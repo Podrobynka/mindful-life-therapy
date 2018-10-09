@@ -15,19 +15,15 @@ module HasPagePhoto
   end
 
   def fallback_photo
-    translation_for 'fallback'
+    translation_for 'page_photo', 'fallback'
   end
 
   def variant_size
-    translation_for 'variant'
+    translation_for 'page_photo', 'variant'
   end
 
   def photo_title
-    translation_for 'caption'
-  end
-
-  def translation_for attr
-    I18n.t("page_photo.#{self.class.name.underscore}.#{attr}")
+    translation_for 'page_photo', 'caption'
   end
 
   class_methods do
