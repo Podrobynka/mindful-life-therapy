@@ -1,3 +1,3 @@
 class CounsellingPage < ApplicationRecord
-  include HasPagePhoto, HasBody
+  include HasPagePhoto, HasBody, HasTranslations
 end
