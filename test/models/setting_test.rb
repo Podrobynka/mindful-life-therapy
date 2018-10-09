@@ -2,7 +2,59 @@ require 'test_helper'
 
 class SettingTest < ActiveSupport::TestCase
 
-  test "creates a valid settings record" do
+  setup do
+    @setting = settings(:one)
+  end
+
+  test "telephone" do
+    assert_required @setting, :telephone
+    assert_too_long @setting, :telephone, 31
+    assert_valid_length @setting, :telephone, 30
+  end
+
+  test "contact_email" do
+    assert_required @setting, :contact_email
+    assert_too_long @setting, :contact_email, 51
+    assert_valid_length @setting, :contact_email, 50
+  end
+
+  test "office_address_line_1" do
+    assert_required @setting, :office_address_line_1
+    assert_too_long @setting, :office_address_line_1, 51
+    assert_valid_length @setting, :office_address_line_1, 50
+  end
+
+  test "office_address_line_2" do
+    assert_optional @setting, :office_address_line_2
+    assert_too_long @setting, :office_address_line_2, 51
+    assert_valid_length @setting, :office_address_line_2, 50
+  end
+
+  test "office_address_line_3" do
+    assert_optional @setting, :office_address_line_3
+    assert_too_long @setting, :office_address_line_3, 51
+    assert_valid_length @setting, :office_address_line_3, 50
+  end
+
+  test "office_address_city" do
+    assert_required @setting, :office_address_city
+    assert_too_long @setting, :office_address_city, 51
+    assert_valid_length @setting, :office_address_city, 50
+  end
+
+  test "office_address_postcode" do
+    assert_required @setting, :office_address_postcode
+    assert_too_long @setting, :office_address_postcode, 51
+    assert_valid_length @setting, :office_address_postcode, 50
+  end
+
+  test "session_rate is required" do
+    assert_required @setting, :session_rate
+    assert_too_long @setting, :session_rate, 51
+    assert_valid_length @setting, :session_rate, 50
+  end
+
+  test "valid record" do
     attrs = {
       telephone: 'a' * 30,
       contact_email: 'a' * 50,
@@ -16,85 +68,5 @@ class SettingTest < ActiveSupport::TestCase
 
     setting = Setting.create attrs
     assert setting.valid?
-  end
-
-  test "telephone is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:telephone].to_s
-  end
-
-  test "telephone has max length" do
-    setting = Setting.create telephone: '0' * 31
-    assert_match /too long/, setting.errors[:telephone].to_s
-  end
-
-  test "contact_email is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:contact_email].to_s
-  end
-
-  test "contact_email has max length" do
-    setting = Setting.create contact_email: 'a' * 51
-    assert_match /too long/, setting.errors[:contact_email].to_s
-  end
-
-  test "office_address_line_1 is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:office_address_line_1].to_s
-  end
-
-  test "office_address_line_1 has max length" do
-    setting = Setting.create office_address_line_1: 'a' * 51
-    assert_match /too long/, setting.errors[:office_address_line_1].to_s
-  end
-
-  test "office_address_line_2 is not required" do
-    setting = Setting.create
-    assert_empty setting.errors[:office_address_line_2]
-  end
-
-  test "office_address_line_2 has max length" do
-    setting = Setting.create office_address_line_2: 'a' * 51
-    assert_match /too long/, setting.errors[:office_address_line_2].to_s
-  end
-
-  test "office_address_line_3 is not required" do
-    setting = Setting.create
-    assert_empty setting.errors[:office_address_line_3]
-  end
-
-  test "office_address_line_3 has max length" do
-    setting = Setting.create office_address_line_3: 'a' * 51
-    assert_match /too long/, setting.errors[:office_address_line_3].to_s
-  end
-
-  test "office_address_city is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:office_address_city].to_s
-  end
-
-  test "office_address_city has max length" do
-    setting = Setting.create office_address_city: 'a' * 51
-    assert_match /too long/, setting.errors[:office_address_city].to_s
-  end
-
-  test "office_address_postcode is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:office_address_postcode].to_s
-  end
-
-  test "office_address_postcode has max length" do
-    setting = Setting.create office_address_postcode: 'a' * 51
-    assert_match /too long/, setting.errors[:office_address_postcode].to_s
-  end
-
-  test "session_rate is required" do
-    setting = Setting.create
-    assert_match /blank/, setting.errors[:session_rate].to_s
-  end
-
-  test "session_rate has max length" do
-    setting = Setting.create session_rate: 'a' * 51
-    assert_match /too long/, setting.errors[:session_rate].to_s
   end
 end

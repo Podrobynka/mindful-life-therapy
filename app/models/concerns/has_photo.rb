@@ -3,7 +3,7 @@ module HasPhoto
 
   included do
     has_one_attached :photo
-    validates :photo, file_size: allowed_photo_size, content_type: allowed_photo_content_types
+    validates :photo, file_size: allowed_photo_size, content_type: allowed_content_types[:photo]
   end
 
   def display_photo
@@ -27,8 +27,10 @@ module HasPhoto
   end
 
   class_methods do
-    def allowed_photo_content_types
-      ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
+    def allowed_content_types
+      {
+        photo: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
+      }
     end
 
     def allowed_photo_size

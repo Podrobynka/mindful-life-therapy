@@ -29,6 +29,18 @@ class ActiveSupport::TestCase
     fixture_file_upload('files/logo.png', 'image/png')
   end
 
+  def content_types_fixture
+    %w(image/png image/jpg image/jpeg image/gif)
+  end
+
+  def fallback_photos
+    {
+      about_page: 'about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpg',
+      counselling_page: 'counselling-and-psychotherapy/home-psychotherapy.png',
+      mindfulness_page: 'mindfulness/mindfulness-meditation.jpg'
+    }
+  end
+
   # controller test helper methods
 
   def assert_gets url
@@ -82,20 +94,25 @@ class ActiveSupport::TestCase
 
   # model test helper methods
 
-  def assert_body_is_required record
-    record.update body: ''
-    assert_match /blank/, record.errors[:body].to_s
+  def assert_required record, attribute
+    record.update attribute => ''
+    assert_match /blank/, record.errors[attribute].to_s
   end
 
-  def assert_body_has_max_length record, length
-    invalid_body = 'a' * length
-    record.update body: invalid_body
-    assert_match /too long/, record.errors[:body].to_s
+  def assert_optional record, attribute
+    record.update attribute => ''
+    assert_empty record.errors[attribute]
   end
 
-  def assert_body_with_valid_length record, length
-    valid_body = 'a' * length
-    record.update body: valid_body
+  def assert_too_long record, attribute, length
+    long = 'a' * length
+    record.update attribute => long
+    assert_match /too long/, record.errors[attribute].to_s
+  end
+
+  def assert_valid_length record, attribute, length
+    valid = 'a' * length
+    record.update attribute => valid
     assert record.valid?
   end
 
@@ -106,33 +123,41 @@ class ActiveSupport::TestCase
     assert_equal 'logo.png', record.photo.filename.to_s
   end
 
-  def assert_photo_has_restricted_content_type record
-    attach_file_to record, pdf_fixture
-    refute record.valid?
-    refute record.photo.attached?
-    assert_match /is the wrong format/, record.errors[:photo].to_s
-  end
-
-  def assert_allowed_photo_content_types record, expected
-    assert_equal expected.sort, record.class.allowed_photo_content_types.sort
-  end
-
-  def assert_photo_has_max_size record, size
-    stub_size_and_attach_file_to record, photo_fixture, size
+  def assert_too_big record, fixture, size
+    stub_size_and_attach_file_to record, fixture, size
     refute record.valid?
     refute record.photo.attached?
     assert_match /is too big/, record.errors[:photo].to_s
   end
 
-  def assert_photo_with_valid_size record, size
-    stub_size_and_attach_file_to record, photo_fixture, size
+  def assert_valid_size record, fixture, size
+    stub_size_and_attach_file_to record, fixture, size
     assert record.valid?
     assert record.photo.attached?
     assert_empty record.errors[:photo]
   end
 
-  def assert_allowed_photo_size record, size
+  def assert_allowed_size record, fixture, size
     assert_equal size, record.class.allowed_photo_size
+  end
+
+  def assert_wrong_format record, attribute, fixture
+    attach_file_to record, fixture
+    refute record.valid?
+    refute record.send(attribute).attached?
+    assert_match /is the wrong format/, record.errors[attribute].to_s
+  end
+
+  def assert_valid_format record, attribute, fixture
+    attach_file_to record, fixture
+    assert record.valid?
+    assert record.send(attribute).attached?
+    assert_empty record.errors[attribute]
+  end
+
+  def assert_allowed_content_types record, attribute, content_types
+    actual = record.class.allowed_content_types[attribute]
+    assert_equal content_types.sort, actual.sort
   end
 
   def assert_display_photo_defaults_to_fallback_photo record, fallback
@@ -141,10 +166,12 @@ class ActiveSupport::TestCase
     assert_equal record.display_photo, record.fallback_photo
   end
 
-  def assert_display_photo_returns_stored_photo_if_it_exists record
-    attach_file_to record, photo_fixture
+  def assert_display_photo_returns_stored_photo_if_it_exists record, fixture
+    attach_file_to record, fixture
     assert_instance_of ActiveStorage::Variant, record.display_photo
     assert_instance_of ActiveStorage::Variant, record.stored_photo
+    assert_equal 'logo.png', record.display_photo.image.send(:filename).to_s
+    assert_equal 'logo.png', record.stored_photo.image.send(:filename).to_s
   end
 
   def assert_photo_title record, title

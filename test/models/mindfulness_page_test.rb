@@ -6,50 +6,31 @@ class MindfulnessPageTest < ActiveSupport::TestCase
     @mindfulness_page = mindfulness_pages(:one)
   end
 
-  test 'body is required' do
-    assert_body_is_required @mindfulness_page
-  end
-
-  test 'body has max length' do
-    assert_body_has_max_length @mindfulness_page, 100001
-  end
-
-  test 'body with valid length' do
-    assert_body_with_valid_length @mindfulness_page, 100000
+  test 'body' do
+    assert_required @mindfulness_page, :body
+    assert_too_long @mindfulness_page, :body, 100001
+    assert_valid_length @mindfulness_page, :body, 100000
   end
 
   test 'has one attached photo' do
     assert_has_one_attached_photo @mindfulness_page
   end
 
-  test 'photo has restricted content_type' do
-    assert_photo_has_restricted_content_type @mindfulness_page
+  test 'photo size' do
+    assert_too_big @mindfulness_page, photo_fixture, 21.megabytes
+    assert_valid_size @mindfulness_page, photo_fixture, 20.megabytes
+    assert_allowed_size @mindfulness_page, photo_fixture, 20.megabytes
   end
 
-  test 'photo allowed_content_types' do
-    content_types = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
-    assert_allowed_photo_content_types @mindfulness_page, content_types
+  test 'photo content_type' do
+    assert_wrong_format @mindfulness_page, :photo, pdf_fixture
+    assert_valid_format @mindfulness_page, :photo, photo_fixture
+    assert_allowed_content_types @mindfulness_page, :photo, content_types_fixture
   end
 
-  test 'photo has max size' do
-    assert_photo_has_max_size @mindfulness_page, 21.megabytes
-  end
-
-  test 'photo with valid size' do
-    assert_photo_with_valid_size @mindfulness_page, 20.megabytes
-  end
-
-  test 'allowed_photo_size' do
-    assert_allowed_photo_size @mindfulness_page, 20.megabytes
-  end
-
-  test 'display_photo defaults to fallback_photo' do
-    fallback = 'mindfulness/mindfulness-meditation.jpg'
-    assert_display_photo_defaults_to_fallback_photo @mindfulness_page, fallback
-  end
-
-  test 'display_photo returns stored_photo if it exists' do
-    assert_display_photo_returns_stored_photo_if_it_exists @mindfulness_page
+  test 'display_photo' do
+    assert_display_photo_defaults_to_fallback_photo @mindfulness_page, fallback_photos[:mindfulness_page]
+    assert_display_photo_returns_stored_photo_if_it_exists @mindfulness_page, photo_fixture
   end
 
   test "photo_title" do
@@ -59,5 +40,11 @@ class MindfulnessPageTest < ActiveSupport::TestCase
 
   test "photo_variant_size" do
     assert_photo_variant_size @mindfulness_page, '640'
+  end
+
+  test "valid record" do
+    mindfulness_page = MindfulnessPage.create body: 'a' * 100000
+    attach_file_to mindfulness_page, photo_fixture
+    assert mindfulness_page.valid?
   end
 end

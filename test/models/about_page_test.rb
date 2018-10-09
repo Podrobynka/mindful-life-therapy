@@ -6,50 +6,31 @@ class AboutPageTest < ActiveSupport::TestCase
     @about_page = about_pages(:one)
   end
 
-  test 'body is required' do
-    assert_body_is_required @about_page
-  end
-
-  test 'body has max length' do
-    assert_body_has_max_length @about_page, 100001
-  end
-
-  test 'body with valid length' do
-    assert_body_with_valid_length @about_page, 100000
+  test 'body' do
+    assert_required @about_page, :body
+    assert_too_long @about_page, :body, 100001
+    assert_valid_length @about_page, :body, 100000
   end
 
   test 'has one attached photo' do
     assert_has_one_attached_photo @about_page
   end
 
-  test 'photo has restricted content_type' do
-    assert_photo_has_restricted_content_type @about_page
+  test 'photo size' do
+    assert_too_big @about_page, photo_fixture, 21.megabytes
+    assert_valid_size @about_page, photo_fixture, 20.megabytes
+    assert_allowed_size @about_page, photo_fixture, 20.megabytes
   end
 
-  test 'allowed_photo_content_types' do
-    content_types = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
-    assert_allowed_photo_content_types @about_page, content_types
+  test 'photo content_type' do
+    assert_wrong_format @about_page, :photo, pdf_fixture
+    assert_valid_format @about_page, :photo, photo_fixture
+    assert_allowed_content_types @about_page, :photo, content_types_fixture
   end
 
-  test 'photo has max size' do
-    assert_photo_has_max_size @about_page, 21.megabytes
-  end
-
-  test 'photo with valid size' do
-    assert_photo_with_valid_size @about_page, 20.megabytes
-  end
-
-  test 'allowed_photo_size' do
-    assert_allowed_photo_size @about_page, 20.megabytes
-  end
-
-  test 'display_photo defaults to fallback_photo' do
-    fallback = 'about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpg'
-    assert_display_photo_defaults_to_fallback_photo @about_page, fallback
-  end
-
-  test 'display_photo returns stored_photo if it exists' do
-    assert_display_photo_returns_stored_photo_if_it_exists @about_page
+  test 'display_photo' do
+    assert_display_photo_defaults_to_fallback_photo @about_page, fallback_photos[:about_page]
+    assert_display_photo_returns_stored_photo_if_it_exists @about_page, photo_fixture
   end
 
   test "photo_title" do
@@ -59,5 +40,11 @@ class AboutPageTest < ActiveSupport::TestCase
 
   test "photo_variant_size" do
     assert_photo_variant_size @about_page, '210'
+  end
+
+  test "valid record" do
+    about_page = AboutPage.create body: 'a' * 100000
+    attach_file_to about_page, photo_fixture
+    assert about_page.valid?
   end
 end
