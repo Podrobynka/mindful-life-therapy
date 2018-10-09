@@ -15,10 +15,3 @@ class PhotoHelperTest < ActionView::TestCase
     assert_match expected, photo_for(record)
   end
 end
-
-  # def photo_for record
-  #   image_tag record.display_photo,
-  #     title: record.photo_title,
-  #     alt: record.photo_title,
-  #     class: 'border-radius'
-  # end
