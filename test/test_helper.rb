@@ -41,6 +41,26 @@ class ActiveSupport::TestCase
     }
   end
 
+  def address_fixture
+    {
+      office_address_line_1: 'Awesome House',
+      office_address_line_2: 'Apartment 95',
+      office_address_line_3: 'Cool Street',
+      office_address_city: 'Amazing City',
+      office_address_postcode: 'G1 1AA'
+    }
+  end
+
+  def address_fixture_with_blanks
+    {
+      office_address_line_1: 'Awesome House',
+      office_address_line_2: '',
+      office_address_line_3: nil,
+      office_address_city: 'Amazing City',
+      office_address_postcode: 'G1 1AA'
+    }
+  end
+
   # controller test helper methods
 
   def assert_gets url
