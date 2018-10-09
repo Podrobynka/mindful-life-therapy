@@ -1,42 +1,29 @@
-%footer.footer.black-background
-  .row.lpt.mpb.column
-    %ul.no-bullet.nmb.text-center
-      %li.inline-block.sma
-        %span
-          = fa_icon 'phone'
-          %strong.primary-color= @settings.telephone
+%footer.footer.black-background.strong
+  .row.lpt.spb.column
+    %ul.no-bullet.nmb.text-center.spt
+      %li.inline-block.sma.primary-color
+        = fa_icon 'phone', text: @settings.telephone
 
       %li.inline-block.sma
-        %span
-          = fa_icon 'envelope'
-          %strong.primary-color
-            = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-white border-link'
+        = fa_icon 'envelope'
+        = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-white border-link'
 
-      %li.inline-block.sma
-        %span
-          = fa_icon 'map-marker'
-          %strong.primary-color
-            = footer_office_address @settings
+      %li.inline-block.sma.primary-color
+        = fa_icon 'map-marker', text: footer_office_address(@settings)
 
   .row
-    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-1.text-center-on-medium-down.lmb.mpt
-      %h2.strong.lead.white
-        Do you need help with a sensitive issue?
+    .column.small-10.small-offset-1.medium-10.medium-offset-1.large-8.large-offset-2.text-center
+      .callout.clear
+        %h2.white
+          Do you need help with a sensitive issue?
 
-      %p.nmb.medium-gray.strong
-        My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
+        %p.nmb.medium-gray
+          My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
 
-    .column.small-10.small-offset-1.medium-8.medium-offset-2.large-5.large-offset-0.end.text-center-on-medium-down.lmb.mpt
-      %h2.strong.lead.white
-        Do you want to learn mindfulness?
-
-      %p.nmb.medium-gray.strong
-        I host regular mindfulness events, meditation retreats and stress reduction courses, where you can learn to ease the pressures of everyday life.
-
-  .row.mpt.lpb.column.text-center
-    = link_to 'Home', root_path, class: 'strong inline-block sma hover-white'
-    = link_to 'About', about_page_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Counselling & Psychotherapy', counselling_page_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Mindfulness', mindfulness_page_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Contact', contact_path, class: 'strong inline-block sma hover-white'
-    = link_to 'Admin', admin_path, class: 'strong inline-block sma hover-white'
+  .row.spt.lpb.column.text-center
+    = link_to 'Home', root_path, class: 'inline-block sma hover-white'
+    = link_to 'About', about_page_path, class: 'inline-block sma hover-white'
+    = link_to 'Counselling & Psychotherapy', counselling_page_path, class: 'inline-block sma hover-white'
+    = link_to 'Mindfulness', mindfulness_page_path, class: 'inline-block sma hover-white'
+    = link_to 'Contact', contact_path, class: 'inline-block sma hover-white'
+    = link_to 'Admin', admin_path, class: 'inline-block sma hover-white'

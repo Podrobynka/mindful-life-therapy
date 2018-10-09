@@ -128,7 +128,7 @@
     display: block;
   }
 }
-
+.callout.clear { background: none; }
 .vsmt-on-medium { @include breakpoint(medium up) { padding-top: 0.25rem; } }
 .full-width { width: 100%; }
 .border-radius { border-radius: $global-radius; }
