@@ -107,3 +107,17 @@ en:
       mindfulness_page: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
       contact: "If you are going through a tough time and seek counselling in Glasgow then please contact Zoe at Mindful Life Therapy."
       admin: "This is the admin page for Mindful Life Threapy"
+
+  forms:
+    about_page:
+      title: "Edit the About Page"
+      trix_input: "about_page_body"
+      body_placeholder: "i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
+    counselling_page:
+      title: "Edit the Counselling & Psychotherapy Page"
+      trix_input: "counselling_page_body"
+      body_placeholder: "i.e. My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
+    mindfulness_page:
+      title: "Edit the Mindfulness Page"
+      trix_input: "mindfulness_page_body"
+      body_placeholder: "i.e. Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
