@@ -1,0 +1,5 @@
+.field
+  = f.label :page_photo, class: 'strong'
+  %p.mmb 20MB max size
+  .preview.dark-outer-box-shadow.white-background.border-radius.mmb= page_photo_for f.object
+  = f.file_field :page_photo, multiple: false, tabindex: '2', direct_upload: true, accept: '.png, .gif, .jpeg, .jpg', class: 'spt nmb'

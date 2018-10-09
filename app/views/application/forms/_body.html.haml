@@ -1,0 +1,5 @@
+.field
+  = f.label :body, class: 'required strong', title: 'Body is required'
+  %p.smb 100,000 characters max
+  = f.text_field :body, type: 'hidden'
+  %trix-editor{ input: f.object.trix_input, placeholder: f.object.body_placeholder, class: 'smb trix-editor', tabindex: '1' }

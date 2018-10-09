@@ -7,7 +7,7 @@
 
   %fieldset.fieldset.callout.success.dark-border-bottom.lmb
 
-    = render 'form_errors', target: @settings
+    = render 'application/forms/errors', target: f.object
 
     .field{ data: { controller: 'errors' } }
       = f.label :session_rate, 'What is your session rate?', class: 'required strong', title: 'Your session rate is required'

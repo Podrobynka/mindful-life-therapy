@@ -1,23 +1,4 @@
 = form_with model: @about_page, url: about_page_path, class: 'mmb' do |f|
-
-  %h1.text-center.lmb.lpb Edit the About Page
-
-  %fieldset.fieldset.callout.success.dark-border-bottom.lmb
-
-    = render 'form_errors', target: @about_page
-
-    .field
-      = f.label :body, class: 'required strong', title: 'Body is required'
-      %p.smb 100,000 characters max
-      = f.text_field :body, type: 'hidden'
-      %trix-editor{ input: 'about_page_body', placeholder: 'i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield.', class: 'smb trix-editor', tabindex: '1' }
-
-    .field
-      = f.label :page_photo, class: 'required strong', title: 'Page photo is required'
-      %p.smb 20MB max size
-      = f.file_field :page_photo, multiple: false, tabindex: '2', direct_upload: true, accept: '.png, .gif, .jpeg, .jpg'
-
-      -# #photo-preview.lpt.lmb
-      -#   .mpt= preview_photo_for f.object
-
-  .actions.text-right= f.button t('form.button_text').html_safe, class: 'button strong large dark-border-bottom nmb', tabindex: '3', data: { disable_with: t('form.disable_with_text').html_safe }
+  = form_title_for f.object
+  = render 'application/forms/fieldset', f: f
+  = render 'application/forms/submit_button', f: f
