@@ -5,14 +5,14 @@
   -# %p.medium-gray.text-center Your message will be handled with the utmost care and your personal details will not be stored, or shared with anyone
 
   %ul.no-bullet.text-center.lmb.mpt.mpb
-    %li.inline-block.splr.primary-color
-      = fa_icon 'phone', text: @settings.telephone, class: 'smr dark-gray'
+    %li.inline-block.splr.medium-gray.vsmt-on-medium
+      = fa_icon 'phone', text: @settings.telephone, class: 'smr dark-gray show-for-medium'
 
-    %li.inline-block.splr
-      = fa_icon 'envelope', text: mail_to(@settings.contact_email, @settings.contact_email), class: 'smr dark-gray'
+    %li.inline-block.splr.vsmt-on-medium
+      = fa_icon 'envelope', text: mail_to(@settings.contact_email, @settings.contact_email), class: 'smr dark-gray show-for-medium'
 
-    %li.inline-block.splr.primary-color
-      = fa_icon 'map-marker', text: footer_office_address(@settings), class: 'smr dark-gray'
+    %li.inline-block.splr.medium-gray.vsmt-on-medium
+      = fa_icon 'map-marker', text: footer_office_address(@settings), class: 'smr dark-gray show-for-medium'
 
   %fieldset.fieldset.callout.success.dark-border-bottom.lmb
 
