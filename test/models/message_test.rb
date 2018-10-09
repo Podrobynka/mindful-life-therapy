@@ -2,63 +2,41 @@ require 'test_helper'
 
 class MessageTest < ActiveSupport::TestCase
 
+  setup do
+    @message = Message.new
+    @message.valid?
+  end
+
+  test 'name' do
+    assert_message_attribute_required @message, :name
+    assert_message_attribute_too_long @message, :name, 101
+    assert_message_attribute_valid_length @message, :name, 100
+  end
+
+  test 'email' do
+    assert_message_attribute_required @message, :email
+    assert_message_attribute_too_long @message, :email, 101
+    assert_message_attribute_valid_length @message, :email, 100
+  end
+
+  test 'subject' do
+    assert_message_attribute_required @message, :subject
+    assert_message_attribute_too_long @message, :subject, 51
+    assert_message_attribute_valid_length @message, :subject, 50
+  end
+
+  test 'body' do
+    assert_message_attribute_required @message, :body
+    assert_message_attribute_too_long @message, :body, 1001
+    assert_message_attribute_valid_length @message, :body, 1000
+  end
+
   test 'valid message' do
-    attrs = {
-      name: 'a' * 100,
-      email: 'a' * 100,
-      subject: 'a' * 50,
-      body: 'a' * 100
-    }
+    @message.name = 'a' * 100
+    @message.email = 'a' * 100
+    @message.subject = 'a' * 50
+    @message.body = 'a' * 1000
 
-    message = Message.new attrs
-    assert message.valid?
-  end
-
-  test 'name is required' do
-    message = Message.new
-    refute message.valid?
-    assert_match /blank/, message.errors[:name].to_s
-  end
-
-  test 'name has max length' do
-    message = Message.new name: 'a' * 101
-    refute message.valid?
-    assert_match /too long/, message.errors[:name].to_s
-  end
-
-  test 'email is required' do
-    message = Message.new
-    refute message.valid?
-    assert_match /blank/, message.errors[:email].to_s
-  end
-
-  test 'email has max length' do
-    message = Message.new email: 'a' * 101
-    refute message.valid?
-    assert_match /too long/, message.errors[:email].to_s
-  end
-
-  test 'subject is required' do
-    message = Message.new
-    refute message.valid?
-    assert_match /blank/, message.errors[:subject].to_s
-  end
-
-  test 'subject has max length' do
-    message = Message.new subject: 'a' * 51
-    refute message.valid?
-    assert_match /too long/, message.errors[:subject].to_s
-  end
-
-  test 'body is required' do
-    message = Message.new
-    refute message.valid?
-    assert_match /blank/, message.errors[:body].to_s
-  end
-
-  test 'body has max length' do
-    message = Message.new body: 'a' * 1001
-    refute message.valid?
-    assert_match /too long/, message.errors[:body].to_s
+    assert @message.valid?
   end
 end

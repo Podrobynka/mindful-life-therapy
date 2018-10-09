@@ -194,4 +194,25 @@ class ActiveSupport::TestCase
       record.photo.attach io: file, filename: File.basename(file)
     end
   end
+
+  # message model test helpers
+  #
+  # message model does not inherit from activerecord
+  # and it's instances are not persisted
+
+  def assert_message_attribute_required record, attribute
+    assert_match /blank/, record.errors[attribute].to_s
+  end
+
+  def assert_message_attribute_too_long record, attribute, length
+    record.send("#{attribute}=", 'a' * length)
+    record.valid?
+    assert_match /too long/, record.errors[attribute].to_s
+  end
+
+  def assert_message_attribute_valid_length record, attribute, length
+    record.send("#{attribute}=", 'a' * length)
+    record.valid?
+    assert_empty record.errors[attribute]
+  end
 end
