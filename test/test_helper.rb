@@ -14,6 +14,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
+  # fixture helper methods
+
   def photo_fixture
     File.join(Rails.root, 'test', 'fixtures', 'files', 'logo.png')
   end
@@ -22,7 +24,63 @@ class ActiveSupport::TestCase
     File.join(Rails.root, 'test', 'fixtures', 'files', 'dummy.pdf')
   end
 
-  # Add more helper methods to be used by all tests here...
+  def stubbed_photo_fixture size
+    ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(size)
+    fixture_file_upload('files/logo.png', 'image/png')
+  end
+
+  # controller test helper methods
+
+  def assert_gets url
+    get url
+    assert_response :success
+  end
+
+  def assert_updates_page controller_name
+    assert_difference active_storage_counts do
+      path = url_for(controller_name)
+      patch path, params: params_for(controller_name, 'hello', 20.megabytes)
+      assert_redirected_to path
+    end
+  end
+
+  def assert_updates_page_via_xhr controller_name
+    assert_difference active_storage_counts do
+      path = url_for(controller_name)
+      patch path, xhr: true, params: params_for(controller_name, 'hello', 20.megabytes)
+      assert_match turbolinks_response_for(path), response.body
+    end
+  end
+
+  def assert_update_fails controller_name
+    assert_no_difference active_storage_counts do
+      path = url_for(controller_name)
+      patch path, params: params_for(controller_name, '', 21.megabytes)
+      assert_match /2 errors prohibited/, response.body.to_s
+    end
+  end
+
+  def assert_update_fails_via_xhr controller_name
+    assert_no_difference active_storage_counts do
+      path = url_for(controller_name)
+      patch path, xhr: true, params: params_for(controller_name, '', 21.megabytes)
+      assert_match /2 errors prohibited/, response.body.to_s
+    end
+  end
+
+  def turbolinks_response_for path
+    %Q{Turbolinks.visit("#{path}", {"action":"replace"})}
+  end
+
+  def active_storage_counts
+    ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count']
+  end
+
+  def params_for controller_name, body, size
+    { controller_name => { body: body, photo: stubbed_photo_fixture(size) } }
+  end
+
+  # model test helper methods
 
   def assert_body_is_required record
     record.update body: ''

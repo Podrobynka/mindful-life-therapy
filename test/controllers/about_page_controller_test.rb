@@ -3,64 +3,26 @@ require 'test_helper'
 class AboutPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should show about_page" do
-    get about_page_url
-    assert_response :success
+    assert_gets about_page_url
   end
 
   test "should get edit" do
-    get edit_about_page_url
-    assert_response :success
+    assert_gets edit_about_page_url
   end
 
   test "should update about_page" do
-    file = fixture_file_upload('files/logo.png', 'image/png')
-
-    # make the file appear to be 20MB
-    ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(20.megabytes)
-
-    assert_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
-      patch about_page_url, params: { about_page: { body: about_pages(:one).body, photo: file } }
-    end
-
-    assert_redirected_to about_page_url
+    assert_updates_page :about_page
   end
 
   test "should update about_page via :xhr" do
-    file = fixture_file_upload('files/logo.png', 'image/png')
-
-    # make the file appear to be 20MB
-    ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(20.megabytes)
-
-    assert_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
-      patch about_page_url, xhr: true, params: { about_page: { body: about_pages(:one).body, photo: fixture_file_upload('files/logo.png', 'image/png') } }
-    end
-
-    assert_match 'Turbolinks.visit("http://www.example.com/about-mindful-life-therapy", {"action":"replace"})', response.body
+    assert_updates_page_via_xhr :about_page
   end
 
   test "should show error message when update fails" do
-    file = fixture_file_upload('files/logo.png', 'image/png')
-
-    # make the file appear to be 21MB - which is too big and should cause a validation error
-    ActiveStorage::Blob.any_instance.stubs(:byte_size).returns(21.megabytes)
-
-    assert_no_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
-      patch about_page_url, params: { about_page: { body: '', photo: file } }
-    end
-
-    assert_match /2 errors prohibited this record from being saved/, response.body.to_s
-    assert_match /is too big/, response.body.to_s
+    assert_update_fails :about_page
   end
 
   test "should show error message when update via :xhr fails" do
-    # lets try a pdf this time - this should also cause a validation error
-    file = fixture_file_upload('files/dummy.pdf', 'application/pdf')
-
-    assert_no_difference ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count'] do
-      patch about_page_url, xhr: true, params: { about_page: { body: '', photo: file } }
-    end
-
-    assert_match /2 errors prohibited this record from being saved/, response.body.to_s
-    assert_match /is the wrong format/, response.body.to_s
+    assert_update_fails_via_xhr :about_page
   end
 end

@@ -3,32 +3,26 @@ require 'test_helper'
 class MindfulnessPageControllerTest < ActionDispatch::IntegrationTest
 
   test "should show mindfulness_page" do
-    get mindfulness_page_url
-    assert_response :success
+    assert_gets mindfulness_page_url
   end
 
   test "should get edit" do
-    get edit_mindfulness_page_url
-    assert_response :success
+    assert_gets edit_mindfulness_page_url
   end
 
   test "should update mindfulness_page" do
-    patch mindfulness_page_url, params: { mindfulness_page: { body: mindfulness_pages(:one).body } }
-    assert_redirected_to mindfulness_page_url
+    assert_updates_page :mindfulness_page
   end
 
   test "should update mindfulness_page via :xhr" do
-    patch mindfulness_page_url, xhr: true, params: { mindfulness_page: { body: mindfulness_pages(:one).body } }
-    assert_match 'Turbolinks.visit("http://www.example.com/mindfulness-in-glasgow", {"action":"replace"})', response.body
+    assert_updates_page_via_xhr :mindfulness_page
   end
 
   test "should show error message when update fails" do
-    patch mindfulness_page_url, params: { mindfulness_page: { body: '' } }
-    assert_match /1 error prohibited this record from being saved/, response.body
+    assert_update_fails :mindfulness_page
   end
 
   test "should show error message when update via :xhr fails" do
-    patch mindfulness_page_url, xhr: true, params: { mindfulness_page: { body: '' } }
-    assert_match /1 error prohibited this record from being saved/, response.body
+    assert_update_fails_via_xhr :mindfulness_page
   end
 end

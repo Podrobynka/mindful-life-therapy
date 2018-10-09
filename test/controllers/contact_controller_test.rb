@@ -3,8 +3,7 @@ require 'test_helper'
 class ContactControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
-    get contact_url
-    assert_response :success
+    assert_gets contact_url
   end
 
   test "should create new message and send email" do

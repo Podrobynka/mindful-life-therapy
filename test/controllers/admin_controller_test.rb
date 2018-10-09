@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class AdminControllerTest < ActionDispatch::IntegrationTest
-  test "should get show" do
-    get admin_url
-    assert_response :success
-  end
 
+  test "should get show" do
+    assert_gets admin_url
+  end
 end
