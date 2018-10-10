@@ -3,6 +3,7 @@ module HasPhoto
 
   included do
     has_one_attached :photo
+    attr_accessor :change_photo
     validates :photo, file_size: allowed_photo_size, content_type: allowed_content_types[:photo]
   end
 
