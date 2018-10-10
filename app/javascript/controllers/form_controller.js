@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ['field', 'message']
+  static targets = ['field']
 
   connect() {
     this.turnBrowserValidationOff()
