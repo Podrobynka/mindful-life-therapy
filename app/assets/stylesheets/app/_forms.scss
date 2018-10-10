@@ -1,0 +1,35 @@
+.hidden-file-field-container {
+  @include make-invisible() { margin-bottom: 0; }
+  * { display: none; }
+
+  .file-field-trigger:checked ~ & {
+    @include make-visible() { padding-top: 0.25rem; }
+    * { display: initial; }
+    [type="file"] { margin-bottom: 0.5rem; }
+  }
+}
+
+.hidden-by-checked-checkbox {
+  @include make-visible() { display: initial; }
+
+  .file-field-trigger:checked ~ & {
+    @include make-invisible() { display: none; }
+  }
+}
+
+.hidden-by-unchecked-checkbox {
+  @include make-invisible() { display: none; }
+
+  .file-field-trigger:checked ~ & {
+    @include make-visible() { display: initial; }
+  }
+}
+
+[type="checkbox"].file-field-trigger + label {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+[type="file"] {
+  overflow: hidden;
+}
