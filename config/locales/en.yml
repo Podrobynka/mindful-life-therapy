@@ -54,11 +54,11 @@ en:
     counselling_page:
       fallback: "counselling-and-psychotherapy/home-psychotherapy.png"
       caption: "Counselling and Psychotherapy in Glasgow"
-      variant: "640"
+      variant: "608"
     mindfulness_page:
       fallback: "mindfulness/mindfulness-meditation.jpg"
       caption: "Mindfulness in Glasgow"
-      variant: "640"
+      variant: "608"
 
   colophon:
     image:

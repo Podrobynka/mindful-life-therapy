@@ -4,30 +4,13 @@
 
 
 .row.column
-  %h1.page-title.lpb Mindfulness in Glasgow
+  %h1.page-title.mpb Mindfulness in Glasgow
 
 .row
-  .column.large-10.large-offset-1
-    .row
-      .column.small-12.medium-3
-        %figure.text-center.lmb.mpr-on-medium.lpr-on-large.vsmt-on-medium
-          = photo_for @mindfulness_page
+  .column.medium-8.medium-offset-2.mplr-on-medium.xplr-on-large
+    %figure.text-center.lmb.mplr-on-medium.xplr-on-large
+      = photo_for @mindfulness_page
 
-      .column.medium-9.large-6
-        .lmb.trix-content= sanitize @mindfulness_page.body
-
-      .column.medium-9.medium-offset-3.large-3.large-offset-0
-        .lpl-on-large.sidebar
-          .mmb
-            .block.strong.success-color Rates:
-            .block= @settings.session_rate
-
-          .mmb
-            .block.strong.success-color Phone:
-            .block= @settings.telephone
-
-          .mmb
-            .block.strong.success-color Office:
-            = office_address @settings
+    .lmb.trix-content.mplr-on-medium.xplr-on-large= sanitize @mindfulness_page.body
 
 = render 'colophon'

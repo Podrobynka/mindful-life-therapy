@@ -39,7 +39,7 @@ class MindfulnessPageTest < ActiveSupport::TestCase
   end
 
   test "photo_variant_size" do
-    assert_photo_variant_size @mindfulness_page, '640'
+    assert_photo_variant_size @mindfulness_page, '608'
   end
 
   test "valid record" do
