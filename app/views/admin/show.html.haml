@@ -2,44 +2,45 @@
 - provide :meta_description, t('seo.meta_description.admin')
 - provide :canonical_url, admin_url(protocol: 'https')
 
-%h1.page-title.lpb.lmb Admin
+%h1.text-center.lmb Admin
 
 .row.lpb
-  .column.medium-8.medium-offset-2.large-6.large-offset-3
+  .column.medium-8.medium-offset-2.large-6.large-offset-0
     .callout.success.dark-border-bottom
       %h2.page-subtitle.strong Admin Links
       %p Use the following links to edit the content of the site.
       %ul
-        %li= link_to 'Edit the Site Settings', edit_settings_url
-        %li= link_to 'Edit the About Page', edit_about_page_url
-        %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
-        %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url
+        %li= link_to 'Edit the Site Settings', edit_settings_url, class: 'strong'
+        %li= link_to 'Edit the About Page', edit_about_page_url, class: 'strong'
+        %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url, class: 'strong'
+        %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url, class: 'strong'
 
+  .column.medium-8.medium-offset-2.large-6.large-offset-0
     .callout.success.lmb.dark-border-bottom
       %h2.page-subtitle.strong Site Settings
-      %p.lmb
-        The following settings are used throughout the site, and you can edit them
+      %p.mmb
+        You can edit the site settings
         = succeed '.' do
-          = link_to 'here', edit_settings_url
+          = link_to 'here', edit_settings_url, class: 'strong'
 
       %p
         %strong Session rate:
         %br
-        = @settings.session_rate
+        %span.medium-gray= @settings.session_rate
 
       %p
         %strong Telephone:
         %br
-        = @settings.telephone
+        %span.medium-gray= @settings.telephone
 
       %p
         %strong Contact email:
         %br
-        = @settings.contact_email
+        %span.medium-gray= @settings.contact_email
 
       %p.nmb
         %strong Office address:
-      = office_address @settings
+      .medium-gray= office_address @settings
 
       %p.mpt
         = link_to 'Edit Site Settings', edit_settings_path, class: button_css
