@@ -1,4 +1,12 @@
 module FormHelper
+  def button_css color: 'success'
+    "button strong #{color} dark-border-bottom nmb button-border-bottom button-text-shadow"
+  end
+
+  def form_button_css
+    "#{button_css} large"
+  end
+
   def form_title_for record
     content_tag :h1, class: 'text-center lmb lpb' do
       t "forms.#{record.class.name.underscore}.title"
