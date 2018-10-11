@@ -4,7 +4,7 @@
 
 .row
   .column.medium-4.large-3.mpr-on-large
-    %figure.text-center.lmb.spl-on-medium.mpr-on-medium.xpr-on-large.smt-on-medium
+    %figure.text-center.lmb.spl-on-medium.mpr-on-medium.xpr-on-large.vsmt-on-medium
       = photo_for @about_page
 
       %figcaption.about-caption.mpt.mmb
@@ -13,9 +13,9 @@
 
       = link_to 'Contact', contact_path, class: button_css
 
-  .column.medium-8.large-9
+  .column.medium-8.large-9.npl-on-large
     .row
-      .column.large-8.lpr-on-medium.xpr-on-large
+      .column.large-8.lpr-on-medium.lpr-on-large.npl-on-large
         %h1.mmb About Mindful Life Therapy
 
         .lmb.trix-content= sanitize @about_page.body
