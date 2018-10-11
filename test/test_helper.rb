@@ -36,7 +36,7 @@ class ActiveSupport::TestCase
   def fallback_photos
     {
       about_page: 'about/zoe-zalavary-glasgow-counsellor-psychotherapist-mindful-life-therapy.jpg',
-      counselling_page: 'counselling-and-psychotherapy/home-psychotherapy.png',
+      counselling_page: 'counselling-and-psychotherapy/flowers.png',
       mindfulness_page: 'mindfulness/mindfulness-meditation.jpg'
     }
   end

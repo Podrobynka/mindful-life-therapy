@@ -52,7 +52,7 @@ en:
       caption: "Zoe Zalavary, Glasgow based Counsellor, Psychotherapist and Mindfulness Instructor"
       variant: "210"
     counselling_page:
-      fallback: "counselling-and-psychotherapy/home-psychotherapy.png"
+      fallback: "counselling-and-psychotherapy/flowers.png"
       caption: "Counselling and Psychotherapy in Glasgow"
       variant: "608"
     mindfulness_page:
