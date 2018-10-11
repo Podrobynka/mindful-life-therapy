@@ -4,7 +4,7 @@ body {
   flex-direction: column;
 }
 
-strong, .strong { color: $heading-black; }
+strong, .strong:not(a) { color: $heading-black; }
 
 blockquote { font-weight: $global-weight-bold; color: $black; }
 
