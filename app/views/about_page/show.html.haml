@@ -2,37 +2,39 @@
 - provide :meta_description, t('seo.meta_description.about_page')
 - provide :canonical_url, about_page_url(protocol: 'https')
 
-.row.column
-  %h1.page-title.lpb About Mindful Life Therapy
-
 .row
-  .column.large-10.large-offset-1
+  .column.medium-4.large-3.mpr-on-large
+    %figure.text-center.lmb.mplr-on-medium.xpr-on-large.smt-on-medium
+      = photo_for @about_page
+
+      %figcaption.about-caption.mpt.mmb
+        %strong.block.black.smb Zoe Zalavary
+        %small.block.medium-gray BA (Hons), PGDip, MBACP
+
+      = link_to 'Contact', contact_path, class: button_css
+
+  .column.medium-8.large-9
     .row
-      .column.small-12.medium-3
-        %figure.text-center.lmb.mpr-on-medium.lpr-on-large.vsmt-on-medium
-          = photo_for @about_page
+      .column.large-8.lpr-on-medium.xpr-on-large
+        %h1.mmb About Mindful Life Therapy
 
-          %figcaption.about-caption.mpt.mmb
-            %strong.block.body-font-color.smb Zoe Zalavary
-            %small.block.medium-gray BA (Hons), PGDip, MBACP
-
-          = link_to 'Contact', contact_path, class: 'button smt strong dark-border-bottom'
-
-      .column.medium-9.large-6
         .lmb.trix-content= sanitize @about_page.body
 
-      .column.medium-9.medium-offset-3.large-3.large-offset-0
-        .lpl-on-large.sidebar
-          .mmb
-            .block.strong.success-color Counselling Rates:
-            .block= @settings.session_rate
+      .column.large-4
+        %aside
+          %h1.mmb Contact Info
 
           .mmb
-            .block.strong.success-color Phone:
-            .block= @settings.telephone
+            .strong Phone
+            .medium-gray= @settings.telephone
 
           .mmb
-            .block.strong.success-color Office:
-            = office_address @settings
+            .strong Office
+            .medium-gray= office_address @settings
+
+          .mmb
+            .strong Counselling Rate
+            .medium-gray= @settings.session_rate
+
 
 = render 'colophon'

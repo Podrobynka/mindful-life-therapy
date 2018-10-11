@@ -2,7 +2,22 @@
 body {
   .trix-content, .trix-editor {
     h2, blockquote, ul, ol { margin-bottom: 0rem; }
-    h2 { font-weight: $global-weight-bold; }
+    h2, blockquote { font-weight: $global-weight-bold; }
+
+    a {
+      font-weight: $global-weight-bold;
+      @include hover { text-decoration: underline; }
+    }
+
+    ul {
+      list-style: disclosure-open;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
     blockquote {
       margin: 0;
       padding: rem-calc(9 20 9 19);
@@ -21,6 +36,8 @@ trix-editor, .trix-editor {
 
 
 .trix-button--icon-strike,
+.trix-button--icon-italic,
 .trix-button--icon-code,
+.trix-button--icon-number-list,
 .trix-button--icon-increase-nesting-level,
 .trix-button--icon-decrease-nesting-level { display: none; }

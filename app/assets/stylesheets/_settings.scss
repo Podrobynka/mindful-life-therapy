@@ -80,7 +80,7 @@ $medium-gray: #9da1a1;
 $light-medium-gray: #b5b8b8;
 $light-gray: #e6e7e7;
 
-$global-font-size: 100%;
+$global-font-size: 125%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -96,14 +96,14 @@ $black: $base-black;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $text-black;
-$body-font-family: Quicksand, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: $dark-gray;
+$body-font-family: 'Mukta', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
-$global-weight-normal: normal;
-$global-weight-bold: 500;
+$global-weight-normal: 200;
+$global-weight-bold: 300;
 $global-radius: 3px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -135,8 +135,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: rem-calc(32),
+  medium: rem-calc(32),
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -146,28 +146,28 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: $heading-black;
+$header-color: $black;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    'h1': ('font-size': 28),
+    'h2': ('font-size': 25),
+    'h3': ('font-size': 23),
+    'h4': ('font-size': 22),
+    'h5': ('font-size': 21),
+    'h6': ('font-size': 20),
   ),
   medium: (
-    'h1': ('font-size': 28),
-    'h2': ('font-size': 22),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 28),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 22),
+    'h5': ('font-size': 21),
+    'h6': ('font-size': 20),
   ),
 );
 $header-text-rendering: optimizeLegibility;
@@ -178,12 +178,12 @@ $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
-$code-font-weight: $global-weight-normal;
+$code-font-weight: $global-weight-bold;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: scale-color($primary-color, $lightness: -24%);
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color: $primary-color;
+$anchor-color-hover: scale-color($primary-color, $lightness: -32%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -198,7 +198,7 @@ $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
-$blockquote-color: $dark-gray;
+$blockquote-color: $black;
 $blockquote-padding: rem-calc(9 20 9 19);
 $blockquote-border: 3px solid $light-gray;
 $cite-font-size: rem-calc(13);
@@ -435,8 +435,8 @@ $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
-$form-label-color: $text-black;
-$form-label-font-size: rem-calc(18);
+$form-label-color: $black;
+$form-label-font-size: rem-calc(22);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
 $select-background: $white;

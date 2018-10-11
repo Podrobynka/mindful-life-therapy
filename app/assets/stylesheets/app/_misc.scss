@@ -15,8 +15,9 @@
   line-height: 1;
 }
 
-.hover-pointer { @include hover { cursor: pointer; } }
 .hover-opacity { @include hover { opacity: 0.5; } }
+.hover-pointer { @include hover { cursor: pointer; } }
+.hover-text-decoration { @include hover { text-decoration: underline; } }
 
 .text-center-on-medium-down {
   @include breakpoint(medium down) { text-align: center; }
@@ -93,6 +94,8 @@
 .warning-background { background: $warning-color; }
 .alert-background { background: $alert-color; }
 
+.light-succses-background { background: #f8f7ea }
+
 .white-background { background: $white; }
 .light-gray-background { background: $light-gray; }
 .light-medium-gray-background { background: $light-medium-gray; }
@@ -129,6 +132,7 @@
     display: block;
   }
 }
+
 .callout.clear { background: none; }
 .vsmt-on-medium { @include breakpoint(medium up) { padding-top: 0.25rem; } }
 .full-width { width: 100%; }
@@ -140,5 +144,7 @@
 .light-border-bottom { border-bottom: 1px solid $white; }
 .dark-border-top { border-top: 1px solid rgba($black, 0.1); }
 .dark-border-bottom { border-bottom: 1px solid rgba($black, 0.1); }
+.button-border-bottom { border-bottom: 1px solid rgba($black, 0.125); }
+.button-text-shadow { text-shadow: 0 -1px 0 rgba($black, 0.15) }
 
 .dark-outer-box-shadow { box-shadow: 0 0 1px rgba($black, 0.2); }
