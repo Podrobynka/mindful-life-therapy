@@ -4,37 +4,96 @@
 
 .row
   .column.medium-4.large-3.mpr-on-large
-    %figure.text-center.lmb.spl-on-medium.mpr-on-medium.xpr-on-large.vsmt-on-medium
+    %figure.text-center-on-medium-up.lmb.spl-on-medium.mpr-on-medium.xpr-on-large.vsmt-on-medium
       = photo_for @about_page
 
-      %figcaption.about-caption.mpt.mmb
-        %strong.block.black.smb Zoe Zalavary
-        %small.block.medium-gray BA (Hons), PGDip, MBACP
-
-      = link_to 'Contact', contact_path, class: button_css
+      %figcaption.spt.smt.lmb
+        %p.larger.strong.black.smb Zoe Zalavary
+        %p.smaller.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
+        = link_to 'Contact', contact_url, class: button_css(color: 'primary')
 
   .column.medium-8.large-9.npl-on-large
     .row
-      .column.large-8.lpr-on-medium.lpr-on-large.npl-on-large
+      .column.large-8.lpr-on-medium.xpr-on-large.npl-on-large
         %h1.mmb About Mindful Life Therapy
 
         .lmb.trix-content= sanitize @about_page.body
 
-      .column.large-4
-        %aside
-          %h1.mmb Contact Details
+        .callout.success.dark-border-bottom.mpa
+          %h2 Memberships and Qualifications
+
+          %p Zoe's list of memberships and qualifications includes the following:
+
+          %ul.nmb
+            %li.smb
+              = link_to 'Registered Member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'dark-primary-link hover-text-decoration strong'
+              of the British Association of Counselling and Psychotherapy
+              %strong (BACP)
+            %li.smb
+              %strong Post Graduate Diploma in Counselling
+              from the University of Strathclyde
+            %li.smb
+              %strong Compassion Focused Therapy
+              Levels 1 & 2
+            %li.smb
+              %strong COSCA Certificate in Counselling Skills
+              from Glasgow Caledonian University
+            %li.smb
+              %strong Mindfulness Teacher Training
+              at Bangor University
+            %li.smb
+              %strong Mindfulness Practitioner Training
+              with the Mindfulness Association
+            %li.smb
+              %strong Mindful Self Compassion Core Skills Training
+              with Dr Chris Germer and Dr Kristin Neff
+
+      .column.large-4.npl-on-large
+        %aside.callout.success.dark-border-bottom.mpa
+          %h2 Counselling
+
+          %p.dark-gray
+            Zoe is a
+            = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'dark-primary-link hover-text-decoration strong'
+            of the British Association of Counselling and Psychotherapy
+            = succeed '.' do
+              %strong (BACP)
 
           .mmb
-            .strong Phone
-            .medium-gray= @settings.telephone
+            .strong Session Rate
+            .dark-gray= @settings.session_rate
+
+          = link_to 'Counselling Services', counselling_page_path, class: "#{button_css color: 'success'} large-block"
+
+        %aside.callout.success.dark-border-bottom.mpa
+          %h2 Contact
 
           .mmb
-            .strong Office
-            .medium-gray= office_address @settings
+            .strong Telephone
+            .dark-gray= @settings.telephone
 
           .mmb
-            .strong Counselling Rate
-            .medium-gray= @settings.session_rate
+            .strong Contact Email
+            .dark-gray.word-wrap= mail_to @settings.contact_email, @settings.contact_email, class: 'dark-primary-link hover-text-decoration'
 
+          .nmb
+            .strong Office Location
+            .dark-gray= office_address @settings
+
+          %p.nmb= link_to 'Contact Zoe', contact_path, class: "#{button_css color: 'success'} large-block"
+
+        %aside.callout.success.dark-border-bottom.mpa
+          %h2 Mindfulness
+
+          %p.dark-gray
+            Zoe incorporates
+            %strong Mindfulness
+            into her therapeutic work and hosts regular
+            %strong Mindfulness
+            classes, workshops and retreats in
+            %strong Glasgow
+            and beyond.
+
+          %p.nmb= link_to 'Mindfulness Page', mindfulness_page_path, class: "#{button_css color: 'success'} large-block"
 
 = render 'colophon'

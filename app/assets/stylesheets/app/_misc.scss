@@ -23,6 +23,10 @@
   @include breakpoint(medium down) { text-align: center; }
 }
 
+.text-center-on-medium-up {
+  @include breakpoint(medium up) { text-align: center; }
+}
+
 .inline-block-on-large {
   @include breakpoint(large up) { display: block; }
 }
@@ -39,6 +43,10 @@
 
 .active {
   @include anchor($black, $black);
+}
+
+.dark-primary-link {
+  @include anchor($anchor-color-hover, $anchor-color-hover);
 }
 
 .white-link {
@@ -133,6 +141,12 @@
   }
 }
 
+.large-block {
+  @include breakpoint(large up) {
+    display: block;
+  }
+}
+
 .callout.clear { background: none; }
 .vsmt-on-medium { @include breakpoint(medium up) { padding-top: 0.25rem; } }
 .full-width { width: 100%; }
@@ -148,6 +162,14 @@
 .button-text-shadow { text-shadow: 0 -1px 0 rgba($black, 0.15) }
 
 .dark-outer-box-shadow { box-shadow: 0 0 1px rgba($black, 0.2); }
+
+.larger {
+  font-size: 1.25rem;
+}
+
+.smaller {
+  font-size: rem-calc(18);
+}
 
 .button.icon {
   border-radius: 50%;
