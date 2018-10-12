@@ -27,15 +27,15 @@ class MessageTest < ActiveSupport::TestCase
 
   test 'body' do
     assert_message_attribute_required @message, :body
-    assert_message_attribute_too_long @message, :body, 1001
-    assert_message_attribute_valid_length @message, :body, 1000
+    assert_message_attribute_too_long @message, :body, 10001
+    assert_message_attribute_valid_length @message, :body, 10000
   end
 
   test 'valid message' do
     @message.name = 'a' * 100
     @message.email = 'a' * 100
     @message.subject = 'a' * 50
-    @message.body = 'a' * 1000
+    @message.body = 'a' * 10000
 
     assert @message.valid?
   end
