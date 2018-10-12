@@ -154,6 +154,7 @@
 .no-top-border-radius { border-top-left-radius: 0; border-top-right-radius: 0; }
 .no-bottom-border-radius { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 
+.light-gray-border { border: 1px solid $light-gray; }
 .light-border-top { border-top: 1px solid $white; }
 .light-border-bottom { border-bottom: 1px solid $white; }
 .dark-border-top { border-top: 1px solid rgba($black, 0.1); }
