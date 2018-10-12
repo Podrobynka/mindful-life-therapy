@@ -19,7 +19,7 @@
 
         .lmb.trix-content= sanitize @about_page.body
 
-        .callout.success.dark-border-bottom.mpa
+        .callout.success.dark-border-bottom.lmb
           %h2 Memberships and Qualifications
 
           %p Zoe's list of memberships and qualifications includes the following:
@@ -48,8 +48,16 @@
               %strong Mindful Self Compassion Core Skills Training
               with Dr Chris Germer and Dr Kristin Neff
 
+        .callout.primary.lpa.dark-border-bottom.lmb
+          .spt
+            %label.strong Office Location
+            .smb= footer_office_address(@settings)
+
+            .white-background.light-gray-border.border-radius
+              #map
+
       .column.large-4.npl-on-large
-        %aside.callout.success.dark-border-bottom.mpa
+        %aside.callout.success.dark-border-bottom.lmb
           %h2 Counselling
 
           %p.dark-gray
@@ -65,35 +73,16 @@
 
           = link_to 'Counselling Services', counselling_page_path, class: "#{button_css color: 'success'} large-block"
 
-        %aside.callout.success.dark-border-bottom.mpa
-          %h2 Contact
-
-          .mmb
-            .strong Telephone
-            .dark-gray= @settings.telephone
-
-          .mmb
-            .strong Contact Email
-            .dark-gray.word-wrap= mail_to @settings.contact_email, @settings.contact_email, class: 'dark-primary-link hover-text-decoration'
-
-          .nmb
-            .strong Office Location
-            .dark-gray= office_address @settings
-
-          %p.nmb= link_to 'Contact Zoe', contact_path, class: "#{button_css color: 'success'} large-block"
-
-        %aside.callout.success.dark-border-bottom.mpa
+        %aside.callout.success.dark-border-bottom.lmb
           %h2 Mindfulness
 
           %p.dark-gray
             Zoe incorporates
             %strong Mindfulness
-            into her therapeutic work and hosts regular
+            into her therapeutic work. She also hosts
             %strong Mindfulness
             classes, workshops and retreats in
             %strong Glasgow
             and beyond.
 
           %p.nmb= link_to 'Mindfulness Page', mindfulness_page_path, class: "#{button_css color: 'success'} large-block"
-
-= render 'colophon'
