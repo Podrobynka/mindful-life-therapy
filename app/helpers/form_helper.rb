@@ -3,8 +3,8 @@ module FormHelper
     "button strong #{color} dark-border-bottom nmb button-border-bottom button-text-shadow"
   end
 
-  def form_button_css
-    "#{button_css} large"
+  def form_button_css color: 'success'
+    "#{button_css color: color} large"
   end
 
   def form_title_for record
