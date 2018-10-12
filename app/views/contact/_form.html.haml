@@ -18,8 +18,16 @@
 
   .row
     .column.medium-8.medium-offset-2.large-6.large-offset-0
-      %fieldset.fieldset.callout.success.dark-border-bottom.lmb
+      .callout.primary.lpa.dark-border-bottom.lmb
+        .spt
+          %label.strong Office Location
+          .smb= footer_office_address(@settings)
 
+          .white-background.light-gray-border.border-radius
+            #map
+
+    .column.medium-8.medium-offset-2.large-6.large-offset-0.end
+      %fieldset.fieldset.callout.primary.dark-border-bottom.lmb
         = render 'application/forms/errors', target: f.object
 
         .field{ data: { controller: 'errors' } }
@@ -46,16 +54,7 @@
           = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '5'
           = error_message target: 'errors.message'
 
-        .actions.text-right= f.button t('contact.button_text').html_safe, class: form_button_css, tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
-
-    .column.medium-8.medium-offset-2.large-6.large-offset-0.end
-      .callout.success.lpa.dark-border-bottom
-        .spt
-          %label.strong Office Location
-          .smb= footer_office_address(@settings)
-
-          .white-background.light-gray-border.border-radius
-            #map
+        .actions.text-right= f.button t('contact.button_text').html_safe, class: form_button_css(color: 'primary'), tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
 
   .row.column
     %figure.text-center.lpt.lmt
