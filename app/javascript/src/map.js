@@ -27,8 +27,11 @@ function initMap() {
 
   map.setView(defaultCenter, defaultZoom)
   map.scrollWheelZoom.disable()
-  map.once('focus', function() {
+  map.addEventListener('focus', function() {
     map.scrollWheelZoom.enable()
+  })
+  map.addEventListener('blur', function() {
+    map.scrollWheelZoom.disable()
   })
   basemap.addTo(map)
   marker.addTo(map).bindPopup('Mindful Life Therapy')
