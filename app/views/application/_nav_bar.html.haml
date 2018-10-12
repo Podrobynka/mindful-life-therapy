@@ -5,7 +5,7 @@
     = image_tag 'logos/mindful-life-therapy-logo.png', class: 'block hover-opacity', title: t('colophon.image.caption'), alt: t('colophon.image.caption')
 
   %label.flex-1.font-1.hide-for-large.text-right.medium-gray-link{ for: 'nav-checkbox' }
-    %span.hover-pointer.button.success.icon-on-medium-down.button-border-bottom.button-text-shadow.nmb
+    %span.hover-pointer.button.primary.icon-on-medium-down.button-border-bottom.button-text-shadow.nmb
       = fa_icon 'bars', class: 'white'
 
   %ul.primary-nav.flex-1-on-large.no-bullet.npa.nma.text-right{ role: 'menubar' }
@@ -30,5 +30,5 @@
         Admin
 
     %li.inline-block-on-large.block-on-medium-down.sml-on-large
-      = link_to contact_path, class: "#{button_css} smt-on-small nmt-on-large" do
+      = link_to contact_path, class: "#{button_css(color: 'primary')} smt-on-small nmt-on-large" do
         Contact
