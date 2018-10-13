@@ -10,8 +10,8 @@ gem 'turbolinks', '~> 5'
 gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'font-awesome-rails'
 gem 'foundation-rails'
+gem 'font-awesome-sass', '~> 5.3.1'
 gem 'haml-rails'
 gem 'sucker_punch'
 
