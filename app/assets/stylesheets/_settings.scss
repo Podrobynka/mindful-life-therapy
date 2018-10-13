@@ -65,35 +65,38 @@
 // 1. Global
 // ---------
 
-$blue: #6ecccb;
-$brown: #cd9d70;
-$red: #cd7071;
-$purple: #cd70a0;
+$salmon: #f79f79;
+$peach: #f7d08a;
+$blue: #76CCCB;
 $green: #cdcb70;
-$f4: #f4f4f4;
-$base-black: #0b1414;
-$heading-black: #232b2b;
+$purple: #a5668b;
+
+$pale-green: #f8f7ea;
+$off-white: #F5F8F5;
+
+$base-black: #07020d;
+$heading-black: #211a1d;
 $text-black: #3b4242;
+
 $dark-gray: #545a5a;
-$dark-medium-gray: #6c7272;
-$medium-gray: #9da1a1;
-$light-medium-gray: #b5b8b8;
-$light-gray: #e6e7e7;
+// $dark-medium-gray: #6c7272;
+$medium-gray: #777877;
+// $light-medium-gray: #B6B8B6;
+$light-gray: #DCDEDC;
 
 $global-font-size: 125%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: $blue,
-  secondary: $brown,
+  secondary: $purple,
   success: $green,
-  warning: $purple,
-  alert: $red,
-  'medium-gray': $medium-gray,
+  warning: $peach,
+  alert: $salmon,
   'dark-gray': $dark-gray,
 );
+
 $black: $base-black;
-$black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $dark-gray;
@@ -135,8 +138,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: rem-calc(16),
-  medium: rem-calc(32),
+  small: rem-calc(20),
+  medium: rem-calc(30),
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -182,8 +185,8 @@ $code-font-weight: $global-weight-bold;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($primary-color, $lightness: -32%);
+$anchor-color: $secondary-color;
+$anchor-color-hover: scale-color($secondary-color, $lightness: -32%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -327,7 +330,7 @@ $buttongroup-radius-on-each: true;
 // 13. Callout
 // -----------
 
-$callout-background: $white;
+$callout-background: $success-color;
 $callout-background-fade: 85%;
 $callout-border: none;
 $callout-margin: 0 0 1rem 0;
@@ -443,7 +446,7 @@ $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
 $input-color: $text-black;
-$input-placeholder-color: $dark-medium-gray;
+$input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
 $input-font-size: rem-calc(20);
 $input-font-weight: $global-weight-normal;
@@ -452,7 +455,7 @@ $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $light-gray;
-$input-border-focus: 1px solid $dark-medium-gray;
+$input-border-focus: 1px solid $medium-gray;
 $input-padding: $form-spacing / 2;
 $input-shadow: inset 0 0 1px rgba($light-gray, 0.05);
 $input-shadow-focus: 0 0 1px rgba($light-gray, 0.1);

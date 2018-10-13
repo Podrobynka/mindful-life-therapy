@@ -1,5 +1,6 @@
 @import 'foundation_and_overrides';
-@import 'font-awesome';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import 'app/mixins';
 @import 'app/base';
 @import 'app/paddings_and_margins';

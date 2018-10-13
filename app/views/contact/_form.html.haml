@@ -1,24 +1,16 @@
 = form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'mmb' do |f|
 
   .row
-    .column.medium-8.medium-offset-2.text-center.lpb
-      %h1.lmb Contact Mindful Life Therapy
-
-      %p.lmb.xplr-on-large.medium-gray
-        Your message will be handled with the utmost care and sensitivity. Your personal details
-        will not be stored in this website.
+    .column.medium-8.medium-offset-2
+      %h1.text-center.lmb Contact
 
       %ul.no-bullet.mmb.text-center
-        %li.inline-block.splr
-          = fa_icon 'phone', text: @settings.telephone, class: 'smr dark-gray'
-
-        %li.inline-block.splr
-          = fa_icon 'envelope', class: 'smr dark-gray'
-          = mail_to @settings.contact_email, @settings.contact_email, class: 'dark-primary-link hover-text-decoration word-wrap'
+        %li.inline-block.splr.strong
+          = icon 'fas', 'phone', @settings.telephone, class: 'smr'
 
   .row
     .column.medium-8.medium-offset-2.large-6.large-offset-0
-      .callout.primary.lpa.dark-border-bottom.lmb
+      .callout.lpa.lmb
         .spt
           %label.strong Office Location
           .smb= footer_office_address(@settings)
@@ -27,7 +19,7 @@
             #map
 
     .column.medium-8.medium-offset-2.large-6.large-offset-0.end
-      %fieldset.fieldset.callout.primary.dark-border-bottom.lmb
+      %fieldset.callout.lpa.lmb
         = render 'application/forms/errors', target: f.object
 
         .field{ data: { controller: 'errors' } }

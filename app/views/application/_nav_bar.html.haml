@@ -1,4 +1,28 @@
-%nav.row.column.lpt.lpb.flex
+%header.callout.no-radius.mpa.lmb
+  .row.column.smaller
+    .flex.flex-space-between.spl-on-small.mpl-on-large
+
+      .flex-item.strong
+        .table
+          .table-row.vsmb-on-medium-down
+            .table-cell= icon 'fas', 'spa', class: 'smr fixed-width-icon'
+            .table-cell Counselling, Psychotherapy & Mindfulness Training in Glasgow
+
+      .flex-item.strong
+        .table
+          .table-row
+            .table-cell= icon 'fas', 'phone', class: 'smr fixed-width-icon'
+            .table-cell
+              Call Zoe on
+              = @settings.telephone
+
+      .flex-item.strong
+        .table
+          .table-row
+            .table-cell= icon 'fas', 'map-marker-alt', class: 'smr fixed-width-icon'
+            .table-cell= footer_office_address(@settings)
+
+%nav.flex.row.column.lpt.mpb.mpl.mpr.lmb
   %input#nav-checkbox.hide{ type: 'checkbox' }
 
   = link_to root_path do
@@ -6,7 +30,7 @@
 
   %label.flex-1.font-1.hide-for-large.text-right.medium-gray-link{ for: 'nav-checkbox' }
     %span.hover-pointer.button.primary.icon-on-medium-down.button-border-bottom.button-text-shadow.nmb
-      = fa_icon 'bars', class: 'white'
+      = icon 'fas', 'bars', class: 'white'
 
   %ul.primary-nav.flex-1-on-large.no-bullet.npa.nma.text-right{ role: 'menubar' }
     %li.inline-block-on-large.block-on-medium-down.splr-on-large
@@ -30,5 +54,5 @@
         Admin
 
     %li.inline-block-on-large.block-on-medium-down.sml-on-large
-      = link_to contact_path, class: "#{button_css(color: 'primary')} smt-on-small nmt-on-large" do
-        Contact
+      = link_to contact_path, class: "#{button_css(color: 'secondary')} smt-on-small nmt-on-large" do
+        = icon 'fas', 'envelope', 'Contact', class: 'smr'

@@ -29,10 +29,6 @@ textarea {
   font-family: $body-font-family;
 }
 
-button, .button {
-  i { margin-right: 0.25rem; }
-}
-
 form label[title].required:after {
   content: '\002a';
   padding-left: 0.25rem;

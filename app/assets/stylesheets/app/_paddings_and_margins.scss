@@ -1,9 +1,9 @@
 $length-prefixes: (
   'n': 0,
-  's': 0.5rem,
-  'm': 1rem,
-  'l': 2rem,
-  'x': 3rem
+  's': rem-calc(8),
+  'm': rem-calc(16),
+  'l': rem-calc(32),
+  'x': rem-calc(48)
 );
 
 $type-prefixes: (

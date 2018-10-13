@@ -1,29 +1,30 @@
-%footer.footer.black-background.strong
-  .row.lpt.spb.column
-    %ul.no-bullet.nmb.text-center.spt
-      %li.inline-block.sma.primary-color
-        = fa_icon 'phone', text: @settings.telephone
+%footer
+  .callout
+    .row.lpt.spb.column
+      %ul.no-bullet.nmb.text-center.spt
+        %li.inline-block.sma.primary-color
+          = @settings.telephone
 
-      %li.inline-block.sma
-        = fa_icon 'envelope'
-        = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-white border-link'
+        %li.inline-block.sma
+          = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-text-decoration'
 
-      %li.inline-block.sma.primary-color
-        = fa_icon 'map-marker', text: footer_office_address(@settings)
+        %li.inline-block.sma.primary-color
+          = footer_office_address(@settings)
 
-  .row
-    .column.small-10.small-offset-1.medium-10.medium-offset-1.large-8.large-offset-2.text-center
-      .callout.clear
+  .callout.nmb
+    .row
+      .column.medium-10.medium-offset-1.large-8.large-offset-2.text-center.lpa.nmb
         %h2.white
           Do you need help with a sensitive issue?
 
-        %p.nmb.medium-gray
+        %p.nmb.light-gray
           My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
 
-  .row.spt.lpb.column.text-center
-    = link_to 'Home', root_path, class: 'inline-block sma hover-white'
-    = link_to 'About', about_page_path, class: 'inline-block sma hover-white'
-    = link_to 'Counselling & Psychotherapy', counselling_page_path, class: 'inline-block sma hover-white'
-    = link_to 'Mindfulness', mindfulness_page_path, class: 'inline-block sma hover-white'
-    = link_to 'Contact', contact_path, class: 'inline-block sma hover-white'
-    = link_to 'Admin', admin_path, class: 'inline-block sma hover-white'
+  .callout.nmb.mpa
+    .row.column
+      = link_to 'Home', root_path, class: 'inline-block sma hover-text-decoration'
+      = link_to 'About', about_page_path, class: 'inline-block sma hover-text-decoration'
+      = link_to 'Counselling & Psychotherapy', counselling_page_path, class: 'inline-block sma hover-text-decoration'
+      = link_to 'Mindfulness', mindfulness_page_path, class: 'inline-block sma hover-text-decoration'
+      = link_to 'Contact', contact_path, class: 'inline-block sma hover-text-decoration'
+      = link_to 'Admin', admin_path, class: 'inline-block sma hover-text-decoration'

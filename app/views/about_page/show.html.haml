@@ -3,14 +3,14 @@
 - provide :canonical_url, about_page_url(protocol: 'https')
 
 .row
-  .column.medium-4.large-3.mpr-on-large
-    %figure.text-center-on-medium-up.lmb.spl-on-medium.mpr-on-medium.xpr-on-large.vsmt-on-medium
+  .column.medium-4.large-3.lpr-on-large
+    %figure.lmb.spl-on-medium.mpr-on-medium.lpr-on-large.vsmt-on-medium
       = photo_for @about_page
 
       %figcaption.spt.smt.lmb
-        %p.larger.strong.black.smb Zoe Zalavary
-        %p.smaller.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
-        = link_to 'Contact', contact_url, class: button_css(color: 'primary')
+        %p
+          %span.strong Zoe Zalavary
+          %span.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
 
   .column.medium-8.large-9.npl-on-large
     .row
@@ -19,7 +19,7 @@
 
         .lmb.trix-content= sanitize @about_page.body
 
-        .callout.success.dark-border-bottom.lmb
+        %aside.callout.lpa.lmb
           %h2 Memberships and Qualifications
 
           %p Zoe's list of memberships and qualifications includes the following:
@@ -31,7 +31,7 @@
               %strong (BACP)
             %li.smb
               %strong Post Graduate Diploma in Counselling
-              from the University of Strathclyde
+              from Strathclyde University
             %li.smb
               %strong Compassion Focused Therapy
               Levels 1 & 2
@@ -48,38 +48,31 @@
               %strong Mindful Self Compassion Core Skills Training
               with Dr Chris Germer and Dr Kristin Neff
 
-        .callout.primary.lpa.dark-border-bottom.lmb
-          .spt
-            %label.strong Office Location
-            .smb= footer_office_address(@settings)
-
-            .white-background.light-gray-border.border-radius
-              #map
-
       .column.large-4.npl-on-large
-        %aside.callout.success.dark-border-bottom.lmb
+
+        %aside.callout.lpa.lmb
           %h2 Counselling
 
           %p.dark-gray
             Zoe is a
-            = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'dark-primary-link hover-text-decoration strong'
+            = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration'
             of the British Association of Counselling and Psychotherapy
             = succeed '.' do
               %strong (BACP)
 
-          .mmb
+          .lmb
             .strong Session Rate
             .dark-gray= @settings.session_rate
 
           = link_to 'Counselling Services', counselling_page_path, class: "#{button_css color: 'success'} large-block"
 
-        %aside.callout.success.dark-border-bottom.lmb
+        %aside.callout.lpa.lmb
           %h2 Mindfulness
 
           %p.dark-gray
             Zoe incorporates
             %strong Mindfulness
-            into her therapeutic work. She also hosts
+            into her therapeutic work and hosts regular
             %strong Mindfulness
             classes, workshops and retreats in
             %strong Glasgow

@@ -1,5 +1,6 @@
 - flash.each do |key, value|
-  .flash.primary-background.mpt.mpb{ data: { controller: 'flash', target: 'flash.message' }}
+  .flash.primary-background.border-bottom.mpt.mpb{ data: { controller: 'flash', target: 'flash.message' }}
     .row.column.flash-message.flex
-      %span.white.flex-1.lpr= value
-      = fa_icon 'window-close', class: 'close-flash nmr hover-pointer hover-white', data: { action: 'click->flash#close' }
+      %span.white.flex-1.mpl.lpr.button-text-shadow
+        = icon 'fas', 'bolt', value, class: 'smr fixed-width-icon'
+      = icon 'fas', 'window-close', class: 'close-flash nmr hover-pointer hover-white', data: { action: 'click->flash#close' }

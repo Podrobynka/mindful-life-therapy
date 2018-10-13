@@ -1,6 +1,6 @@
 .field {
-  padding-top: 0.5rem;
-  margin-bottom: 2.5rem;
+  padding-top: rem-calc(8);
+  margin-bottom: rem-calc(40);
 
   &.npt { padding-top: 0; }
   &.nmb { margin-bottom: 0; }
@@ -11,8 +11,8 @@
 
   input, textarea {
     @include form-focus {
-      border-color: lighten($alert-color, 10%) !important;
-      background: lighten($alert-color, 20%) !important;
+      border-color: lighten($secondary-color, 10%) !important;
+      background: lighten($secondary-color, 20%) !important;
     }
 
     &::placeholder { color: $body-font-color !important; }
@@ -20,9 +20,9 @@
 }
 
 .error-message {
-  color: $alert-color;
+  color: $secondary-color;
   font-weight: $global-weight-bold;
   line-height: 1.5;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: rem-calc(16);
+  margin-bottom: rem-calc(8);
 }
