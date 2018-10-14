@@ -8,19 +8,18 @@
       = photo_for @about_page
 
       %figcaption.spt.smt.lmb
-        %p
-          %span.strong Zoe Zalavary
-          %span.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
+        %p.nmb.strong Zoe Zalavary
+        %p.nmb.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
 
   .column.medium-8.large-9.npl-on-large
     .row
       .column.large-8.lpr-on-medium.xpr-on-large.npl-on-large
         %h1.mmb About Mindful Life Therapy
 
-        .lmb.trix-content= sanitize @about_page.body
+        .trix-content= sanitize @about_page.body
 
-        %aside.callout.lpa.lmb
-          %h2 Memberships and Qualifications
+        %aside.callout.lmb.lmt
+          %h2.mmb Memberships and Qualifications
 
           %p Zoe's list of memberships and qualifications includes the following:
 
@@ -51,7 +50,7 @@
       .column.large-4.npl-on-large
 
         %aside.callout.lpa.lmb
-          %h2 Counselling
+          %h2.mmb Counselling
 
           %p.dark-gray
             Zoe is a
@@ -67,9 +66,9 @@
           = link_to 'Counselling Services', counselling_page_path, class: "#{button_css color: 'success'} large-block"
 
         %aside.callout.lpa.lmb
-          %h2 Mindfulness
+          %h2.mmb Mindfulness
 
-          %p.dark-gray
+          %p.dark-gray.lmb
             Zoe incorporates
             %strong Mindfulness
             into her therapeutic work and hosts regular
