@@ -2,7 +2,7 @@
 - provide :meta_description, t('seo.meta_description.about_page')
 - provide :canonical_url, about_page_url(protocol: 'https')
 
-.row
+.row.lmb
   .column.medium-4.large-3.lpr-on-large
     %figure.lmb.spl-on-medium.mpr-on-medium.lpr-on-large.vsmt-on-medium
       = photo_for @about_page
@@ -18,34 +18,33 @@
 
         .trix-content= sanitize @about_page.body
 
-        %aside.callout.lmb.lmt
-          %h2.mmb Memberships and Qualifications
+        %h2.lmt.lmb Memberships and Qualifications
 
-          %p Zoe's list of memberships and qualifications includes the following:
+        %p Zoe's list of memberships and qualifications includes the following:
 
-          %ul.nmb
-            %li.smb
-              = link_to 'Registered Member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'dark-primary-link hover-text-decoration strong'
-              of the British Association of Counselling and Psychotherapy
-              %strong (BACP)
-            %li.smb
-              %strong Post Graduate Diploma in Counselling
-              from Strathclyde University
-            %li.smb
-              %strong Compassion Focused Therapy
-              Levels 1 & 2
-            %li.smb
-              %strong COSCA Certificate in Counselling Skills
-              from Glasgow Caledonian University
-            %li.smb
-              %strong Mindfulness Teacher Training
-              at Bangor University
-            %li.smb
-              %strong Mindfulness Practitioner Training
-              with the Mindfulness Association
-            %li.smb
-              %strong Mindful Self Compassion Core Skills Training
-              with Dr Chris Germer and Dr Kristin Neff
+        %ul.lmb
+          %li.smb
+            = link_to 'Registered Member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'dark-primary-link hover-text-decoration strong'
+            of the British Association of Counselling and Psychotherapy
+            %strong (BACP)
+          %li.smb
+            %strong Post Graduate Diploma in Counselling
+            from Strathclyde University
+          %li.smb
+            %strong Compassion Focused Therapy
+            Levels 1 & 2
+          %li.smb
+            %strong COSCA Certificate in Counselling Skills
+            from Glasgow Caledonian University
+          %li.smb
+            %strong Mindfulness Teacher Training
+            at Bangor University
+          %li.smb
+            %strong Mindfulness Practitioner Training
+            with the Mindfulness Association
+          %li.smb
+            %strong Mindful Self Compassion Core Skills Training
+            with Dr Chris Germer and Dr Kristin Neff
 
       .column.large-4.npl-on-large
 
