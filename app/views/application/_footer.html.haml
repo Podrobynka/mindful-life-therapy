@@ -1,35 +1,39 @@
-%footer.footer.black-background.callout.no-radius.no-border
-  .row
+%footer.footer.black-background
+  .row.lpt
     .column
       %ul.text-center
         %li.inline-block.sma.light-gray
-          = icon 'fas', 'phone', "Call Zoe on #{@settings.telephone}", class: 'smr white hide-for-small hide-for-medium'
+          = icon 'fas', 'phone', "Call Zoe on #{@settings.telephone}", class: 'smr white show-for-large'
 
         %li.inline-block.sma.light-gray
-          = icon 'fas', 'map-marker-alt', footer_office_address(@settings), class: 'smr white hide-for-small hide-for-medium'
+          = icon 'fas', 'map-marker-alt', footer_office_address(@settings), class: 'smr white show-for-large'
 
         %li.inline-block.sma.light-gray
-          = icon 'fas', 'map', class: 'smr white hide-for-small hide-for-medium'
+          = icon 'fas', 'map', class: 'smr white show-for-large'
           = link_to 'Find the office on the Map', map_page_url
 
   .row
     %aside.column.large-6.lmb.mpb.mpt.text-center-on-medium-down
-      %h2.white
+      %h2.white.body-size
         Do you need help with a sensitive issue?
 
       %p.nmb.medium-gray
-        My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
-        = link_to 'More on Counselling.', counselling_page_path
+        My aim is to support your exploration of sensitive issues, emotions and behaviours, and help you to clear a path towards happiness and wellbeing.
+
+      %p.nmb.spt
+        = link_to 'More on Counselling.', counselling_page_path, class: 'white-link hover-text-decoration'
 
     %aside.column.large-6.lmb.mpb.mpt.text-center-on-medium-down.mpb-on-small.npb-on-large
-      %h2.white
+      %h2.white.body-size
         Do you want to learn mindfulness?
 
       %p.nmb.medium-gray
-        We host regular mindfulness events, meditation retreats and stress reduction courses, where you can learn to ease the pressures of everyday life.
-        = link_to 'More on Mindfulness.', mindfulness_page_path
+        Zoe hosts mindfulness classes, retreats and stress reduction courses in Glasgow, where you can learn to ease the pressures of everyday life.
 
-  .row
+      %p.nmb.spt
+        = link_to 'More on Mindfulness.', mindfulness_page_path, class: 'white-link hover-text-decoration'
+
+  .row.lpb
     .column
       %ul.no-bullet.nmb.text-center
         %li.inline-block.sma.white
@@ -39,4 +43,3 @@
         %li.inline-block.sma= link_to "Privacy Policy", '#', class: 'hover-text-decoration'
         %li.inline-block.sma= link_to "Terms of Use", '#', class: 'hover-text-decoration'
         %li.inline-block.sma= link_to 'Site by Stephen Murdoch', 'https://www.murdo.ch', class: 'hover-text-decoration'
-        %li.inline-block.sma= link_to 'Login', '#', class: 'hover-text-decoration'

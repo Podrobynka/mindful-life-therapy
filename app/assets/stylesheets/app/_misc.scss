@@ -41,10 +41,14 @@
 }
 
 .inline-block-on-large {
-  @include breakpoint(large up) { display: block; }
+  @include breakpoint(large up) { display: inline-block; }
 }
 
-.block-on-medium-down { @include breakpoint(large up) { display: inline-block; } }
+.inline-block-on-medium-down { @include breakpoint(medium down) { display: inline-block; } }
+
+.block-on-medium-down { @include breakpoint(medium down) { display: block; } }
+
+.spt-on-medium-down { @include breakpoint(medium down) { padding-top: rem-calc(8) } }
 
 .hide-on-large {
   @include breakpoint(large up) { display: none; }
@@ -52,10 +56,12 @@
 
 .inactive {
   @include anchor($medium-gray, $dark-gray);
+  @include hover { text-decoration: underline; }  
 }
 
 .active {
   @include anchor($black, $black);
+  text-decoration: underline;
 }
 
 .white-link {
@@ -177,7 +183,7 @@
 
 .dark-outer-box-shadow { box-shadow: 0 0 1px rgba($black, 0.2); }
 
-.larger {
+.larger, .body-size {
   font-size: rem-calc(20);
 }
 

@@ -1,17 +1,22 @@
 = form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
 
-  .row
-    .column.medium-8.medium-offset-2
-      %h1.text-center.lmb Contact Mindful Life Therapy
+  .row.text-center
+    .column.medium-8.medium-offset-2.large-6.large-offset-3
+      %h1.lmb Contact
 
-      %p.medium-gray.text-center.nmb
-        Call
-        %strong Zoe
-        on
-        %strong= @settings.telephone
+      %p.medium-gray.lmb
+        Please note that your message will be handled with the utmost care,
+        and your personal details will remain private and confidential.
 
-      %p.medium-gray.text-center.lmb.mpb
-        = link_to "Find me on the map", map_page_url
+      %ul.text-center.lmb.spb
+        %li.inline-block.sma.medium-gray
+          = icon 'fas', 'phone', class: 'smr light-gray'
+          Call Zoe on
+          %strong= @settings.telephone
+
+        %li.inline-block.sma.medium-gray
+          = icon 'fas', 'map', class: 'smr light-gray'
+          = link_to 'Find the office on the Map', map_page_url
 
   .row
     .column.medium-10.medium-offset-1.large-6.large-offset-3.end

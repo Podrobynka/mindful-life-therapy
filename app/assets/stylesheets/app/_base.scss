@@ -56,11 +56,15 @@ select {
 }
 
 .button {
-  @include anchor($white, $white);
+  @include anchor($black, $black);
+  @include hover { color: $black; }
 
   &.primary,
   &.secondary,
   &.success,
   &.warning,
-  &.alert { @include anchor($white, $white); }
+  &.alert {
+    @include anchor($white, $white);
+    @include hover { color: $white; }
+  }
 }

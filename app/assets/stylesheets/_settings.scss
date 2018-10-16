@@ -84,7 +84,7 @@ $medium-gray: #777877;
 // $light-medium-gray: #B6B8B6;
 $light-gray: #DCDEDC;
 
-$global-font-size: 125%;
+$global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -93,7 +93,7 @@ $foundation-palette: (
   success: $green,
   warning: $peach,
   alert: $salmon,
-  'dark-gray': $dark-gray,
+  'pale': $pale-green,
 );
 
 $black: $base-black;
@@ -427,8 +427,8 @@ $flexbox-responsive-breakpoints: true;
 // ---------
 
 $fieldset-border: 1px solid $medium-gray;
-$fieldset-padding: rem-calc(20);
-$fieldset-margin: rem-calc(18 0);
+$fieldset-padding: rem-calc(16);
+$fieldset-margin: rem-calc(16 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(32);
 $helptext-color: $black;
