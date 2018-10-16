@@ -1,0 +1,10 @@
+- provide :page_title, t('seo.title.map.show')
+- provide :meta_description, t('seo.meta_description.map')
+- provide :canonical_url, map_page_url(protocol: 'https')
+
+.row.column.lmb
+  %h1 Office Location
+  .mmb= footer_office_address(@settings)
+
+  .white-background.light-gray-border.border-radius
+    #map

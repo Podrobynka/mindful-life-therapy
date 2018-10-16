@@ -78,6 +78,8 @@ en:
         edit: "Edit the Mindfulness Page"
       contact:
         new: "Contact Mindful Life Therapy"
+      map:
+        show: "Office Location"
       settings:
         show: "Site Settings"
         edit: "Edit Site Settings"
@@ -90,6 +92,7 @@ en:
       counselling_page: "My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
       mindfulness_page: "Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
       contact: "If you are going through a tough time and seek counselling in Glasgow then please contact Zoe at Mindful Life Therapy."
+      map: "I offer a comfortable and confidential space for you to talk and be heard; a genuine human encounter that is warm, empathic and non judgemental."
       admin: "This is the admin page for Mindful Life Threapy"
 
   forms:

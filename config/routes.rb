@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :mindfulness_page, only: [:show, :edit, :update], controller: 'mindfulness_page', path: 'mindfulness-in-glasgow'
   resource :settings, only: [:edit, :update]
 
+  get '/office-location', to: 'map#show', as: 'map_page'
   get '/contact-mindful-life-therapy', to: 'contact#new', as: 'contact'
   post '/contact-mindful-life-therapy', to: 'contact#create', as: 'create_contact'
   get '/admin', to: 'admin#show', as: 'admin'
