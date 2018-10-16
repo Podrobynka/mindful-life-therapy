@@ -14,6 +14,15 @@
   @include breakpoint(large up) { flex: 1; }
 }
 
+.flex-row-on-large { @include breakpoint(large up) { flex-flow: row wrap; } }
+
+.flex-column-on-medium-down {
+  @include breakpoint(medium down) {
+    flex-flow: column wrap;
+    align-items: flex-start;
+  }
+}
+
 .font-1 {
   font-size: 1rem;
   line-height: 1;
@@ -51,6 +60,14 @@
 
 .white-link {
   @include anchor($white, $white);
+}
+
+.dark-gray-link {
+  @include anchor($dark-gray, $dark-gray);
+}
+
+.black-link {
+  @include anchor($black, $black);
 }
 
 .secondary-link {
@@ -134,6 +151,8 @@
 
 .callout.clear { background: none; }
 
+.footer { border-top: 1px solid rgba($black, 0.05) }
+
 .callout {
   border-bottom: 1px solid rgba($black, 0.05);
 }
@@ -141,6 +160,8 @@
 .callout.no-radius { border-radius: 0; }
 
 .vsmt-on-medium { @include breakpoint(medium up) { padding-top: 0.25rem; } }
+.smb-on-medium-down { @include breakpoint(medium down) { margin-bottom: rem-calc(8); } }
+
 .full-width { width: 100%; }
 .border-radius { border-radius: $global-radius; }
 .no-top-border-radius { border-top-left-radius: 0; border-top-right-radius: 0; }
