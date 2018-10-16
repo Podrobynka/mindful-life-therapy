@@ -2,14 +2,19 @@
 
   .row
     .column.medium-8.medium-offset-2
-      %h1.text-center.lmb Contact
+      %h1.text-center.lmb Contact Mindful Life Therapy
 
-      %ul.no-bullet.mmb.text-center
-        %li.inline-block.splr.strong
-          = icon 'fas', 'phone', @settings.telephone, class: 'smr'
+      %p.medium-gray.text-center.nmb
+        Call
+        %strong Zoe
+        on
+        %strong= @settings.telephone
+
+      %p.medium-gray.text-center.lmb.mpb
+        = link_to "Find me on the map", map_page_url
 
   .row
-    .column.medium-8.medium-offset-2.large-6.large-offset-3.end
+    .column.medium-10.medium-offset-1.large-6.large-offset-3.end
       %fieldset.callout.lpa.lmb
         = render 'application/forms/errors', target: f.object
 
@@ -37,4 +42,4 @@
           = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '5'
           = error_message target: 'errors.message'
 
-        .actions.text-right= f.button t('contact.button_text').html_safe, class: form_button_css(color: 'primary'), tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
+      .actions.text-right= f.button t('contact.button_text').html_safe, class: form_button_css(color: 'primary'), tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }
