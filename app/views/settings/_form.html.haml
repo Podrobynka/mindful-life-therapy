@@ -1,4 +1,4 @@
-= form_with model: @settings, url: settings_path, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'mmb' do |f|
+= form_with model: @settings, url: settings_path, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'lmb' do |f|
 
   %h1.text-center.lmb Edit Site Settings
 
@@ -14,7 +14,7 @@
       %p.nmb 50 characters max
       %p.nmb Please include the £ symbol and session length too
       %p.smb i.e. £55 per 50 minute session
-      = f.text_field :session_rate, placeholder: 'i.e. £55 per 50 minute session', maxlength: '50', required: true, class: 'smb', tabindex: '1', autofocus: true, data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :session_rate, placeholder: 'i.e. £55 per 50 minute session', maxlength: '50', required: true, class: 'smb', tabindex: '1', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .field{ data: { controller: 'errors' } }
