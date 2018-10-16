@@ -30,7 +30,7 @@
             .table-cell= icon 'fas', 'envelope', class: 'smr fixed-width-icon black'
             .table-cell.light-gray= mail_to @settings.contact_email, @settings.contact_email, class: 'black-link hover-text-decoration'
 
-      .flex-item.strong
+      .flex-item.strong.smb-on-medium-down
         .table
           .table-row
             .table-cell= icon 'fas', 'map-marker-alt', class: 'smr fixed-width-icon black'
@@ -63,11 +63,11 @@
 
     %li.inline-block-on-large.splr-on-large
       = link_to counselling_page_path, class: active_link?('counselling_page') do
-        Counselling
+        Counselling & Psychotherapy
 
     %li.inline-block-on-large.splr-on-large
       = link_to mindfulness_page_path, class: active_link?('mindfulness_page') do
-        Mindfulness
+        Mindfulness Training
 
     %li.inline-block-on-large.sml-on-large
       = link_to contact_path, class: "#{button_css(color: 'primary')} smt-on-small nmt-on-large" do

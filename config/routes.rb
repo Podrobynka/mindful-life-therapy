@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resource :about_page, only: [:show, :edit, :update], controller: 'about_page', path: 'about-mindful-life-therapy'
   resource :counselling_page, only: [:show, :edit, :update], controller: 'counselling_page', path: 'counselling-and-psychotherapy-in-glasgow'
-  resource :mindfulness_page, only: [:show, :edit, :update], controller: 'mindfulness_page', path: 'mindfulness-in-glasgow'
+  resource :mindfulness_page, only: [:show, :edit, :update], controller: 'mindfulness_page', path: 'mindfulness-training-in-glasgow'
   resource :settings, only: [:edit, :update]
+
+  get '/terms-and-conditions', to: 'terms_and_conditions#show', as: 'terms_and_conditions'
+  get '/privacy-policy', to: 'privacy_policy#show', as: 'privacy_policy'
 
   get '/office-location', to: 'map#show', as: 'map_page'
   get '/contact-mindful-life-therapy', to: 'contact#new', as: 'contact'

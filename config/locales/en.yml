@@ -74,7 +74,7 @@ en:
         show: "Counselling and Psychotherapy in Glasgow"
         edit: "Edit the Counselling & Psychotherapy Page"
       mindfulness_page:
-        show: "Mindfulness in Glasgow"
+        show: "Mindfulness Training in Glasgow"
         edit: "Edit the Mindfulness Page"
       contact:
         new: "Contact Mindful Life Therapy"
@@ -85,6 +85,10 @@ en:
         edit: "Edit Site Settings"
       admin:
         show: "Admin Page"
+      terms_and_conditions:
+        show: "Mindful Life Therapy website Terms and Conditions"
+      privacy_policy:
+        show: "Mindful Life Therapy Privacy Policy"
 
     meta_description:
       home_page: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
@@ -94,6 +98,8 @@ en:
       contact: "If you are going through a tough time and seek counselling in Glasgow then please contact Zoe at Mindful Life Therapy."
       map: "I offer a comfortable and confidential space for you to talk and be heard; a genuine human encounter that is warm, empathic and non judgemental."
       admin: "This is the admin page for Mindful Life Threapy"
+      terms_and_conditions: "."
+      privacy_policy: "."
 
   forms:
     about_page:
