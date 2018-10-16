@@ -1,30 +1,34 @@
-%footer
-  .callout
-    .row.lpt.spb.column
-      %ul.no-bullet.nmb.text-center.spt
-        %li.inline-block.sma.primary-color
-          = @settings.telephone
-
-        %li.inline-block.sma
+%footer.footer.strong.text-center.callout.black-background.xptb.no-radius.nmb
+  .row
+    .column
+      %ul.nmb
+        %li.inline-block.sma.medium-gray
+          = icon 'fas', 'phone', @settings.telephone, class: 'smr white'
+        %li.inline-block.sma.medium-gray
+          = icon 'far', 'envelope', class: 'smr white'
           = mail_to @settings.contact_email, @settings.contact_email, class: 'hover-text-decoration'
+        %li.inline-block.sma.medium-gray
+          = icon 'fas', 'map-marker-alt', footer_office_address(@settings), class: 'smr white'
 
-        %li.inline-block.sma.primary-color
-          = footer_office_address(@settings)
-
-  .callout.nmb
-    .row
-      .column.medium-10.medium-offset-1.large-8.large-offset-2.text-center.lpa.nmb
-        %h2.white
+  .row
+    .column.medium-10.medium-offset-1.large-8.large-offset-2
+      %aside.xptb
+        %h2.mmb.white
           Do you need help with a sensitive issue?
 
-        %p.nmb.light-gray
+        %p.medium-gray.nmb
           My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and wellbeing.
 
-  .callout.nmb.mpa
-    .row.column
-      = link_to 'Home', root_path, class: 'inline-block sma hover-text-decoration'
-      = link_to 'About', about_page_path, class: 'inline-block sma hover-text-decoration'
-      = link_to 'Counselling & Psychotherapy', counselling_page_path, class: 'inline-block sma hover-text-decoration'
-      = link_to 'Mindfulness', mindfulness_page_path, class: 'inline-block sma hover-text-decoration'
-      = link_to 'Contact', contact_path, class: 'inline-block sma hover-text-decoration'
-      = link_to 'Admin', admin_path, class: 'inline-block sma hover-text-decoration'
+  .row
+    .column
+      %ul.no-bullet.nmb
+        %li.inline-block.sma.white
+          &copy;
+          Zoe Zalavary,
+          = DateTime.current.year
+        %li.inline-block.sma.white= link_to "Privacy Policy", '#', class: 'hover-text-decoration'
+        %li.inline-block.sma.white= link_to "Terms of Use", '#', class: 'hover-text-decoration'
+        %li.inline-block.sma.white= link_to 'Site by Stephen Murdoch', 'https://www.murdo.ch', class: 'hover-text-decoration'
+
+        %li.inline-block.sma
+          = link_to 'Login', '#', class: 'hover-text-decoration'
