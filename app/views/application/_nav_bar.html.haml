@@ -1,14 +1,14 @@
-%header.callout.no-radius.mpa.lmb
+%section.callout.no-radius.mpa.lmb
   .row.column.smaller
-    .flex.flex-space-between.spl-on-small.mpl-on-large
+    .flex.flex-space-between.spl-on-small.mpl-on-large.flex-row-on-large.flex-column-on-medium-down
 
-      .flex-item.strong
+      .flex-item.strong.smb-on-medium-down
         .table
           .table-row.vsmb-on-medium-down
             .table-cell= icon 'fas', 'spa', class: 'smr fixed-width-icon'
             .table-cell Counselling, Psychotherapy & Mindfulness Training in Glasgow
 
-      .flex-item.strong
+      .flex-item.strong.smb-on-medium-down
         .table
           .table-row
             .table-cell= icon 'fas', 'phone', class: 'smr fixed-width-icon'
@@ -20,7 +20,7 @@
         .table
           .table-row
             .table-cell= icon 'fas', 'map-marker-alt', class: 'smr fixed-width-icon'
-            .table-cell= footer_office_address(@settings)
+            .table-cell.strong= footer_office_address(@settings)
 
 %nav.flex.row.column.lpt.mpb.mpl.mpr.lmb
   %input#nav-checkbox.hide{ type: 'checkbox' }
@@ -43,7 +43,7 @@
 
     %li.inline-block-on-large.block-on-medium-down.splr-on-large
       = link_to counselling_page_path, class: active_link?('counselling_page') do
-        Counselling & Psychotherapy
+        Counselling
 
     %li.inline-block-on-large.block-on-medium-down.splr-on-large
       = link_to mindfulness_page_path, class: active_link?('mindfulness_page') do
@@ -53,6 +53,10 @@
       = link_to admin_path, class: active_link?('admin') do
         Admin
 
+    %li.inline-block-on-large.block-on-medium-down.splr-on-large
+      = link_to map_page_path, class: active_link?('map') do
+        Location
+
     %li.inline-block-on-large.block-on-medium-down.sml-on-large
-      = link_to contact_path, class: "#{button_css(color: 'secondary')} smt-on-small nmt-on-large" do
+      = link_to contact_path, class: "#{button_css(color: 'primary')} smt-on-small nmt-on-large" do
         = icon 'fas', 'envelope', 'Contact', class: 'smr'
