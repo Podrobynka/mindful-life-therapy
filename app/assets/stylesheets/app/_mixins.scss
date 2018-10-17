@@ -54,3 +54,14 @@
   visibility: visible;
   @content;
 }
+
+
+@mixin navbar-button($background, $background-hover, $color) {
+  @include button(false, $background, $background-hover, $color, 'solid');
+  @include button-border();
+  padding: 0.5rem;
+}
+
+@mixin button-border() {
+  border-bottom: 1px solid rgba($black, 0.1);
+}
