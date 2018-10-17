@@ -84,6 +84,9 @@ $medium-gray: #777877;
 // $light-medium-gray: #B6B8B6;
 $light-gray: #DCDEDC;
 
+$lightest-gray: #eeeeec;
+$lighter-gray: scale-color($lightest-gray, $lightness: -8%);
+
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
@@ -298,7 +301,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 
 $button-font-family: inherit;
 $button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-margin: 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
