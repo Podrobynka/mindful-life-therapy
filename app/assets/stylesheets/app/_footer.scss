@@ -13,7 +13,7 @@
 }
 
 #footer--contact {
-  font-style: normal;
+  margin-bottom: 2rem;
 }
 
 .footer--title {
@@ -21,7 +21,7 @@
 }
 
 #footer--contact-list {
-  margin: 0 0 2rem;
+  margin: 0;
   list-style: none;
   text-align: center;
 }
@@ -55,7 +55,14 @@
 
 #footer--nav {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+
+  @include breakpoint (medium down) {
+    padding-bottom: 2rem;
+  }
+
+  @include breakpoint (large up) {
+    padding-bottom: 0.5rem;
+  }
 }
 
 #footer--nav-list {
