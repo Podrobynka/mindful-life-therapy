@@ -4,8 +4,6 @@ body {
   flex-direction: column;
 }
 
-strong, .strong:not(a) { color: $heading-black; }
-
 blockquote { font-weight: $global-weight-bold; color: $black; }
 
 main {
@@ -15,8 +13,6 @@ main {
 figure {
   margin: 0;
   padding: 0;
-
-  i { margin-right: 0.5rem; }
 }
 
 abbr { border-bottom: none; }

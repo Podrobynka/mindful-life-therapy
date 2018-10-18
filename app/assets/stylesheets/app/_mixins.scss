@@ -55,7 +55,6 @@
   @content;
 }
 
-
 @mixin navbar-button($background, $background-hover, $color) {
   @include button(false, $background, $background-hover, $color, 'solid');
   @include button-border();

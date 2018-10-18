@@ -1,0 +1,88 @@
+#footer {
+  background: $heading-black;
+  text-align: center;
+
+  @include breakpoint(small only) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @include breakpoint(medium up) {
+    padding: 2rem;
+  }
+}
+
+#footer--contact {
+  font-style: normal;
+}
+
+.footer--title {
+  color: $white;
+}
+
+#footer--contact-list {
+  margin: 0 0 2rem;
+  list-style: none;
+  text-align: center;
+}
+
+.footer--contact-item {
+  color: $light-gray;
+
+  @include breakpoint(medium down) {
+    display: block;
+  }
+
+  @include breakpoint(large up) {
+    display: inline-block;
+    padding: 0 0.5rem 0.25rem 0.5rem;
+  }
+}
+
+.footer--aside {
+  margin-bottom: 2rem;
+}
+
+.footer--blurb {
+  color: $light-gray;
+  margin-bottom: 0;
+
+  @include breakpoint(medium only) {
+    display: inline-block;
+    max-width: 450px;
+  }
+}
+
+#footer--nav {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+#footer--nav-list {
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.footer--nav-list-item {
+  @include breakpoint(small only) {
+    display: block;
+  }
+
+  @include breakpoint(large up) {
+    display: inline-block;
+    padding: 0 0.25rem;
+  }
+}
+
+.footer--link {
+  @include hover { text-decoration: underline; }
+}
+
+#footer--copy {
+  color: $white;
+  display: block;
+  font-style: normal;
+  font-weight: $global-weight-bold;
+  text-align: center;
+}

@@ -1,35 +1,30 @@
 %nav#navbar.row.column
 
-  %input#navbar--checkbox{ type: 'checkbox' }
-
   = link_to root_path, id: 'navbar--logo-link' do
     = image_tag 'logos/mindful-life-therapy-logo.png', id: 'navbar--logo-image', title: t('colophon.image.caption'), alt: t('colophon.image.caption')
-
-  %label#navbar--label{ for: 'navbar--checkbox' }
-    %span#navbar--label-pseudo-button= icon 'fas', 'bars', class: 'fixed-width-icon'
 
   %ul#navbar--primary-nav{ role: 'menubar' }
     %li.navbar--primary-nav-item
       = link_to root_path, class: active_link?('home_page') do
-        %span.hide-for-large= icon 'fas', 'home', class: 'fixed-width-icon'
-        %span.show-for-large Home
+        %span= icon 'fas', 'home', class: 'fixed-width-icon'
+        %span.navbar--primary-nav-item-text Home
 
     %li.navbar--primary-nav-item
       = link_to about_page_path, class: active_link?('about_page') do
-        %span.hide-for-large= icon 'fas', 'info', class: 'fixed-width-icon'
-        %span.show-for-large About
+        %span= icon 'fas', 'info', class: 'fixed-width-icon'
+        %span.navbar--primary-nav-item-text About
 
     %li.navbar--primary-nav-item
       = link_to counselling_page_path, class: active_link?('counselling_page') do
-        %span.hide-for-large= icon 'fas', 'heart', class: 'fixed-width-icon'
-        %span.show-for-large Counselling & Psychotherapy
+        %span= icon 'fas', 'list', class: 'fixed-width-icon'
+        %span.navbar--primary-nav-item-text Counselling
 
     %li.navbar--primary-nav-item
       = link_to mindfulness_page_path, class: active_link?('mindfulness_page') do
-        %span.hide-for-large= icon 'fas', 'star', class: 'fixed-width-icon'
-        %span.show-for-large Mindfulness Training
+        %span= icon 'fas', 'expand', class: 'fixed-width-icon'
+        %span.navbar--primary-nav-item-text Mindfulness
 
     %li.navbar--primary-nav-item
       = link_to contact_path, id: 'navbar--primary-nav-contact-button', class: active_link?('contact') do
-        %span.hide-for-large= icon 'fas', 'envelope', class: 'fixed-width-icon'
-        %span.show-for-large Contact
+        %span= icon 'fas', 'envelope', class: 'fixed-width-icon'
+        %span.navbar--primary-nav-item-text Contact

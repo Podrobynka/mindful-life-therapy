@@ -1,90 +1,60 @@
-%footer.footer.black-background
-
-  -# %section.callout.no-radius.mpa.lmb
-  -#   .row.column.smaller
-  -#     .flex.flex-space-between.npl-on-small.npl-on-medium.mpl-on-large.flex-row-on-large.flex-column-on-medium-down
-  -#
-  -#       .flex-item.strong.smb-on-medium-down
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'phone', class: 'smr fixed-width-icon black'
-  -#             .table-cell.black= "Call Zoe on #{@settings.telephone}"
-  -#
-  -#       .flex-item.strong.smb-on-medium-down
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'envelope', class: 'smr fixed-width-icon black'
-  -#             .table-cell.light-gray= mail_to @settings.contact_email, @settings.contact_email, class: 'black-link hover-text-decoration'
-  -#
-  -#       .flex-item.strong.smb-on-medium-down
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'map-marker-alt', class: 'smr fixed-width-icon black'
-  -#             .table-cell.strong= link_to footer_office_address(@settings), map_page_url, class: 'black-link hover-text-decoration'
-  -#
-  -#       .flex-item.strong
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'map', class: 'smr fixed-width-icon black'
-  -#             .table-cell.strong= link_to 'Office Location Map', map_page_url, class: 'black-link hover-text-decoration'
-  -#
-  -# %section.callout.primary-background.no-radius.mpa.nmb
-  -#   .row.column.smaller
-  -#     .flex.flex-space-between.npl-on-small.npl-on-medium.mpl-on-large.flex-row-on-large.flex-column-on-medium-down
-  -#
-  -#       .flex-item.strong.smb-on-medium-down
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'spa', class: 'smr fixed-width-icon black'
-  -#             .table-cell.black Mindful Life Therapy provides Counselling, Psychotherapy & Mindfulness Training services in Glasgow and further afield
-  -#
-  -#       .flex-item.strong
-  -#         .table
-  -#           .table-row
-  -#             .table-cell= icon 'fas', 'lock', class: 'smr fixed-width-icon black'
-  -#             .table-cell= link_to "Admin", admin_path, class: 'black-link hover-text-decoration'
-
-  .row.lpt
+%footer#footer
+  .row
     .column
-      %ul.text-center
-        %li.inline-block.sma.light-gray
-          = icon 'fas', 'phone', "Call Zoe on #{@settings.telephone}", class: 'smr white show-for-large'
+      %address#footer--contact
+        %h2.footer--title Contact
 
-        %li.inline-block.sma.light-gray
-          = icon 'fas', 'map-marker-alt', footer_office_address(@settings), class: 'smr white show-for-large'
+        %ul#footer--contact-list
+          %li.footer--contact-item
+            = "Call Zoe on #{@settings.telephone}"
 
-        %li.inline-block.sma.light-gray
-          = icon 'fas', 'map', class: 'smr white show-for-large'
-          = link_to 'Find the office on the Map', map_page_url
+          %li.footer--contact-item
+            = footer_office_address(@settings)
+
+          %li.footer--contact-item
+            = link_to 'Find the office on the Map', map_page_url
+
+  .row.medium-up-1.large-up-3
+    .column
+      %aside.footer--aside
+        %h2.footer--title About
+
+        %p.footer--blurb
+          Services are provided by Zoe Zalavary BA (Hons), PGDip, a
+          = link_to 'BACP registered', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'footer--link', target: '_blank'
+          Counsellor and Psychotherapist, and qualified Mindfulness teacher.
+
+    .column
+      %aside.footer--aside
+        %h2.footer--title Counselling
+
+        %p.footer--blurb
+          Zoe's aim is to support your exploration of sensitive issues, emotions and behaviours, and help you to clear a path towards happiness and wellbeing.
+
+    .column
+      %aside.footer--aside
+        %h2.footer--title Mindfulness
+
+        %p.footer--blurb
+          Zoe incorporates
+          %strong.white Mindfulness
+          into her therapeutic work and hosts
+          %strong.white Mindfulness
+          classes, workshops and retreats in
+          %strong.white Glasgow
+          and further afield.
 
   .row
-    %aside.column.large-6.lmb.mpb.mpt.text-center-on-medium-down
-      %h2.white.body-size
-        Do you need help with a sensitive issue?
-
-      %p.nmb.medium-gray
-        My aim is to support your exploration of sensitive issues, emotions and behaviours, and help you to clear a path towards happiness and wellbeing.
-
-      %p.nmb.spt
-        = link_to 'More on Counselling.', counselling_page_path, class: 'white-link hover-text-decoration'
-
-    %aside.column.large-6.lmb.mpb.mpt.text-center-on-medium-down.mpb-on-small.npb-on-large
-      %h2.white.body-size
-        Do you want to learn mindfulness?
-
-      %p.nmb.medium-gray
-        Zoe hosts mindfulness classes, retreats and stress reduction courses in Glasgow, where you can learn to ease the pressures of everyday life.
-
-      %p.nmb.spt
-        = link_to 'More on Mindfulness.', mindfulness_page_path, class: 'white-link hover-text-decoration'
-
-  .row.lpb
     .column
-      %ul.no-bullet.nmb.text-center
-        %li.inline-block.sma.white
-          &copy;
-          Zoe Zalavary,
-          = DateTime.current.year
-        %li.inline-block.sma= link_to "Privacy Policy", privacy_policy_path, class: 'hover-text-decoration'
-        %li.inline-block.sma= link_to "Terms & Conditions", terms_and_conditions_path, class: 'hover-text-decoration'
-        %li.inline-block.sma= link_to 'Site by Stephen Murdoch', 'https://www.murdo.ch', class: 'hover-text-decoration', target: '_blank'
+      %nav#footer--nav
+        %ul#footer--nav-list
+          %li.footer--nav-list-item= link_to "Privacy Policy", privacy_policy_path, class: 'footer--link'
+          %li.footer--nav-list-item= link_to "Terms & Conditions", terms_and_conditions_path, class: 'footer--link'
+          %li.footer--nav-list-item= link_to 'Site by Stephen Murdoch', 'https://www.murdo.ch', class: 'footer--link', target: '_blank'
+
+  .row
+    .column
+      %address#footer--copy
+        &copy;
+        Zoe Zalavary,
+        = DateTime.current.year

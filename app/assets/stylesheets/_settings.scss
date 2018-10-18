@@ -72,6 +72,15 @@ $green: #cdcb70;
 $purple: #a5668b;
 
 $pale-green: #f8f7ea;
+$pale-green-hover: scale-color($pale-green, $lightness: -5%);
+
+$pale-blue: #eaf7f7;
+$pale-blue-hover: scale-color($pale-blue, $lightness: -5%);
+
+$active-color: scale-color($pale-blue-hover, $lightness: -5%);
+$inactive-color: $pale-green;
+$inactive-color-hover: scale-color($inactive-color, $lightness: -5%);
+
 $off-white: #F5F8F5;
 
 $base-black: #07020d;
@@ -87,7 +96,7 @@ $light-gray: #DCDEDC;
 $lightest-gray: #eeeeec;
 $lighter-gray: scale-color($lightest-gray, $lightness: -8%);
 
-$global-font-size: 100%;
+$global-font-size: 112.5%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -438,10 +447,10 @@ $flexbox-responsive-breakpoints: true;
 // ---------
 
 $fieldset-border: 1px solid $medium-gray;
-$fieldset-padding: rem-calc(16);
-$fieldset-margin: rem-calc(16 0);
+$fieldset-padding: rem-calc(18);
+$fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
-$form-spacing: rem-calc(32);
+$form-spacing: rem-calc(38);
 $helptext-color: $black;
 $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
@@ -450,7 +459,7 @@ $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
-$form-label-font-size: rem-calc(22);
+$form-label-font-size: rem-calc(18);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
 $select-background: $white;
@@ -459,7 +468,7 @@ $select-radius: $global-radius;
 $input-color: $text-black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(20);
+$input-font-size: rem-calc(18);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
 $input-background: $white;

@@ -1,10 +1,9 @@
 #navbar {
   align-items: center;
   display: flex;
-  flex-flow: row wrap;
-
-  @include breakpoint(small only) { padding-top: 1rem; padding-bottom: 1rem; }
-  @include breakpoint(medium up) { padding-top: 2rem; padding-bottom: 2rem; }
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex-flow: column wrap;
 }
 
 #navbar--logo-link {
@@ -15,88 +14,33 @@
   display: block;
 }
 
-#navbar--checkbox { display: none; }
-
-#navbar--label {
-  flex: 1;
-  text-align: right;
-  font-size: 1rem;
-  line-height: 1;
-
-  @include hover { cursor: pointer; }
-  @include breakpoint(medium up) { display: none; }
-}
-
-#navbar--label #navbar--label-pseudo-button {
-  @include navbar-button($lightest-gray, $lighter-gray, $dark-gray);
-
-  #navbar--checkbox:checked ~ & {
-    @include navbar-button($lighter-gray, $lighter-gray, $black);
-  }
-}
-
 #navbar--primary-nav {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: right;
-
-  @include breakpoint(small only) {
-    @include make-invisible();
-    flex-basis: 100%;
-
-    #navbar--checkbox:checked ~ & {
-      @include make-visible();
-      padding-top: 1rem;
-    }
-  }
-
-  @include breakpoint(medium up) {
-    flex: 1;
-  }
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .navbar--primary-nav-item {
   display: inline-block;
-
-  @include breakpoint(small only) {
-    margin-bottom: 0.5rem;
-  }
-
-  @include breakpoint(large up) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    &:last-child { padding-right: 0; }
-  }
+  margin-bottom: 0.25rem;
 }
 
 .active {
+  @include navbar-button($active-color, $active-color, $heading-black);
   @include hover { cursor: default; }
-
-  @include breakpoint(medium down) {
-    @include navbar-button($anchor-color, $anchor-color, $white);
-  }
-
-  @include breakpoint(large up) {
-    @include anchor($black, $black);
-  }
 }
 
 .inactive {
-  @include breakpoint(medium down) {
-    @include navbar-button($lightest-gray, $lighter-gray, $heading-black);
-  }
-
-  @include breakpoint(large up) {
-    @include anchor($medium-gray, $black);
-  }
+  @include navbar-button($inactive-color, $inactive-color-hover, $heading-black);
 }
 
-#navbar--primary-nav-contact-button {
-  @include navbar-button($lightest-gray, $lighter-gray, $heading-black);
-
-  &.active {
-    @include navbar-button($anchor-color, $anchor-color, $white);
-    @include hover { cursor: default; }
+.navbar--primary-nav-item-text {
+  @include breakpoint(small only) {
+    display: none;
   }
+
+  padding-left: 0.25rem;
+  font-weight: $global-weight-bold;
 }
