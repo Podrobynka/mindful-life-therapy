@@ -4,27 +4,28 @@
     = image_tag 'logos/mindful-life-therapy-logo.png', id: 'navbar--logo-image', title: t('colophon.image.caption'), alt: t('colophon.image.caption')
 
   %ul#navbar--primary-nav{ role: 'menubar' }
+
     %li.navbar--primary-nav-item
       = link_to root_path, class: active_link?('home_page') do
-        %span= icon 'fas', 'home', class: 'fixed-width-icon'
+        = icon 'fas', 'home', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text Home
 
     %li.navbar--primary-nav-item
       = link_to about_page_path, class: active_link?('about_page') do
-        %span= icon 'fas', 'info', class: 'fixed-width-icon'
+        = icon 'fas', 'info', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text About
 
     %li.navbar--primary-nav-item
       = link_to counselling_page_path, class: active_link?('counselling_page') do
-        %span= icon 'fas', 'list', class: 'fixed-width-icon'
+        = icon 'fas', 'list', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text Counselling
 
     %li.navbar--primary-nav-item
       = link_to mindfulness_page_path, class: active_link?('mindfulness_page') do
-        %span= icon 'fas', 'expand', class: 'fixed-width-icon'
+        = icon 'fas', 'expand', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text Mindfulness
 
     %li.navbar--primary-nav-item
       = link_to contact_path, id: 'navbar--primary-nav-contact-button', class: active_link?('contact') do
-        %span= icon 'fas', 'envelope', class: 'fixed-width-icon'
+        = icon 'fas', 'envelope', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text Contact

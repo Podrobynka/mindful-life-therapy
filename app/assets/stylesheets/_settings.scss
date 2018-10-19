@@ -65,7 +65,7 @@
 // 1. Global
 // ---------
 
-$salmon: #f79f79;
+$red: tomato;
 $peach: #f7d08a;
 $blue: #76CCCB;
 $green: #cdcb70;
@@ -80,6 +80,8 @@ $pale-blue-hover: scale-color($pale-blue, $lightness: -5%);
 $active-color: scale-color($pale-blue-hover, $lightness: -5%);
 $inactive-color: $pale-green;
 $inactive-color-hover: scale-color($inactive-color, $lightness: -5%);
+
+$fieldset-background: $pale-green;
 
 $off-white: #F5F8F5;
 
@@ -104,7 +106,7 @@ $foundation-palette: (
   secondary: $purple,
   success: $green,
   warning: $peach,
-  alert: $salmon,
+  alert: $red,
   'pale': $pale-green,
 );
 

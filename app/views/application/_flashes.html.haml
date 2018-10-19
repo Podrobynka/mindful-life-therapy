@@ -1,11 +1,4 @@
 - flash.each do |key, value|
-  .flash.black-background.border-bottom.mpt.smaller.mpb{ data: { controller: 'flash', target: 'flash.message' }}
-    .row.column.flash-message.flex
-      .flex-item.strong.lpr.mpl.flex-1
-        .table
-          .table-row
-            .table-cell= icon 'fas', 'bolt', class: 'smr fixed-width-icon white'
-            .table-cell.white= value
-
-      .flex-item
-        = icon 'fas', 'window-close', class: 'close-flash nmr hover-pointer white hover-primary', data: { action: 'click->flash#close' }
+  .flash
+    .row.column
+      = value

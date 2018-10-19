@@ -36,18 +36,22 @@ export default class extends Controller {
 
   checkField(field) {
     let validity = field.checkValidity()
-    this.updateForm(validity)
+    this.setFormValidity(validity)
     this.updateField(field, validity)
   }
 
-  updateForm(validity) {
+  setFormValidity(validity) {
     if (!validity) this.formValid = false
   }
 
   updateField(field, validity) {
-    let parent = field.parentElement
-    this.toggleClass(parent, validity)
-    this.toggleError(field, parent, validity)
+    let finder = `[data-field=${field.id}]`
+    let parent = document.querySelector(finder)
+console.log(parent)
+    if (parent) {
+      this.toggleClass(parent, validity)
+      this.toggleError(field, parent, validity)
+    }
   }
 
   toggleClass(parent, validity) {

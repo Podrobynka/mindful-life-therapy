@@ -23,14 +23,14 @@ class ContactControllerTest < ActionDispatch::IntegrationTest
   test "should show error message when create fails" do
     assert_no_enqueued_jobs do
       post create_contact_url, params: { message: { name: '', email: 'a@b.c', subject: 'hi', body: 'yo' } }
-      assert_match /1 error prohibited this record from being saved:/, response.body
+      assert_match /1 error prevented this message from being sent:/, response.body
     end
   end
 
   test "should show error message when create fails when posted via :xhr" do
     assert_no_enqueued_jobs do
       post create_contact_url, xhr: true, params: { message: { name: '', email: 'a@b.c', subject: 'hi', body: 'yo' } }
-      assert_match /1 error prohibited this record from being saved:/, response.body
+      assert_match /1 error prevented this message from being sent:/, response.body
     end
   end
 end
