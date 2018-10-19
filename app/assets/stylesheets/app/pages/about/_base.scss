@@ -1,0 +1,69 @@
+#about-page--padding {
+  padding-bottom: 3rem;
+
+  @include breakpoint(large up) {
+    padding-top: 3rem;
+  }
+}
+
+#about-page--hidden-title {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  @include breakpoint(large up) {
+    display: none;
+  }
+}
+
+#about-page--figure-section {
+  text-align: center;
+
+  @include breakpoint(large up) {
+    margin-top: 0.25rem;
+  }
+}
+
+#about-page--figure {
+  display: inline-block;
+  margin-bottom: 3rem;
+  max-width: 250px;
+  text-align: center;
+
+  img {
+    border-radius: $global-radius;
+    margin-bottom: 1rem;
+  }
+}
+
+#about-page--figure-title {
+  margin-bottom: 1rem;
+}
+
+#about-page--figure-blurb {
+  margin-bottom: 1.5rem;
+}
+
+#about-page--title {
+
+  @include breakpoint(medium down) {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  @include breakpoint(large up) {
+    margin-bottom: 1rem;
+  }
+}
+
+.about-page--sidebar-title {
+  margin-bottom: 1rem;
+}
+
+.about-page--sidebar-blurb {
+  margin-bottom: 1.5rem;
+}
+
+.about-page--sidebar {
+  @include breakpoint(medium down) { margin-bottom: 3rem; }
+  @include breakpoint(large up) { margin-bottom: 3rem; }
+}
