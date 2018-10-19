@@ -2,72 +2,49 @@
 - provide :meta_description, t('seo.meta_description.about_page')
 - provide :canonical_url, about_page_url(protocol: 'https')
 
-.row.lmb
-  .column.medium-4.large-3.lpr-on-large
-    %figure.lmb.spl-on-medium.mpr-on-medium.lpr-on-large.vsmt-on-medium
-      = photo_for @about_page
+.row#about-page--padding
+  .column.medium-8.medium-offset-2.large-3.large-offset-0
+    %section#about-page--figure-section
+      %p#about-page--hidden-title.h1 About
 
-      %figcaption.spt.smt.lmb
-        %p.nmb.strong Zoe Zalavary
-        %p.nmb.medium-gray Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
+      %figure#about-page--figure
+        = photo_for @about_page
 
-  .column.medium-8.large-9.npl-on-large
+        %figcaption#about-page--caption
+          %p#about-page--figure-title.h6 Zoe Zalavary
+          %p#about-page--figure-blurb Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
+          = link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
+
+  .column.medium-8.medium-offset-2.large-9.large-offset-0.end
     .row
       .column.large-8.lpr-on-medium.xpr-on-large.npl-on-large
-        %h1.mmb About Mindful Life Therapy
+        %h1#about-page--title About Mindful Life Therapy
 
         .trix-content= sanitize @about_page.body
 
-        %h2.lmt.lmb Memberships & Qualifications
+      .column.large-4
 
-        %p Zoe's list of memberships and qualifications includes the following:
+        %aside.about-page--sidebar
+          %h2.h1.about-page--sidebar-title Counselling
 
-        %ul.lmb
-          %li.smb
-            = link_to 'Registered Member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', target: '_blank', class: 'dark-primary-link hover-text-decoration strong'
-            of the British Association of Counselling and Psychotherapy
-            %strong (BACP)
-          %li.smb
-            %strong Post Graduate Diploma in Counselling
-            from Strathclyde University
-          %li.smb
-            %strong Compassion Focused Therapy
-            Levels 1 & 2
-          %li.smb
-            %strong COSCA Certificate in Counselling Skills
-            from Glasgow Caledonian University
-          %li.smb
-            %strong Mindfulness Teacher Training
-            at Bangor University
-          %li.smb
-            %strong Mindfulness Practitioner Training
-            with the Mindfulness Association
-          %li.smb
-            %strong Mindful Self Compassion Core Skills Training
-            with Dr Chris Germer and Dr Kristin Neff
-
-      .column.large-4.npl-on-large
-
-        %aside.callout.lpa.lmb
-          %h2.mmb.larger Counselling
-
-          %p.dark-gray
+          %p
             Zoe is a
             = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration', target: '_blank'
             of the British Association of Counselling and Psychotherapy
             = succeed '.' do
               %strong (BACP)
 
-          .lmb
-            .strong Session Rate
-            .dark-gray= @settings.session_rate
+            %p.about-page--sidebar-blurb
+              %strong Session Rate
+              %br
+              = @settings.session_rate
 
-          = link_to 'Counselling Services', counselling_page_path, class: "#{button_css color: 'primary'} large-block"
+          %p= link_to 'Counselling Services', counselling_page_path, class: button_css(color: 'success')
 
-        %aside.callout.lpa.lmb
-          %h2.mmb.larger Mindfulness
+        %aside.about-page--sidebar
+          %h2.h1.about-page--sidebar-title Mindfulness
 
-          %p.dark-gray.lmb
+          %p.about-page--sidebar-blurb
             Zoe incorporates
             %strong Mindfulness
             into her therapeutic work and hosts regular
@@ -76,4 +53,6 @@
             %strong Glasgow
             and beyond.
 
-          %p.nmb= link_to 'Mindfulness Page', mindfulness_page_path, class: "#{button_css color: 'primary'} large-block"
+          %p= link_to 'Mindfulness Page', mindfulness_page_path, class: button_css(color: 'success')
+
+= render 'colophon'
