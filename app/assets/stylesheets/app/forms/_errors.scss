@@ -1,0 +1,36 @@
+#form--errors {
+  background: $alert-color;
+  border-radius: $global-radius;
+  margin-bottom: 2rem;
+
+  @include bottom-border();
+  @include breakpoint(small only) { padding: 1rem; }
+  @include breakpoint(medium up) { padding: 2rem; }
+}
+
+#form--error-message-title {
+  color: $white;
+  font-size: 1rem;
+  font-weight: $global-weight-bold;
+}
+
+#form--error-list {
+  margin-bottom: 0;
+}
+
+.form--field.field_with_errors {
+  margin-bottom: 0;
+  @include field-errors($alert-color);
+}
+
+.form--error-item {
+  color: $white;
+}
+
+.error-message {
+  color: $alert-color;
+  font-weight: $global-weight-bold;
+  line-height: 1.5;
+  font-size: rem-calc(18);
+  margin-bottom: rem-calc(9);
+}

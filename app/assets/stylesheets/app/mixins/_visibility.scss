@@ -1,0 +1,15 @@
+@mixin make-invisible() {
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  @content;
+}
+
+@mixin make-visible() {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  @content;
+}

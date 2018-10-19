@@ -1,0 +1,5 @@
+.button {
+  @include bottom-border();
+  @include button-active();
+  @include button-focus();
+}

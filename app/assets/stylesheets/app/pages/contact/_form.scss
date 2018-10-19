@@ -1,0 +1,37 @@
+#contact--form-header {
+  text-align: center;
+}
+
+#contact--form-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#contact--form-details-list {
+  list-style: none;
+  margin: 0 0 3rem 0;
+  text-align: center;
+}
+
+.contact--form-details-item {
+  color: $medium-gray;
+  display: block;
+  text-align: center;
+}
+
+#contact--form-fieldset {
+  background: $fieldset-background;
+  border-radius: $global-radius;
+
+  @include bottom-border();
+
+  @include breakpoint(small only) {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint(medium up) {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+}

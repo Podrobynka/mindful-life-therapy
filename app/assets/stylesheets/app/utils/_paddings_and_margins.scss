@@ -1,0 +1,176 @@
+$length-prefixes: (
+  'n': 0,
+  's': rem-calc(8),
+  'm': rem-calc(16),
+  'l': rem-calc(32),
+  'x': rem-calc(48)
+);
+
+$type-prefixes: (
+  'm': margin,
+  'p': padding
+);
+
+$direction-prefixes: (
+  't': top,
+  'r': right,
+  'b': bottom,
+  'l': left
+);
+
+
+// Classes for adding directional margin OR padding to an element.
+//
+//
+// Margin classes look like this:
+//
+// i.e. .nmt { margin-top: 0; }           (no-margin-top)
+// i.e. .smr { margin-right: 0.5rem; }    (small-margin-right)
+// i.e. .mmb { margin-bottom: 1rem; }     (medium-margin-bottom)
+// i.e. .lml { margin-left: 2rem; }       (large-margin-left)
+// i.e. .xml { margin-left: 3rem; }       (extra-large-margin-left)
+//
+//
+// Padding classes look like this:
+//
+// i.e. .npt { padding-top: 0; }          (no-padding-top)
+// i.e. .spr { padding-right: 0.5rem; }   (small-padding-right)
+// i.e. .mpb { padding-bottom: 1rem; }    (medium-padding-bottom)
+// i.e. .lpl { padding-left: 2rem; }      (large-padding-left)
+// i.e. .xpl { padding-left: 3rem; }      (extra-large-padding-left)
+//
+//
+// The first character of the class name respresents the size of the padding or
+// margin that the class adds. For intsance the 'l' in '.lmb' stands for 'large'.
+//
+// Sizes are as follows:
+//
+// n = no (or none)
+// s = small
+// m = medium
+// l = large
+// x = extra-large
+//
+//
+// The second character of the class name signifies whether that class adds
+// margin or padding. For instance the 'm' in '.lmb' stands for 'margin'.
+//
+// Types are as follows:
+//
+// m = margin
+// p = padding
+//
+//
+// The third character of the class name represents the direction the margin
+// or padding is added to. For instance the 'b' in '.lmb' stands for 'bottom'.
+//
+// Directions are as follows:
+//
+// t = top
+// r = right
+// b = bottom
+// l = left
+// a = all
+//
+
+@each $length-prefix, $length in $length-prefixes {
+  @each $type-prefix, $type in $type-prefixes {
+    @each $direction-prefix, $direction in $direction-prefixes {
+      .#{$length-prefix}#{$type-prefix}#{$direction-prefix} {
+        #{$type}-#{$direction}: $length;
+      }
+    }
+  }
+}
+
+
+// Classes for adding margin OR padding to ALL sides of an element.
+//
+//
+// Margin classes look like this:
+//
+// i.e. .nma { margin: 0; }               (no-margin-all)
+// i.e. .sma { margin: 0.5rem; }          (small-margin-all)
+// i.e. .mma { margin: 1rem; }            (medium-margin-all)
+// i.e. .lma { margin: 2rem; }            (large-margin-all)
+// i.e. .xma { margin: 3rem; }            (extra-large-margin-all)
+//
+//
+// Padding classes look like this:
+//
+// i.e. .npa { padding: 0; }              (no-padding-all)
+// i.e. .spa { padding: 0.5rem; }         (small-padding-all)
+// i.e. .mpa { padding: 1rem; }           (medium-padding-all)
+// i.e. .lpa { padding: 2rem; }           (large-padding-all)
+// i.e. .xpa { padding: 3rem; }           (extra-large-padding-all)
+//
+
+@each $length-prefix, $length in $length-prefixes {
+  @each $type-prefix, $type in $type-prefixes {
+    .#{$length-prefix}#{$type-prefix}a {
+      #{$type}: $length;
+    }
+  }
+}
+
+
+// Classes for adding margin OR padding to the top AND bottom of an element.
+//
+//
+// Margin classes look like this:
+//
+// i.e. .nmtb { margin-top: 0; margin-bottom: 0; }               (no-margin-top-and-bottom)
+// i.e. .smtb { margin-top: 0.5rem; margin-bottom: 0.5rem; }     (small-margin-top-and-bottom)
+// i.e. .mmtb { margin-top: 1rem; margin-bottom: 1rem; }         (medium-margin-top-and-bottom)
+// i.e. .lmtb { margin-top: 2rem; margin-bottom: 2rem; }         (large-margin-top-and-bottom)
+// i.e. .xmtb { margin-top: 3rem; margin-bottom: 3rem; }         (extra-large-margin-top-and-bottom)
+//
+//
+// Padding classes look like this:
+//
+// i.e. .nptb { padding-top: 0; padding-bottom: 0; }             (no-padding-top-and-bottom)
+// i.e. .sptb { padding-top: 0.5rem; padding-bottom: 0.5rem; }   (small-padding-top-and-bottom)
+// i.e. .mptb { padding-top: 1rem; padding-bottom: 1rem; }       (medium-padding-top-and-bottom)
+// i.e. .lptb { padding-top: 2rem; padding-bottom: 2rem; }       (large-padding-top-and-bottom)
+// i.e. .xptb { padding-top: 3rem; padding-bottom: 3rem; }       (extra-large-padding-top-and-bottom)
+//
+
+@each $length-prefix, $length in $length-prefixes {
+  @each $type-prefix, $type in $type-prefixes {
+    .#{$length-prefix}#{$type-prefix}tb {
+      #{$type}-top: $length;
+      #{$type}-bottom: $length;
+    }
+  }
+}
+
+
+// Classes for adding margin OR padding to the left AND right of an element.
+//
+//
+// Margin classes look like this:
+//
+// i.e. .nmlr { margin-left: 0; margin-right: 0; }               (no-margin-left-and-right)
+// i.e. .smlr { margin-left: 0.5rem; margin-right: 0.5rem; }     (small-margin-left-and-right)
+// i.e. .mmlr { margin-left: 1rem; margin-right: 1rem; }         (medium-margin-left-and-right)
+// i.e. .lmlr { margin-left: 2rem; margin-right: 2rem; }         (large-margin-left-and-right)
+// i.e. .xmlr { margin-left: 3rem; margin-right: 3rem; }         (extra-large-margin-left-and-right)
+//
+//
+// Padding classes look like this:
+//
+// i.e. .nplr { padding-left: 0; padding-right: 0; }             (no-padding-left-and-right)
+// i.e. .splr { padding-left: 0.5rem; padding-right: 0.5rem; }   (small-padding-left-and-right)
+// i.e. .mplr { padding-left: 1rem; padding-right: 1rem; }       (medium-padding-left-and-right)
+// i.e. .lplr { padding-left: 2rem; padding-right: 2rem; }       (large-padding-left-and-right)
+// i.e. .xplr { padding-left: 3rem; padding-right: 3rem; }       (extra-large-padding-left-and-right)
+//
+
+@each $length-prefix, $length in $length-prefixes {
+  @each $type-prefix, $type in $type-prefixes {
+    .#{$length-prefix}#{$type-prefix}lr {
+      #{$type}-left: $length;
+      #{$type}-right: $length;
+    }
+  }
+}

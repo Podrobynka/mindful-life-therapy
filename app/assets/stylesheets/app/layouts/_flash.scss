@@ -1,0 +1,9 @@
+.flash {
+  background: $pale-green;
+  color: $heading-black;
+  font-weight: $global-weight-bold;
+  padding: 1rem;
+  text-align: center;
+
+  @include bottom-border();
+}

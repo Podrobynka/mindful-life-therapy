@@ -1,0 +1,17 @@
+@mixin anchor($link, $hover) {
+  color: $link;
+
+  &:active { color: $hover; }
+  &:focus { color: $hover; }
+  &:hover { color: $hover; }
+  &:visited { color: $link; }
+}
+
+@mixin hover {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+    outline: none;
+  }
+}

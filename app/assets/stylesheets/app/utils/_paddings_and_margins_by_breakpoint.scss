@@ -1,0 +1,113 @@
+// Classes for adding directional margin OR padding to an element for
+// each available breakpoint or sreen-size (small, medium and large).
+//
+//
+// Generated margin class names look like this:
+//
+// i.e. .smt-on-small { }
+// i.e. .smt-on-medium { }
+// i.e. .smt-on-large { }
+//
+//
+// Generated padding class names look like this:
+//
+// i.e. .spt-on-small { }
+// i.e. .spt-on-medium { }
+// i.e. .spt-on-large { }
+//
+//
+// The breakpoint mixin used below is built-in to Zurb foundation. Disable it
+// if you do not need these classes, or do not use Zurb foundation.
+//
+// Please note that $length-prefixes, $type-prefixes and $direction-prefixes
+// are defined in app/assets/stylesheets/app/_paddings_and_margins.scss,
+// which is loaded before this file.
+//
+
+@include breakpoint(small up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      @each $direction-prefix, $direction in $direction-prefixes {
+        .#{$length-prefix}#{$type-prefix}#{$direction-prefix}-on-small {
+          #{$type}-#{$direction}: $length;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(medium up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      @each $direction-prefix, $direction in $direction-prefixes {
+        .#{$length-prefix}#{$type-prefix}#{$direction-prefix}-on-medium {
+          #{$type}-#{$direction}: $length;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(large up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      @each $direction-prefix, $direction in $direction-prefixes {
+        .#{$length-prefix}#{$type-prefix}#{$direction-prefix}-on-large {
+          #{$type}-#{$direction}: $length;
+        }
+      }
+    }
+  }
+}
+
+
+// Classes for adding margin OR padding to the left AND right of an element for
+// each available breakpoint or sreen-size (small, medium and large).
+//
+//
+// Generated margin class names look like this:
+//
+// i.e. .smlr-on-small { }           (small-margin-left-and-right-on-small)
+// i.e. .smlr-on-medium { }          (small-margin-left-and-right-on-medium)
+// i.e. .smlr-on-large { }           (small-margin-left-and-right-on-large)
+//
+//
+// Generated padding class names look like this:
+//
+// i.e. .splr-on-small { }           (small-padding-left-and-right-on-small)
+// i.e. .splr-on-medium { }          (small-padding-left-and-right-on-medium)
+// i.e. .splr-on-large { }           (small-padding-left-and-right-on-large)
+//
+
+@include breakpoint(small up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      .#{$length-prefix}#{$type-prefix}lr-on-small {
+        #{$type}-left: $length;
+        #{$type}-right: $length;
+      }
+    }
+  }
+}
+
+@include breakpoint(medium up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      .#{$length-prefix}#{$type-prefix}lr-on-medium {
+        #{$type}-left: $length;
+        #{$type}-right: $length;
+      }
+    }
+  }
+}
+
+@include breakpoint(large up) {
+  @each $length-prefix, $length in $length-prefixes {
+    @each $type-prefix, $type in $type-prefixes {
+      .#{$length-prefix}#{$type-prefix}lr-on-large {
+        #{$type}-left: $length;
+        #{$type}-right: $length;
+      }
+    }
+  }
+}

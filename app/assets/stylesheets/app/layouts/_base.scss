@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+abbr {
+  border-bottom: none;
+}
+
+blockquote {
+  color: $black;
+  font-weight: $global-weight-bold;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $body-font-family;
+}
+
+cite {
+  font-style: normal;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
