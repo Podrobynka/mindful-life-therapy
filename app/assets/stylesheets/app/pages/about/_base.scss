@@ -1,37 +1,30 @@
 #about-page--padding {
   padding-bottom: 3rem;
-
-  @include breakpoint(large up) {
-    padding-top: 3rem;
-  }
 }
 
-#about-page--hidden-title {
+#about-page--title {
   margin-bottom: 3rem;
   text-align: center;
-
-  @include breakpoint(large up) {
-    display: none;
-  }
-}
-
-#about-page--figure-section {
-  text-align: center;
-
-  @include breakpoint(large up) {
-    margin-top: 0.25rem;
-  }
 }
 
 #about-page--figure {
-  display: inline-block;
   margin-bottom: 3rem;
-  max-width: 250px;
   text-align: center;
 
   img {
     border-radius: $global-radius;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @include breakpoint(medium down) {
+      display: inline-block;
+      max-width: 250px;
+    }
+
+    @include breakpoint(large up) {
+      display: block;
+      width: 100%;
+    }
   }
 }
 
@@ -40,19 +33,10 @@
 }
 
 #about-page--figure-blurb {
+  display: inline-block;
   margin-bottom: 1.5rem;
-}
-
-#about-page--title {
-
-  @include breakpoint(medium down) {
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-
-  @include breakpoint(large up) {
-    margin-bottom: 1rem;
-  }
+  max-width: 250px;
+  text-align: center;
 }
 
 .about-page--sidebar-title {
@@ -64,6 +48,5 @@
 }
 
 .about-page--sidebar {
-  @include breakpoint(medium down) { margin-bottom: 3rem; }
-  @include breakpoint(large up) { margin-bottom: 3rem; }
+  margin-bottom: 3rem;
 }

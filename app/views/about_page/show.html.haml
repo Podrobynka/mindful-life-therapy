@@ -2,57 +2,53 @@
 - provide :meta_description, t('seo.meta_description.about_page')
 - provide :canonical_url, about_page_url(protocol: 'https')
 
-.row#about-page--padding
-  .column.medium-8.medium-offset-2.large-3.large-offset-0
-    %section#about-page--figure-section
-      %p#about-page--hidden-title.h1 About
+.row
+  .column.medium-8.medium-offset-2.large-12.large-offset-0.end
+    %h1#about-page--title About Mindful Life Therapy
 
-      %figure#about-page--figure
-        = photo_for @about_page
+.row
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %figure#about-page--figure
+      = photo_for @about_page
 
-        %figcaption#about-page--caption
-          %p#about-page--figure-title.h6 Zoe Zalavary
-          %p#about-page--figure-blurb Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
-          = link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
+      %figcaption#about-page--caption
+        %p#about-page--figure-title.h6 Zoe Zalavary
+        %p#about-page--figure-blurb Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
+        %p= link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
 
-  .column.medium-8.medium-offset-2.large-9.large-offset-0.end
-    .row
-      .column.large-8.lpr-on-medium.xpr-on-large.npl-on-large
-        %h1#about-page--title About Mindful Life Therapy
+  .column.medium-8.medium-offset-2.large-6.large-offset-0.end
+    .trix-content= sanitize @about_page.body
 
-        .trix-content= sanitize @about_page.body
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %aside.about-page--sidebar
+      %h2.h4.about-page--sidebar-title Counselling
 
-      .column.large-4
+      %p
+        Zoe is a
+        = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration', target: '_blank'
+        of the British Association of Counselling and Psychotherapy
+        = succeed '.' do
+          %strong (BACP)
 
-        %aside.about-page--sidebar
-          %h2.h1.about-page--sidebar-title Counselling
+        %p.about-page--sidebar-blurb
+          %strong Session Rate
+          %br
+          = @settings.session_rate
 
-          %p
-            Zoe is a
-            = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration', target: '_blank'
-            of the British Association of Counselling and Psychotherapy
-            = succeed '.' do
-              %strong (BACP)
+      %p= link_to 'Counselling Services', counselling_page_path, class: button_css(color: 'success')
 
-            %p.about-page--sidebar-blurb
-              %strong Session Rate
-              %br
-              = @settings.session_rate
+    %aside.about-page--sidebar
+      %h2.h4.about-page--sidebar-title Mindfulness
 
-          %p= link_to 'Counselling Services', counselling_page_path, class: button_css(color: 'success')
+      %p.about-page--sidebar-blurb
+        Zoe incorporates
+        %strong Mindfulness
+        into her therapeutic work and hosts regular
+        %strong Mindfulness
+        classes, workshops and retreats in
+        %strong Glasgow
+        and beyond.
 
-        %aside.about-page--sidebar
-          %h2.h1.about-page--sidebar-title Mindfulness
-
-          %p.about-page--sidebar-blurb
-            Zoe incorporates
-            %strong Mindfulness
-            into her therapeutic work and hosts regular
-            %strong Mindfulness
-            classes, workshops and retreats in
-            %strong Glasgow
-            and beyond.
-
-          %p= link_to 'Mindfulness Page', mindfulness_page_path, class: button_css(color: 'success')
+      %p= link_to 'Mindfulness Page', mindfulness_page_path, class: button_css(color: 'success')
 
 = render 'colophon'
