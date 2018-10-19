@@ -1,10 +1,10 @@
 module FormHelper
   def button_css color: 'success'
-    "button strong #{color} dark-border-bottom nmb button-border-bottom button-text-shadow"
+    "button strong #{color}"
   end
 
   def form_button_css color: 'success'
-    "#{button_css color: color}"
+    "#{button_css color: color} large"
   end
 
   def form_title_for record
