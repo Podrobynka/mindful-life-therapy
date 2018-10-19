@@ -1,5 +1,15 @@
 .button {
-  @include bottom-border();
-  @include button-active();
-  @include button-focus();
+  @include button-border($black);
+  @include button-active($black);
+  @include button-focus($black);
+}
+
+.button.success, .button.primary {
+  color: $white;
+
+  @include hover() { color: $white; }
+}
+
+form .button.success {
+  font-weight: $global-weight-bold;
 }

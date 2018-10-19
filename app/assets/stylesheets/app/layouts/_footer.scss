@@ -1,19 +1,12 @@
 #footer {
   background: $heading-black;
   text-align: center;
-
-  @include breakpoint(small only) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  @include breakpoint(medium up) {
-    padding: 2rem;
-  }
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 #footer--contact {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .footer--title {
@@ -40,7 +33,7 @@
 }
 
 .footer--aside {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .footer--blurb {
@@ -57,7 +50,7 @@
   padding-top: 1rem;
 
   @include breakpoint (medium down) {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 
   @include breakpoint (large up) {

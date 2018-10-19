@@ -1,22 +1,42 @@
-@mixin button-active() {
-  &:active {
-    border-color: rgba($black, 0.15);
-    border-bottom-color: rgba($black, 0.2);
+@mixin button-border($color) {
+  border-color: rgba($color, 0.05);
+  border-bottom-color: rgba($color, 0.1);
+  outline: none;
+}
+
+@mixin button-focus($color) {
+  &:focus {
+    border-color: rgba($color, 0.1);
+    border-bottom-color: rgba($color, 0.15);
     outline: none;
   }
 }
 
-@mixin button-focus() {
-  &:focus {
-    border-color: rgba($black, 0.1);
-    border-bottom-color: rgba($black, 0.15);
+@mixin button-active($color) {
+  &:active {
+    border-color: rgba($color, 0.15);
+    border-bottom-color: rgba($color, 0.2);
     outline: none;
   }
+}
+
+@mixin navbar-button-padding() {
+  @include breakpoint(small only) { padding: 0.5rem; }
 }
 
 @mixin navbar-button($background, $background-hover, $color) {
   @include button(false, $background, $background-hover, $color, 'solid');
-  @include bottom-border();
-  @include breakpoint(small only) { padding: 0.5rem; }
-  @include breakpoint(medium up) { padding: 0.5rem 1rem; }
+  @include button-active($black);
+  @include button-focus($black);
+  @include navbar-button-padding();
+}
+
+@mixin active-navbar-button($background, $background-hover, $color) {
+  @include button(false, $background, $background-hover, $color, 'solid');
+  @include bottom-border(rgba($black, 0.175));
+  @include button-active(transparent);
+  @include button-focus(transparent);
+  @include navbar-button-padding();
+  @include hover { cursor: default; }
+  text-shadow: 0 -1px 0 rgba($black, 0.1);
 }

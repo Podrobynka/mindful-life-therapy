@@ -1,9 +1,11 @@
 #navbar {
   align-items: center;
   display: flex;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  flex-flow: column wrap;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include breakpoint(medium down) { flex-flow: column wrap; }
+  @include breakpoint(large up) { flex-flow: row wrap; }
 }
 
 #navbar--logo-link {
@@ -18,22 +20,42 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-top: 2rem;
-  text-align: center;
+
+  @include breakpoint(medium down) {
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  @include breakpoint(large up) {
+    flex: 1;
+    text-align: right;
+  }
 }
 
 .navbar--primary-nav-item {
   display: inline-block;
-  margin-bottom: 0.25rem;
+
+  @include breakpoint(medium down) { margin-bottom: 0.25rem; }
+  @include breakpoint(large up) { margin-bottom: 0; }
 }
 
 .active {
-  @include navbar-button($active-color, $active-color, $heading-black);
-  @include hover { cursor: default; }
+  @include active-navbar-button($active-color, $active-color, $white);
 }
 
 .inactive {
-  @include navbar-button($inactive-color, $inactive-color-hover, $heading-black);
+  @include breakpoint(medium down) {
+    @include navbar-button($inactive-color, $inactive-color-hover, $heading-black);
+    @include bottom-border(rgba($black, 0.1));
+  }
+
+  @include breakpoint(large up) {
+    @include navbar-button(transparent, $inactive-color-hover, $heading-black);
+
+    &:hover {
+      @include bottom-border(rgba($black, 0.1));
+    }
+  }
 }
 
 .navbar--icon {
@@ -48,10 +70,11 @@
 }
 
 .navbar--primary-nav-item-text {
-  font-weight: $global-weight-bold;
-  padding-left: 0.25rem;
-
   @include breakpoint(small only) {
     display: none;
+  }
+
+  @include breakpoint(large up) {
+    font-size: 1rem;
   }
 }

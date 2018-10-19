@@ -1,3 +1,8 @@
-@mixin bottom-border() {
-  border-bottom: 1px solid rgba($black, 0.1);
+@mixin borders() {
+  border: 1px solid rgba($black, 0.05);
+  border-bottom-color: rgba($black, 0.1);
+}
+
+@mixin bottom-border($color) {
+  border-bottom: 1px solid $color;
 }

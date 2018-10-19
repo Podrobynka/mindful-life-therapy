@@ -1,16 +1,34 @@
 @mixin field-errors($base-error-color) {
-  input, textarea {
-    background: lighten($base-error-color, 5%);
+  @include input-css() {
+    background: lighten($base-error-color, 25%);
     border-color: $base-error-color;
     outline: none;
 
     &:focus, &:active {
-      background: lighten($base-error-color, 3%);
+      background: lighten($base-error-color, 22%);
       border-color: $base-error-color;
       box-shadow: inset 0 0 1px rgba($black, 0.5);
       outline: none;
     }
+  }
+}
 
-    &::placeholder { color: $white; }
+@mixin input-css {
+  [type="text"],
+  [type="password"],
+  [type="date"],
+  [type="datetime"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"],
+  [type="email"],
+  [type="number"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="url"],
+  [type="color"],
+  textarea {
+    @content
   }
 }

@@ -11,6 +11,7 @@
 @import 'app/mixins/visibility';
 
 @import 'app/layouts/base';
+@import 'app/layouts/colophon';
 @import 'app/layouts/flash';
 @import 'app/layouts/navbar';
 @import 'app/layouts/footer';
@@ -20,6 +21,8 @@
 @import 'app/forms/errors';
 @import 'app/forms/trix';
 @import 'app/forms/uploads';
+
+@import 'app/pages/about/base';
 
 @import 'app/pages/contact/form';
 @import 'app/pages/contact/thankyou';

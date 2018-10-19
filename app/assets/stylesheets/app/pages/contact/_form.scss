@@ -14,7 +14,6 @@
 }
 
 .contact--form-details-item {
-  color: $medium-gray;
   display: block;
   text-align: center;
 }
@@ -23,7 +22,7 @@
   background: $fieldset-background;
   border-radius: $global-radius;
 
-  @include bottom-border();
+  @include bottom-border(rgba($black, 0.1));
 
   @include breakpoint(small only) {
     padding: 1rem;
@@ -31,7 +30,7 @@
   }
 
   @include breakpoint(medium up) {
-    padding: 2rem;
-    margin-bottom: 2rem;
+    padding: 3rem;
+    margin-bottom: 3rem;
   }
 }

@@ -1,5 +1,7 @@
 form {
   margin-bottom: 2rem;
+
+  @include input-css() { margin-bottom: 0.5rem; }
 }
 
 form label[title].required:after {
@@ -10,8 +12,8 @@ form label[title].required:after {
 }
 
 .form--field {
-  margin-bottom: rem-calc(38);
-  padding-top: rem-calc(9);
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
 }
 
 .form--help-text {
