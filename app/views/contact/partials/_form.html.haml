@@ -1,3 +1,3 @@
-= form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' }, class: 'form' do |f|
+= form_with model: @message, url: create_contact_url, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' } do |f|
   = render 'contact/partials/title'
   = render 'contact/partials/fieldset', f: f
