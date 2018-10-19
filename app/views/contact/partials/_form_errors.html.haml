@@ -1,0 +1,8 @@
+- if target.errors.any?
+  %section#form--errors
+    %h1#form--error-message-title
+      = "#{error_count_for target} prevented this message from being sent:"
+
+    %ul#form--error-list
+      - target.errors.full_messages.each do |msg|
+        %li.form--error-item= msg

@@ -1,0 +1,32 @@
+.row
+  .column.medium-10.medium-offset-1.large-6.large-offset-3
+
+    %fieldset#contact--form-fieldset
+
+      = render 'contact/partials/form_errors', target: f.object
+
+      .form--field{ data: { controller: 'errors', field: 'message_name' } }
+        = f.label :name, 'What is your name?', class: 'required strong', title: 'Your name is required'
+        = help_text '100 characters max'
+        = f.text_field :name, required: true, maxlength: '100', placeholder: 'i.e. Jane Doe', class: 'smb', tabindex: '1', data: { 'parent-element': '', target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+        = error_message target: 'errors.message'
+
+      .form--field{ data: { controller: 'errors', field: 'message_email' } }
+        = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
+        = help_text '100 characters max'
+        = f.email_field :email, required: true, maxlength: '100', placeholder: 'i.e. name@example.org', class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+        = error_message target: 'errors.message'
+
+      .form--field{ data: { controller: 'errors', field: 'message_subject' } }
+        = f.label :subject, 'Subject of your message', class: 'required strong', title: 'Please briefly outline the nature of your message'
+        = help_text '50 characters max'
+        = f.text_field :subject, required: true, maxlength: '50', placeholder: 'i.e. I would like to book a session', class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+        = error_message target: 'errors.message'
+
+      .form--field{ data: { controller: 'errors', field: 'message_body' } }
+        = f.label :body, 'Your message', class: 'required strong', title: 'Please type your message here'
+        = help_text '10,000 characters max'
+        = f.text_area :body, required: true, maxlength: '1000', placeholder: 'i.e. Dear Zoe, I need your help with a sensitive issue.', class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }, rows: '5'
+        = error_message target: 'errors.message'
+
+    .form--actions= f.button t('contact.button_text').html_safe, class: form_button_css(color: 'primary'), tabindex: '5', data: { disable_with: t('contact.disable_with_text').html_safe }

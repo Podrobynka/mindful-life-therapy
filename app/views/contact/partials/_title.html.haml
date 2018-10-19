@@ -1,0 +1,15 @@
+.row
+  .column.medium-8.medium-offset-2.large-6.large-offset-3
+
+    %header#contact--form-header
+      %h1#contact--form-title Contact
+
+      %ul#contact--form-details-list
+        %li.contact--form-details-item
+          = "Call Zoe on #{@settings.telephone}"
+
+        %li.contact--form-details-item
+          = footer_office_address(@settings)
+
+        %li.contact--form-details-item
+          = link_to 'Find the office on the Map', map_page_url, class: 'hover-text-decoration'
