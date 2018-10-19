@@ -22,11 +22,11 @@ class SettingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show error message when update fails" do
     patch settings_url, params: { setting: { telephone: '' } }
-    assert_match /1 error prohibited/, response.body
+    assert_match /The form contains 1 error:/, response.body
   end
 
   test "should show error message when update via :xhr fails" do
     patch settings_url, xhr: true, params: { setting: { telephone: '' } }
-    assert_match /1 error prohibited/, response.body
+    assert_match /The form contains 1 error:/, response.body
   end
 end
