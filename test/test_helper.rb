@@ -88,7 +88,7 @@ class ActiveSupport::TestCase
     assert_no_difference active_storage_counts do
       path = url_for(controller_name)
       patch path, params: params_for(controller_name, '', 21.megabytes)
-      assert_match /2 errors prohibited/, response.body.to_s
+      assert_match /The form contains 2 errors:/, response.body.to_s
     end
   end
 
@@ -96,7 +96,7 @@ class ActiveSupport::TestCase
     assert_no_difference active_storage_counts do
       path = url_for(controller_name)
       patch path, xhr: true, params: params_for(controller_name, '', 21.megabytes)
-      assert_match /2 errors prohibited/, response.body.to_s
+      assert_match /The form contains 2 errors:/, response.body.to_s
     end
   end
 
