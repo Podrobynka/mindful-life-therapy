@@ -3,17 +3,17 @@ require 'test_helper'
 class FormHelperTest < ActionView::TestCase
 
   test 'button_css returns string and with default color if no argument is provided' do
-    expected = "button strong success dark-border-bottom nmb button-border-bottom button-text-shadow"
+    expected = "button strong success"
     assert_equal expected, button_css
   end
 
   test 'button_css argument changes the default color' do
-    expected = "button strong primary dark-border-bottom nmb button-border-bottom button-text-shadow"
+    expected = "button strong primary"
     assert_equal expected, button_css(color: 'primary')
   end
 
   test 'form_button_css returns a string' do
-    expected = "button strong success dark-border-bottom nmb button-border-bottom button-text-shadow"
+    expected = "button strong success large"
     assert_equal expected, form_button_css
   end
 
