@@ -45,9 +45,8 @@ export default class extends Controller {
   }
 
   updateField(field, validity) {
-    let finder = `[data-field=${field.id}]`
-    let parent = document.querySelector(finder)
-console.log(parent)
+    let parent = document.querySelector(`[data-field=${field.id}]`)
+
     if (parent) {
       this.toggleClass(parent, validity)
       this.toggleError(field, parent, validity)
@@ -55,7 +54,7 @@ console.log(parent)
   }
 
   toggleClass(parent, validity) {
-    parent.classList.toggle('field_with_errors', !validity)
+    parent.classList.toggle('form--invalid-field', !validity)
   }
 
   toggleError(field, parent, validity) {

@@ -12,19 +12,19 @@ export default class extends Controller {
 
   get errorMessageMatrix() {
     return {
-      messageValueMissing: 'Please fill out this field.',
-      messageValueMissingSelect: 'Please select a value.',
-      messageValueMissingSelectMulti: 'Please select at least one value.',
-      messageTypeMismatchEmail: 'Please enter a valid email address.',
-      messageTypeMismatchURL: 'Please enter a URL.',
-      messageTooShort: 'Please lengthen this text to {minLength} characters or more. You are currently using {length} characters.',
-      messageTooLong: 'Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.',
-      messagePatternMismatch: 'Please match the requested format.',
-      messageBadInput: 'Please enter a number.',
-      messageStepMismatch: 'Please select a valid value.',
-      messageRangeOverflow: 'Please select a value that is no more than {max}.',
-      messageRangeUnderflow: 'Please select a value that is no less than {min}.',
-      messageGeneric: 'The value you entered for this field is invalid.'
+      messageValueMissing: 'Please fill out this field',
+      messageValueMissingSelect: 'Please select a value',
+      messageValueMissingSelectMulti: 'Please select at least one value',
+      messageTypeMismatchEmail: 'Please enter a valid email address',
+      messageTypeMismatchURL: 'Please enter a URL',
+      messageTooShort: 'Please lengthen this text to {minLength} characters or more. You are currently using {length} characters',
+      messageTooLong: 'Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters',
+      messagePatternMismatch: 'Please match the requested format',
+      messageBadInput: 'Please enter a number',
+      messageStepMismatch: 'Please select a valid value',
+      messageRangeOverflow: 'Please select a value that is no more than {max}',
+      messageRangeUnderflow: 'Please select a value that is no less than {min}',
+      messageGeneric: 'The value you entered for this field is invalid'
     }
   }
 
