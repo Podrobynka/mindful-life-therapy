@@ -29,3 +29,8 @@
       = link_to contact_path, id: 'navbar--primary-nav-contact-button', class: active_link?('contact') do
         = icon 'fas', 'envelope', class: 'navbar--icon'
         %span.navbar--primary-nav-item-text Contact
+
+    %li.navbar--primary-nav-item
+      = link_to admin_path, id: 'navbar--primary-nav-contact-button', class: active_link?('admin') do
+        = icon 'fas', 'lock', class: 'navbar--icon'
+        %span.navbar--primary-nav-item-text Admin
