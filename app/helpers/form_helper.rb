@@ -4,13 +4,17 @@ module FormHelper
   end
 
   def form_button_css color: 'success'
-    "#{button_css color: color} large"
+    "#{button_css color: color}"
   end
 
   def form_title_for record
     content_tag :h1, class: 'text-center lmb' do
       t "forms.#{record.class.name.underscore}.title"
     end
+  end
+
+  def help_text text
+    content_tag :p, text, class: 'form--help-text'
   end
 
   def error_message target: 'errors.message'

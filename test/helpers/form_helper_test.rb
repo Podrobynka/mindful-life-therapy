@@ -13,7 +13,7 @@ class FormHelperTest < ActionView::TestCase
   end
 
   test 'form_button_css returns a string' do
-    expected = "button strong success dark-border-bottom nmb button-border-bottom button-text-shadow large"
+    expected = "button strong success dark-border-bottom nmb button-border-bottom button-text-shadow"
     assert_equal expected, form_button_css
   end
 
@@ -21,6 +21,11 @@ class FormHelperTest < ActionView::TestCase
     expected = "<h1 class='text-center lmb'>Edit the About Page</h1>"
     actual = form_title_for about_pages(:one)
     assert_dom_equal expected, actual
+  end
+
+  test 'help_text returns a paragrph with text' do
+    tag = "<p class='form--help-text'>100 characters max</p>"
+    assert_dom_equal tag, help_text('100 characters max')
   end
 
   test 'error_message returns a div with css classes and a data attribute' do
