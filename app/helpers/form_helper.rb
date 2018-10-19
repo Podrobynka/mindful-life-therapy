@@ -8,7 +8,7 @@ module FormHelper
   end
 
   def form_title_for record
-    content_tag :h1, class: 'text-center lmb' do
+    content_tag :h1, id: 'form--title' do
       t "forms.#{record.class.name.underscore}.title"
     end
   end
