@@ -1,8 +1,8 @@
 - if target.errors.any?
-  %section#form--errors
-    %h1#form--error-message-title
-      = "#{error_count_for target} prohibited this record from being saved:"
+  %section#form--error-notifications
+    %h1#form--error-notifications-title
+      = "The form contains #{error_count_for target}:"
 
-    %ul#form--error-list
+    %ul#form--error-notifications-list
       - target.errors.full_messages.each do |msg|
-        %li.form--error-item= msg
+        %li.form--error-notifications-item= msg
