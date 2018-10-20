@@ -12,26 +12,25 @@
 
 @import 'app/layouts/base';
 @import 'app/layouts/colophon';
+@import 'app/layouts/errors';
+@import 'app/layouts/forms';
 @import 'app/layouts/flash';
 @import 'app/layouts/navbar';
 @import 'app/layouts/footer';
 @import 'app/layouts/turbolinks';
+@import 'app/layouts/trix';
+@import 'app/layouts/uploads';
 
-@import 'app/forms/base';
-@import 'app/forms/errors';
-@import 'app/forms/trix';
-@import 'app/forms/uploads';
-
-@import 'app/admin/show';
-
-@import 'app/pages/about/base';
-@import 'app/pages/about/form';
-
-@import 'app/pages/contact/form';
-@import 'app/pages/contact/thankyou';
+@import 'app/pages/about/show';
+@import 'app/pages/counselling/show';
+@import 'app/pages/contact/new';
+@import 'app/pages/home/show';
 @import 'app/pages/map/show';
+@import 'app/pages/mindfulness/show';
 
 @import 'app/utils/anchors';
+@import 'app/utils/backgrounds';
+@import 'app/utils/borders';
 @import 'app/utils/buttons';
 @import 'app/utils/callouts';
 @import 'app/utils/selection';
