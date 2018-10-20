@@ -2,7 +2,10 @@
 - provide :meta_description, t('seo.meta_description.map')
 - provide :canonical_url, map_page_url(protocol: 'https')
 
-.row.column.xmb.xpb
-  %h1.text-center.smb Office Location
-  %p.text-center.lmb= footer_office_address(@settings)
-  #map.map-page--map
+.row
+  .column
+    %h1.text-center.smb Office Location
+    %p.text-center.lmb= footer_office_address(@settings)
+    #map.map-page--map.xmb
+
+= render 'colophon'
