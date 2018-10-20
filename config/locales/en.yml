@@ -68,11 +68,11 @@ en:
     title:
       home_page: "Welcome"
       about_page:
-        show: "About Mindfulness Life Therapy"
+        show: "About Mindful Life Therapy"
         edit: "Edit the About Page"
       counselling_page:
         show: "Counselling and Psychotherapy in Glasgow"
-        edit: "Edit the Counselling & Psychotherapy Page"
+        edit: "Edit the Counselling Page"
       mindfulness_page:
         show: "Mindfulness Training in Glasgow"
         edit: "Edit the Mindfulness Page"
@@ -86,9 +86,9 @@ en:
       admin:
         show: "Admin Page"
       terms_and_conditions:
-        show: "Mindful Life Therapy website Terms and Conditions"
+        show: "Terms and Conditions"
       privacy_policy:
-        show: "Mindful Life Therapy Privacy Policy"
+        show: "Privacy Policy"
 
     meta_description:
       home_page: "Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
@@ -107,7 +107,7 @@ en:
       trix_input: "about_page_body"
       body_placeholder: "i.e. Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield."
     counselling_page:
-      title: "Edit the Counselling & Psychotherapy Page"
+      title: "Edit the Counselling Page"
       trix_input: "counselling_page_body"
       body_placeholder: "i.e. My aim is to support your exploration of sensitive issues, emotions and behaviours, and help clear a path towards happiness and fulfilment."
     mindfulness_page:
