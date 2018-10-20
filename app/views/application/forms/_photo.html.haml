@@ -1,11 +1,11 @@
-.field.npt.nmb{ data: { controller: 'file-upload-preview' } }
-  %label.strong Photo
+.form--field.nmb{ data: { controller: 'file-upload-preview' } }
+  %label Photo
   %p.mmb 20MB max size
-  .preview.dark-outer-box-shadow.white-background.border-radius.mmb
+  .preview.border-radius.mmb
     = file_upload_preview_photo_for record: f.object, data_target: 'file-upload-preview.filePreviewImage'
   = f.check_box :change_photo, class: 'hide file-field-trigger', checked: false
-  = f.label :change_photo, class: 'hidden-by-checked-checkbox strong hover-pointer hover-primary-color'
+  = f.label :change_photo, class: 'hidden-by-checked-checkbox hover-pointer hover-primary-color'
   .hidden-file-field-container
     = f.hidden_field :photo, value: f.object.photo.signed_id if f.object.photo.attached? && f.object.photo.blob.present?
     = f.file_field :photo, multiple: false, direct_upload: true, accept: '.png, .gif, .jpeg, .jpg', class: 'nmb file-upload-field', data: { target: 'file-upload-preview.fileField', action: 'change->file-upload-preview#showPreviewImage' }
-    = f.label :change_photo, 'Cancel change', class: 'strong hover-pointer hover-primary-color', data: { action: 'click->file-upload-preview#resetFileFieldValue click->file-upload-preview#resetPreviewImage' }
+    = f.label :change_photo, 'Cancel change', class: 'hover-pointer hover-primary-color', data: { action: 'click->file-upload-preview#resetFileFieldValue click->file-upload-preview#resetPreviewImage' }
