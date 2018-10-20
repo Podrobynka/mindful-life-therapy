@@ -1,63 +1,60 @@
 = form_with model: @settings, url: settings_path, data: { controller: 'form', action: 'ajax:beforeSend->form#validateForm' } do |f|
 
-  %h1.text-center.lmb Edit Site Settings
+  = form_title_for f.object
 
-  %p.lpb.text-center.medium-gray
-    Please note that these settings are used in various places throughout this website. Fields marked with an asterisk are required.
-
-  %fieldset.fieldset.callout.lmb
+  %fieldset.callout
 
     = render 'application/forms/errors', target: f.object
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :session_rate, 'What is your session rate?', class: 'required strong', title: 'Your session rate is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_session_rate' } }
+      = f.label :session_rate, 'What is your session rate?', class: 'required', title: 'Your session rate is required'
       %p.nmb 50 characters max
       %p.nmb Please include the £ symbol and session length too
       %p.smb i.e. £55 per 50 minute session
-      = f.text_field :session_rate, placeholder: 'i.e. £55 per 50 minute session', maxlength: '50', required: true, class: 'smb', tabindex: '1', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :session_rate, placeholder: 'i.e. £55 per 50 minute session', maxlength: '50', required: true, tabindex: '1', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :telephone, 'What is your telephone number?', class: 'required strong', title: 'Your telephone number is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_telephone' } }
+      = f.label :telephone, 'What is your telephone number?', class: 'required', title: 'Your telephone number is required'
       %p.smb 30 characters max
-      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', maxlength: '30', required: true, class: 'smb', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', maxlength: '30', required: true, tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :contact_email, 'What is your preferred contact email address?', class: 'required strong', title: 'Your contact email address is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_contact_email' } }
+      = f.label :contact_email, 'What is your preferred contact email address?', class: 'required', title: 'Your contact email address is required'
       %p.nmb 50 characters max
       %p.smb Visitor messages will be sent to this address
-      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', maxlength: '50', required: true, class: 'smb', tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', maxlength: '50', required: true, tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :office_address_line_1, class: 'required strong', title: 'Office address line 1 is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_office_address_line_1' } }
+      = f.label :office_address_line_1, class: 'required', title: 'Office address line 1 is required'
       %p.smb 50 characters max
-      = f.text_field :office_address_line_1, placeholder: 'i.e. 10 Newton Place', maxlength: '50', required: true, class: 'smb', tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :office_address_line_1, placeholder: 'i.e. 10 Newton Place', maxlength: '50', required: true, tabindex: '4', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :office_address_line_2, class: 'strong'
+    .form--field{ data: { controller: 'errors', field: 'setting_office_address_line_2' } }
+      = f.label :office_address_line_2
       %p.smb 50 characters max
-      = f.text_field :office_address_line_2, placeholder: 'Leave blank if not applicable', maxlength: '50', class: 'smb', tabindex: '5', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :office_address_line_2, placeholder: 'Leave blank if not applicable', maxlength: '50', tabindex: '5', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :office_address_line_3, class: 'strong'
+    .form--field{ data: { controller: 'errors', field: 'setting_office_address_line_3' } }
+      = f.label :office_address_line_3
       %p.smb 50 characters max
-      = f.text_field :office_address_line_3, placeholder: 'Leave blank if not applicable', maxlength: '50', class: 'smb', tabindex: '6', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :office_address_line_3, placeholder: 'Leave blank if not applicable', maxlength: '50', tabindex: '6', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :office_address_city, class: 'required strong', title: 'Office address city is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_office_address_city' } }
+      = f.label :office_address_city, class: 'required', title: 'Office address city is required'
       %p.smb 50 characters max
-      = f.text_field :office_address_city, placeholder: 'i.e. Glasgow', required: true, maxlength: '50', class: 'smb', tabindex: '7', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :office_address_city, placeholder: 'i.e. Glasgow', required: true, maxlength: '50', tabindex: '7', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .field{ data: { controller: 'errors' } }
-      = f.label :office_address_postcode, class: 'required strong', title: 'Office address postcode is required'
+    .form--field{ data: { controller: 'errors', field: 'setting_office_address_postcode' } }
+      = f.label :office_address_postcode, class: 'required', title: 'Office address postcode is required'
       %p.smb 50 characters max
-      = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '50', required: true, class: 'smb', tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '50', required: true, tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-  .actions.text-right= f.button t('form.button_text').html_safe, class: form_button_css(color: 'primary'), tabindex: '9', data: { disable_with: t('form.disable_with_text').html_safe }
+    .form--actions= f.button t('form.button_text').html_safe, class: form_button_css(color: 'success'), tabindex: '9', data: { disable_with: t('form.disable_with_text').html_safe }
