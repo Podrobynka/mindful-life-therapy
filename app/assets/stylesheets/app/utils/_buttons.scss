@@ -6,10 +6,9 @@
 
 .button.success, .button.primary {
   color: $white;
-
   @include hover() { color: $white; }
 }
 
-form .button.success {
+.form--actions .button.success {
   font-weight: $global-weight-bold;
 }
