@@ -47,22 +47,6 @@
   }
 }
 
-#contact--form-fieldset {
-  background: $fieldset-background;
-  border-radius: $global-radius;
-  margin-bottom: 3rem;
-
-  @include bottom-border(rgba($black, 0.1));
-
-  @include breakpoint(small only) {
-    padding: 1.5rem;
-  }
-
-  @include breakpoint(medium up) {
-    padding: 3rem;
-  }
-}
-
 #contact--form-disclaimer-section {
   @include breakpoint(large up) { padding-top: 3.5rem; }
 }
