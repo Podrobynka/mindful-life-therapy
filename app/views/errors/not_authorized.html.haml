@@ -2,9 +2,9 @@
 - provide :no_index, true
 
 .row
-  .column.medium-8.medium-centered.lpt.lpb.text-center
-    %h1.strong Not Authorised
-    %p.dark-gray
-      The page you were looking for: 
-      %span.emph.block= request.original_url
-      requires authorisation.
+  .column.medium-8.medium-centered.xpb.text-center
+    %h1.mmb Not Authorised
+    %p.smb
+      The page you were looking for requires authorisation:
+    %p.primary-color.word-wrap.smb= request.original_url
+    %p.xmb Are you logged in?
