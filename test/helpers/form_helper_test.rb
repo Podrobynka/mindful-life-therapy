@@ -18,7 +18,7 @@ class FormHelperTest < ActionView::TestCase
   end
 
   test 'form_title_for' do
-    expected = "<h1 class='text-center lmb'>Edit the About Page</h1>"
+    expected = "<h1 id='form--title'>Edit the About Page</h1>"
     actual = form_title_for about_pages(:one)
     assert_dom_equal expected, actual
   end
