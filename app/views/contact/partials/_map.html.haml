@@ -1,0 +1,7 @@
+.column.medium-8.medium-offset-2.large-3.large-offset-0.end
+  %section#contact--form-address-section
+    %h1#contact--form-address-title Contact Details
+    %p#contact--form-address-telephone= "Call Zoe on #{@settings.telephone}"
+    %p#contact--form-address-office-location= footer_office_address(@settings)
+    #map.contact--form-address-map
+    = link_to 'View larger map', map_page_url, id: 'contact--form-address-larger-map'
