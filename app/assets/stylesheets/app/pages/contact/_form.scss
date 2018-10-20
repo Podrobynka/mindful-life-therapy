@@ -1,36 +1,74 @@
-#contact--form-header {
-  text-align: center;
-}
-
 #contact--form-title {
-  margin-bottom: 2rem;
   text-align: center;
+
+  @include breakpoint(medium down) { margin-bottom: 1rem; }
+  @include breakpoint(large up) { margin-bottom: 3rem; }
 }
 
-#contact--form-details-list {
-  list-style: none;
-  margin: 0 0 3rem 0;
+#contact--form-address-section {
   text-align: center;
+
+  @include breakpoint(medium down) { margin-bottom: 3rem; }
+  @include breakpoint(large up) { padding-top: 3.5rem; }
 }
 
-.contact--form-details-item {
-  display: block;
-  text-align: center;
+#contact--form-address-title {
+  @include breakpoint(medium down) { display: none; }
+
+  @include breakpoint(large up) {
+    @include labelise() { margin-bottom: 0.5rem; }
+  }
+}
+
+#contact--form-address-telephone {
+  margin-bottom: 0;
+}
+
+#contact--form-address-office-location {
+  @include breakpoint(medium down) { margin-bottom: 1.5rem; }
+  @include breakpoint(large up) { margin-bottom: 1rem; }
+}
+
+#map.contact--form-address-map {
+  background: $pale-green;
+  border-radius: $global-radius;
+  height: 250px;
+
+  @include breakpoint(medium down) { margin-bottom: 1.5rem; }
+  @include breakpoint(large up) { margin-bottom: 1rem; }
+}
+
+#contact--form-address-larger-map {
+  @include anchor($black, $black);
+  @include hover { text-decoration: underline; }
+
+  @include breakpoint(large up) {
+    padding-top: 3.5rem;
+  }
 }
 
 #contact--form-fieldset {
   background: $fieldset-background;
   border-radius: $global-radius;
+  margin-bottom: 3rem;
 
   @include bottom-border(rgba($black, 0.1));
 
   @include breakpoint(small only) {
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
   }
 
   @include breakpoint(medium up) {
     padding: 3rem;
-    margin-bottom: 3rem;
+  }
+}
+
+#contact--form-disclaimer-section {
+  @include breakpoint(large up) { padding-top: 3.5rem; }
+}
+
+#contact--form-disclaimer-title {
+  @include breakpoint(large up) {
+    @include labelise() { margin-bottom: 0.5rem; }
   }
 }
