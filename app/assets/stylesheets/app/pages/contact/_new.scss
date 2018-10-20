@@ -30,8 +30,6 @@
 }
 
 #map.contact--form-address-map {
-  background: $pale-green;
-  border-radius: $global-radius;
   height: 250px;
 
   @include breakpoint(medium down) { margin-bottom: 1.5rem; }
