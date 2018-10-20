@@ -22,7 +22,7 @@
   color: $white;
 }
 
-.form--invalid-field {
+.form--field.form--invalid-field {
   margin-bottom: 0;
   @include field-errors($secondary-color);
 }

@@ -1,5 +1,5 @@
 form {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   @include input-css() { margin-bottom: 0.5rem; }
 }
@@ -9,11 +9,6 @@ form label[title].required:after {
   content: '\002a';
   cursor: pointer;
   padding-left: 0.25rem;
-}
-
-#form--title {
-  margin-bottom: 3rem;
-  text-align: center;
 }
 
 .form--field {
@@ -67,8 +62,4 @@ form label[title].required:after {
 
 [type="file"] {
   overflow: hidden;
-}
-
-.preview {
-  width: 210px;
 }
