@@ -3,16 +3,15 @@
 - provide :canonical_url, about_page_url(protocol: 'https')
 
 .row
-  .column.medium-8.medium-offset-2.large-12.large-offset-0.end
-    %h1#about-page--title About Mindful Life Therapy
+  .column
+    %h1.page--title About Mindful Life Therapy
 
-.row
   .column.medium-8.medium-offset-2.large-3.large-offset-0.end
     %figure#about-page--figure
       = photo_for @about_page
 
       %figcaption#about-page--caption
-        %p#about-page--figure-title.h6 Zoe Zalavary
+        %p.h6.mmb Zoe Zalavary
         %p#about-page--figure-blurb Counsellor, Psychotherapist & Mindfulness Teacher in Glasgow
         %p= link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
 
@@ -20,8 +19,8 @@
     .trix-content= sanitize @about_page.body
 
   .column.medium-8.medium-offset-2.large-3.large-offset-0.end
-    %aside.about-page--sidebar
-      %h2.h4.about-page--sidebar-title Counselling
+    %aside.xmb
+      %h2.h4.mmb Counselling
 
       %p
         Zoe is a
@@ -30,17 +29,17 @@
         = succeed '.' do
           %strong (BACP)
 
-        %p.about-page--sidebar-blurb
+        %p.mmb.spb
           %strong Session Rate
           %br
           = @settings.session_rate
 
       %p= link_to 'Counselling Services', counselling_page_path, class: button_css(color: 'success')
 
-    %aside.about-page--sidebar
-      %h2.h4.about-page--sidebar-title Mindfulness
+    %aside.xmb
+      %h2.h4.mmb Mindfulness
 
-      %p.about-page--sidebar-blurb
+      %p.mmb.spb
         Zoe incorporates
         %strong Mindfulness
         into her therapeutic work and hosts regular
