@@ -1,15 +1,14 @@
 .row
   .column
-    %aside
-      %figure#colophon--figure
-        = image_tag 'logos/mindful-life-therapy-vertical-logo.png', title: t('colophon.image.caption'), alt: t('colophon.image.caption'), id: 'colophon--img'
+    %figure.text-center.xmb.xpb
+      = image_tag 'logos/mindful-life-therapy-vertical-logo.png', title: t('colophon.image.caption'), alt: t('colophon.image.caption'), class: 'mmb'
 
-        %figcaption#colophon--caption
-          %p.show-for-sr Mindful Life Therapy
+      %figcaption.xmb
+        %p.show-for-sr Mindful Life Therapy
 
-          %p
-            Counselling, Psychotherapy &
-            %br
-            Mindfulness Training in Glasgow
+        %p
+          Counselling, Psychotherapy &
+          %br
+          Mindfulness Training in Glasgow
 
-        = link_to 'Contact', contact_path, class: "#{button_css(color: 'primary')} large"
+      = link_to 'Contact', contact_path, class: "#{button_css(color: 'primary')} large"
