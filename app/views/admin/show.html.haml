@@ -5,14 +5,14 @@
 
 .row
   .column.medium-8.medium-offset-2.large-6.large-offset-3.end
-    %h1#admin--title Admin
+    %h1.page--title Admin
 
     .callout
       %h2 Admin Links
 
       %p Use the following links to edit the content of the site.
 
-      %ul#admin--links-list
+      %ul.xmb
         %li= link_to 'Edit the About Page', edit_about_page_url
         %li= link_to 'Edit the Counselling & Psychotherapy Page', edit_counselling_page_url
         %li= link_to 'Edit the Mindfulness Page', edit_mindfulness_page_url
@@ -40,9 +40,9 @@
         %br
         %span.word-wrap= @settings.contact_email
 
-      %p#admin--office-address-paragraph
+      %p.nmb
         %strong Office address:
       = office_address @settings
 
-      %p#admin--edit-settings-paragraph
+      %p
         = link_to 'Edit Site Settings', edit_settings_path, class: button_css(color: 'success')
