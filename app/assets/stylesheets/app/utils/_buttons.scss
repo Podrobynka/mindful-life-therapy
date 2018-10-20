@@ -5,10 +5,5 @@
 }
 
 .button.success, .button.primary {
-  color: $white;
-  @include hover() { color: $white; }
-}
-
-.form--actions .button.success {
-  font-weight: $global-weight-bold;
+  @include anchor($white, $white);
 }
