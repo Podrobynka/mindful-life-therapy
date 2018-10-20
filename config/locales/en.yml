@@ -114,3 +114,5 @@ en:
       title: "Edit the Mindfulness Page"
       trix_input: "mindfulness_page_body"
       body_placeholder: "i.e. Mindfulness training is to intentionally bring our minds to what is happening in the present, while at the same time not judging our thoughts and feelings."
+    setting:
+      title: "Edit the Site Settings"
