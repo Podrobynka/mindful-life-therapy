@@ -1,6 +1,6 @@
 module SettingsHelper
   def office_address settings
-    content_tag :ul, class: 'no-bullet' do
+    content_tag :ul, class: 'no-bullet lmb' do
       company_name_as_list_item
       address_details_as_list(settings)
     end
