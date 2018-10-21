@@ -20,11 +20,11 @@
       = f.telephone_field :telephone, placeholder: 'i.e. 0123456789', maxlength: '30', required: true, tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
-    .form--field{ data: { controller: 'errors', field: 'setting_contact_email' } }
-      = f.label :contact_email, 'What is your preferred contact email address?', class: 'required', title: 'Your contact email address is required'
-      %p.nmb 50 characters max
+    .form--field{ data: { controller: 'errors', field: 'setting_email' } }
+      = f.label :email, 'What is your preferred contact email address?', class: 'required', title: 'Your contact email address is required'
+      %p.nmb 150 characters max
       %p.smb Visitor messages will be sent to this address
-      = f.email_field :contact_email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', maxlength: '50', required: true, tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = f.email_field :email, placeholder: 'i.e. info@mindfullifetherapy.co.uk', maxlength: '150', required: true, tabindex: '3', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .form--field{ data: { controller: 'errors', field: 'setting_office_address_line_1' } }

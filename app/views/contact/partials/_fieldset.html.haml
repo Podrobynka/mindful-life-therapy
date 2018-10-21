@@ -11,8 +11,8 @@
 
     .form--field{ data: { controller: 'errors', field: 'message_email' } }
       = f.label :email, 'What is your email address?', class: 'required strong', title: 'I need your email address so that I can reply your message'
-      = help_text '100 characters max'
-      = f.email_field :email, required: true, maxlength: '100', placeholder: 'i.e. name@example.org', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      = help_text '150 characters max'
+      = f.email_field :email, required: true, maxlength: '150', placeholder: 'i.e. name@example.org', tabindex: '2', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .form--field{ data: { controller: 'errors', field: 'message_subject' } }

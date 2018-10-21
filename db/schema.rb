@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_004954) do
 
   create_table "settings", force: :cascade do |t|
     t.string "telephone"
-    t.string "contact_email"
+    t.string "email"
     t.string "office_address_line_1"
     t.string "office_address_line_2"
     t.string "office_address_line_3"

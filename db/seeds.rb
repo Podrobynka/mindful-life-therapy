@@ -8,7 +8,7 @@
 
 Setting.first_or_create({
   telephone: '07933446549',
-  contact_email: 'info@mindfullifetherapy.co.uk',
+  email: 'info@mindfullifetherapy.co.uk',
   office_address_line_1: '10 Newton Place',
   office_address_line_2: '',
   office_address_line_3: '',

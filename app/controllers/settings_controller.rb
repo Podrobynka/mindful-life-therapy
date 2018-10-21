@@ -14,6 +14,6 @@ class SettingsController < ApplicationController
   private
 
     def setting_params
-      params.require(:setting).permit(:telephone, :contact_email, :office_address_line_1, :office_address_line_2, :office_address_line_3, :office_address_city, :office_address_postcode, :session_rate)
+      params.require(:setting).permit(:telephone, :email, :office_address_line_1, :office_address_line_2, :office_address_line_3, :office_address_city, :office_address_postcode, :session_rate)
     end
 end

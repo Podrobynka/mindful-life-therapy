@@ -1,6 +1,6 @@
 class Setting < ApplicationRecord
   validates :telephone, presence: true, length: { maximum: 30 }
-  validates :contact_email, presence: true, length: { maximum: 150 }, format: {
+  validates :email, presence: true, length: { maximum: 150 }, format: {
     with: URI::MailTo::EMAIL_REGEXP,
     message: 'is not a valid email address',
     allow_blank: true
