@@ -1,3 +1,4 @@
 .hover-text-decoration { @include hover { text-decoration: underline; } }
 .hover-pointer { @include hover { cursor: pointer; } }
+.black-link { @include anchor($black, $black); }
 .hover-primary-color { @include hover { color: $primary-color; } }
