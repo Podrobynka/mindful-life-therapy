@@ -17,9 +17,9 @@ class MessageTest < ActiveSupport::TestCase
     assert_message_attribute_required @message, :email
     assert_message_email_too_long @message, 151
     assert_message_email_valid_length @message, 150
-    assert_invalid_emails_are_rejected @message
-    assert_valid_emails_are_accepted @message
-    assert_blank_email_only_fails_presence_validation @message
+    assert_invalid_message_emails_are_rejected @message
+    assert_valid_message_emails_are_accepted @message
+    assert_blank_message_email_only_fails_presence_validation @message
   end
 
   test 'subject' do
@@ -36,7 +36,7 @@ class MessageTest < ActiveSupport::TestCase
 
   test 'valid message' do
     @message.name = 'a' * 100
-    @message.email = 'a' * 95 + '@b.co'
+    @message.email = 'a' * 145 + '@b.co'
     @message.subject = 'a' * 50
     @message.body = 'a' * 10000
 
