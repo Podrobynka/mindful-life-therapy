@@ -136,6 +136,52 @@ class ActiveSupport::TestCase
     assert record.valid?
   end
 
+  def assert_settings_contact_email_too_long record, length
+    tail = '@b.co'
+    head = 'a' * (length - tail.length)
+    record.update contact_email: head + tail
+    refute record.valid?
+    assert_match /too long/, record.errors[:contact_email].to_s
+  end
+
+  def assert_settings_contact_email_valid_length record, length
+    tail = '@b.co'
+    head = 'a' * (length - tail.length)
+    record.update contact_email: head + tail
+    assert record.valid?
+    assert_empty record.errors[:contact_email]
+  end
+
+  def assert_invalid_settings_contact_emails_are_rejected record
+    invalid_emails = ['a', 'a@', '@com', '@', '.com', 'a@.com', 'a@.', '.', 'a @b.com', 'a@b .com', 'a@b.co m']
+
+    invalid_emails.each do |email|
+      record.update contact_email: email
+      refute record.valid?
+      assert_match /is not a valid email address/, record.errors[:contact_email].to_s
+    end
+  end
+
+  def assert_valid_settings_contact_emails_are_accepted record
+    valid_emails = ['a@b', 'a@b.com', '$@com', 'test+1@b.com']
+
+    valid_emails.each do |email|
+      record.update contact_email: email
+      assert record.valid?
+      assert_empty record.errors[:contact_email]
+    end
+  end
+
+  def assert_blank_settings_contact_email_only_fails_presence_validation record
+    blank_emails = ['', ' ', nil]
+
+    blank_emails.each do |email|
+      record.update contact_email: email
+      refute record.valid?
+      assert_equal ["can't be blank"], record.errors[:contact_email]
+    end
+  end
+
   def assert_has_one_attached_photo record
     attach_file_to record, photo_fixture
     assert record.valid?
@@ -252,7 +298,7 @@ class ActiveSupport::TestCase
     assert_empty record.errors[:email]
   end
 
-  def assert_invalid_emails_are_rejected record
+  def assert_invalid_message_emails_are_rejected record
     invalid_emails = ['a', 'a@', '@com', '@', '.com', 'a@.com', 'a@.', '.', 'a @b.com', 'a@b .com', 'a@b.co m']
 
     invalid_emails.each do |email|
@@ -262,7 +308,7 @@ class ActiveSupport::TestCase
     end
   end
 
-  def assert_valid_emails_are_accepted record
+  def assert_valid_message_emails_are_accepted record
     valid_emails = ['a@b', 'a@b.com', '$@com', 'test+1@b.com']
 
     valid_emails.each do |email|
@@ -272,7 +318,7 @@ class ActiveSupport::TestCase
     end
   end
 
-  def assert_blank_email_only_fails_presence_validation record
+  def assert_blank_message_email_only_fails_presence_validation record
     blank_emails = ['', ' ', nil]
 
     blank_emails.each do |email|

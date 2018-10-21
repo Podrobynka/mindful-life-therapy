@@ -14,8 +14,11 @@ class SettingTest < ActiveSupport::TestCase
 
   test "contact_email" do
     assert_required @setting, :contact_email
-    assert_too_long @setting, :contact_email, 51
-    assert_valid_length @setting, :contact_email, 50
+    assert_settings_contact_email_too_long @setting, 151
+    assert_settings_contact_email_valid_length @setting, 150
+    assert_invalid_settings_contact_emails_are_rejected @setting
+    assert_valid_settings_contact_emails_are_accepted @setting
+    assert_blank_settings_contact_email_only_fails_presence_validation @setting
   end
 
   test "office_address_line_1" do
@@ -57,7 +60,7 @@ class SettingTest < ActiveSupport::TestCase
   test "valid record" do
     attrs = {
       telephone: 'a' * 30,
-      contact_email: 'a' * 50,
+      contact_email: 'a' * 145 + '@b.co',
       office_address_line_1: 'a' * 50,
       office_address_line_2: 'a' * 50,
       office_address_line_3: 'a' * 50,
