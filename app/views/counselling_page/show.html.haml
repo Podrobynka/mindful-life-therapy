@@ -2,25 +2,66 @@
 - provide :meta_description, t('seo.meta_description.counselling_page')
 - provide :canonical_url, counselling_page_url(protocol: 'https')
 
-.row.column
-  %h1.text-center.mpb Counselling & Psychotherapy in Glasgow
-
 .row
-  .column.medium-8.medium-offset-2.mplr-on-medium.xplr-on-large
-    %figure.text-center.lmb.mplr-on-medium.xplr-on-large
+  .column
+    %h1.page--title Counselling & Psychotherapy in Glasgow
+
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %aside.xmb
+      %h2.h4.mmb Session Rate
+
+      %p
+        Sessions usually take place once a week and last 50 minutes.
+
+      %p.mmb.spb
+        %strong Session Rate
+        %br
+        = @settings.session_rate
+
+      %p= link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
+
+  .column.medium-8.medium-offset-2.large-6.large-offset-0.end
+    %figure.text-center.lmb
       = photo_for @counselling_page
 
-    .lmb.trix-content.mplr-on-medium.xplr-on-large= sanitize @counselling_page.body
+    .trix-content= sanitize @counselling_page.body
 
-    %aside.mplr-on-medium.xplr-on-large
-      .mmb
-        .block.strong.success-color Rates:
-        .block= @settings.session_rate
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %aside.xmb
+      %h2.h4.mmb BACP Registered
 
-      .mmb
-        .block.strong.success-color Phone:
-        .block= @settings.telephone
+      %p
+        Zoe is a
+        = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration', target: '_blank'
+        of the British Association of Counselling and Psychotherapy
+        = succeed '.' do
+          %strong (BACP)
 
-      .mmb
-        .block.strong.success-color Office:
-        = office_address @settings
+      %p= link_to 'BACP Register', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: button_css(color: 'success'), target: '_blank'
+
+    %aside.xmb
+      %h2.h4.mmb Location
+
+      %p.nmb
+        %strong The address is:
+
+      %p.mmb= footer_office_address(@settings)
+
+      #map.counselling-page--sidebar-address-map
+      = link_to 'View larger map', map_page_url, id: 'counselling-page--sidebar-address-larger-map'
+
+    %aside.xmb
+      %h2.h4.mmb Mindfulness
+
+      %p.mmb.spb
+        Zoe incorporates
+        %strong Mindfulness
+        into her therapeutic work and hosts
+        %strong Mindfulness
+        classes, workshops and retreats in
+        %strong Glasgow
+        and beyond.
+
+      %p= link_to 'Mindfulness Page', mindfulness_page_path, class: button_css(color: 'success')
+
+= render 'colophon'
