@@ -7,7 +7,7 @@
     %h1.page--title Counselling & Psychotherapy in Glasgow
 
   .column.medium-8.medium-offset-2.large-3.large-offset-0.end
-    %aside.xmb
+    %aside#counselling--session-rate-sidebar.xmb
       %h2.h4.mmb Session Rate
 
       %p
@@ -18,7 +18,7 @@
         %br
         = @settings.session_rate
 
-      %p= link_to 'Contact to Book', contact_path, class: button_css(color: 'success')
+      %p= link_to 'Contact to Book a Session', contact_path, class: button_css(color: 'success')
 
   .column.medium-8.medium-offset-2.large-6.large-offset-0.end
     %figure.text-center.lmb

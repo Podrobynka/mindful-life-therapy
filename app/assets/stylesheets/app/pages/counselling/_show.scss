@@ -1,3 +1,7 @@
+#counselling--session-rate-sidebar {
+  @include breakpoint(medium down) { text-align: center; }
+}
+
 #map.counselling-page--sidebar-address-map {
   height: 250px;
 
