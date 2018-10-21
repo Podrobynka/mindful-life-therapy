@@ -235,4 +235,50 @@ class ActiveSupport::TestCase
     record.valid?
     assert_empty record.errors[attribute]
   end
+
+  def assert_message_email_too_long record, length
+    tail = '@b.co'
+    head = 'a' * (length - tail.length)
+    record.email = head + tail
+    record.valid?
+    assert_match /too long/, record.errors[:email].to_s
+  end
+
+  def assert_message_email_valid_length record, length
+    tail = '@b.co'
+    head = 'a' * (length - tail.length)
+    record.email = head + tail
+    record.valid?
+    assert_empty record.errors[:email]
+  end
+
+  def assert_invalid_emails_are_rejected record
+    invalid_emails = ['a', 'a@', '@com', '@', '.com', 'a@.com', 'a@.', '.', 'a @b.com', 'a@b .com', 'a@b.co m']
+
+    invalid_emails.each do |email|
+      record.email = email
+      record.valid?
+      assert_match /is not a valid email address/, record.errors[:email].to_s
+    end
+  end
+
+  def assert_valid_emails_are_accepted record
+    valid_emails = ['a@b', 'a@b.com', '$@com', 'test+1@b.com']
+
+    valid_emails.each do |email|
+      record.email = email
+      record.valid?
+      assert_empty record.errors[:email]
+    end
+  end
+
+  def assert_blank_email_only_fails_presence_validation record
+    blank_emails = ['', ' ', nil]
+
+    blank_emails.each do |email|
+      record.email = email
+      record.valid?
+      assert_equal ["can't be blank"], record.errors[:email]
+    end
+  end
 end
