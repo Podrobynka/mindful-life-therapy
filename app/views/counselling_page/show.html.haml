@@ -18,7 +18,7 @@
         %br
         = @settings.session_rate
 
-      %p= link_to 'Contact Zoe', contact_path, class: button_css(color: 'success')
+      %p= link_to 'Contact to Book', contact_path, class: button_css(color: 'success')
 
   .column.medium-8.medium-offset-2.large-6.large-offset-0.end
     %figure.text-center.lmb
@@ -31,7 +31,7 @@
       %h2.h4.mmb BACP Registered
 
       %p
-        Zoe is a
+        I am a
         = link_to 'registered member', 'https://www.bacp.co.uk/profile/239578cc-4f90-e711-80e8-3863bb349ac0/Therapist', class: 'hover-text-decoration', target: '_blank'
         of the British Association of Counselling and Psychotherapy
         = succeed '.' do
@@ -43,20 +43,21 @@
       %h2.h4.mmb Location
 
       %p.nmb
-        %strong The address is:
+        %strong My office address is:
 
       %p.mmb= footer_office_address(@settings)
 
       #map.counselling-page--sidebar-address-map
-      = link_to 'View larger map', map_page_url, id: 'counselling-page--sidebar-address-larger-map'
+
+      = link_to 'View larger map', map_page_url, class: 'black-link hover-text-decoration'
 
     %aside.xmb
       %h2.h4.mmb Mindfulness
 
       %p.mmb.spb
-        Zoe incorporates
+        I incorporate
         %strong Mindfulness
-        into her therapeutic work and hosts
+        into my therapeutic work and host
         %strong Mindfulness
         classes, workshops and retreats in
         %strong Glasgow
