@@ -7,3 +7,25 @@
 .button.success, .button.primary {
   @include anchor($white, $white);
 }
+
+.jumbo-button {
+  $bg: rgba($white, 0.75);
+  $bg-hover: rgba($black, 0.75);
+
+  @include button(false, $bg, $bg-hover, $black, 'solid');
+  @include hover {
+    border-color: $bg-hover;
+    color: $white;
+  }
+}
+
+.jumbo-button.alt {
+  $bg: rgba($black, 0.75);
+  $bg-hover: rgba($white, 0.75);
+
+  @include button(false, $bg, $bg-hover, $white, 'solid');
+  @include hover {
+    border-color: $bg-hover;
+    color: $black;
+  }
+}

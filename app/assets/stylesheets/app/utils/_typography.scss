@@ -22,3 +22,7 @@
 .nowrap { white-space: nowrap; }
 
 .word-wrap { @include word-wrap(); }
+
+.black { color: $black; }
+.white { color: $white; }
+.text-shadow { text-shadow: 0 1px 0 rgba($black, 0.2); }
