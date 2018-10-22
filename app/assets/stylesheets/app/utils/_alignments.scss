@@ -1,0 +1,3 @@
+.text-center-on-medium-down {
+  @include breakpoint(medium down) { text-align: center; }
+}

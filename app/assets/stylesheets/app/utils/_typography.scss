@@ -1,7 +1,14 @@
 .page--title {
   margin-bottom: 3rem;
   text-align: center;
+
+  &.alt {
+    @include breakpoint(medium down) {
+      margin-bottom: 1rem;
+    }
+  }
 }
+
 
 .label {
   color: $form-label-color;
@@ -15,3 +22,7 @@
 .nowrap { white-space: nowrap; }
 
 .word-wrap { @include word-wrap(); }
+
+.black { color: $black; }
+.white { color: $white; }
+.text-shadow { text-shadow: 0 1px 0 rgba($black, 0.2); }

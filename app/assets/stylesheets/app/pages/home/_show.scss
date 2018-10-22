@@ -1,0 +1,146 @@
+#home--counselling {
+  background: image-url('jumbo/psychotherapy.png') center no-repeat;
+  background-size: cover;
+
+  @include breakpoint(medium up) {
+    height: 242px;
+    margin-right: 0.5rem;
+  }
+}
+
+#home--mindfulness {
+  background: image-url('jumbo/lady-in-field.png') center no-repeat;
+  background-size: cover;
+
+  @include breakpoint(medium up) {
+    height: 242px;
+    margin-right: 0.5rem;
+  }
+}
+
+#home--about {
+  background: image-url('jumbo/peaceful-landscape.jpg') center no-repeat;
+  background-size: cover;
+
+  @include breakpoint(medium up) {
+    height: 500px;
+    margin-left: 0.5rem;
+  }
+}
+
+#home--cta {
+  align-items: center;
+  background: $pale-green;
+  border-radius: $global-radius;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(medium down) {
+    flex-flow: column wrap;
+    padding: 1.5rem;
+  }
+
+  @include breakpoint(large up) {
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+}
+
+#home--cta-button {
+  @include breakpoint(medium down) {
+    margin-top: 1rem;
+  }
+}
+
+#home--support {
+  background: image-url('jumbo/heart.png') center no-repeat;
+  background-size: cover;
+
+  @include breakpoint(medium up) {
+    height: 500px;
+    margin-right: 0.5rem;
+  }
+}
+
+#home--features {
+  background: $pale-green;
+  border-radius: $global-radius;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+
+  @include bottom-border(rgba($black, 0.1));
+
+  @include breakpoint(medium up) {
+    height: 500px;
+    margin-left: 0.5rem;
+  }
+}
+
+.home-features--flex-item {
+  @include breakpoint(small only) {
+    padding: 1.5rem;
+  }
+
+  @include breakpoint(medium only) {
+    padding: 1rem;
+  }
+
+  @include breakpoint(large up) {
+    padding: 2rem;
+  }
+
+  &.alt {
+    background: $heading-black;
+    border-radius: 0 0 $global-radius $global-radius;
+  }
+}
+
+
+#home--benefits {
+  background: $pale-green;
+  border-radius: $global-radius;
+  text-align: center;
+
+  @include breakpoint(medium down) {
+    padding: 3rem 1rem;
+  }
+
+  @include breakpoint(large up) {
+    padding: 3rem 2rem;
+  }
+}
+
+.home--benefit {
+  @include breakpoint(medium down) {
+    margin-bottom: 3rem;
+  }
+
+  &.alt {
+    @include breakpoint(medium down) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.home--benefit-blurb {
+  margin-bottom: 0;
+  
+  @include breakpoint(medium down) {
+    display: inline-block;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+.jumbo {
+  align-items: center;
+  border-radius: $global-radius;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  @include breakpoint(small only) { padding: 3rem 1.5rem; }
+  @include breakpoint(medium up) { padding: 1.5rem; }
+}

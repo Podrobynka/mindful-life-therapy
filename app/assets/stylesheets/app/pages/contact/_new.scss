@@ -29,17 +29,7 @@
   @include breakpoint(large up) { margin-bottom: 1rem; }
 }
 
-#map.contact--form-address-map {
-  height: 250px;
-
-  @include breakpoint(medium down) { margin-bottom: 1.5rem; }
-  @include breakpoint(large up) { margin-bottom: 1rem; }
-}
-
 #contact--form-address-larger-map {
-  @include anchor($black, $black);
-  @include hover { text-decoration: underline; }
-
   @include breakpoint(large up) {
     padding-top: 3.5rem;
   }

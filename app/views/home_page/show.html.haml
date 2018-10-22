@@ -1,6 +1,97 @@
-.row.lpb
-  .column.medium-8.medium-offset-2.large-6.large-offset-3
+.row
+  .column.large-10.large-offset-1
 
-    %h1.text-center Welcome
+    .row.text-center.collapse.xmb
+      .column
+        %h1 Welcome to Mindful Life Therapy
+        %p.xmb Counselling, Psychotherapy & Mindfulness Training in Glasgow
 
-    %p.text-center Home page is under construction
+      .column.medium-6
+        #home--counselling.jumbo
+          %h2.h4.nmb.white Counselling & Psychotherapy
+          %p.lmb.white Clear a path towards happiness
+          = link_to 'How I can help you', counselling_page_path, class: 'jumbo-button'
+
+        #home--mindfulness.jumbo
+          %h2.h4.nmb.black Mindfulness Training
+          %p.lmb.black Live a simpler and happier life
+          = link_to 'What is Mindfulness?', mindfulness_page_path, class: 'jumbo-button'
+
+      .column.medium-6
+        #home--about.jumbo
+          %h2.h4.mmb.black About Mindful Life Therapy
+          %p.lmb.black
+            Services are provided by
+            %strong Zoe Zalavary
+            BA (Hons), PGDip, a BACP registered Counsellor and Psychotherapist, and qualified Mindfulness teacher
+          = link_to 'About Mindful Life Therapy', about_page_path, class: 'jumbo-button alt'
+
+      .column
+        #home--cta
+          %p.nmb.black= "Call Zoe on #{@settings.telephone}"
+          %p.nmb.black= footer_office_address @settings
+          %p.nmb= link_to 'Find the office on the map', map_page_path, class: 'black-link hover-text-decoration'
+          %p.nmb= link_to 'Make an appointment', contact_path, id: 'home--cta-button', class: 'jumbo-button alt'
+
+    .row.collapse.xmb
+      .column.text-center
+        %h2.xmb How can Mindful Life Therapy help you?
+
+      .column.medium-6
+        #home--support.jumbo.text-center
+          %h3.h4.mmb.white Areas of Speciality
+
+          %p.lmb.white
+            Working with
+            %strong depression,
+            %strong anxiety
+            and
+            %strong shame
+            based issues as well as
+            %strong identity,
+            %strong spirituality
+            and
+            %strong existential
+            issues are areas of speciality.
+
+          = link_to 'More on Counselling', about_page_path, class: 'jumbo-button'
+
+      .column.medium-6
+        #home--features
+          .home-features--flex-item
+            %h3.h6.mmb
+              Mindful Life Therapy can help you with a wide range of issues including the following:
+
+            %p.black.mmb
+              Abuse, Addictions, Anxiety, Bereavement, Depression, Eating Disorders, Identity Problems, Loss, Personal Development, Relationships, Self Esteem, Spirituality, Stress and Work related issues
+
+          .home-features--flex-item.alt
+            %p.nmb.white
+              = link_to 'Contact Mindful Life Therapy', contact_path, class: 'hover-text-decoration'
+              to discuss and explore your particular counselling and psychotherapy requirements
+
+
+    .row.text-center.xmb.xpb
+      .column
+        %h2.xmb Why Choose Mindful Life Therapy?
+
+      .column
+        #home--benefits
+          .row
+            .column.large-4.home--benefit
+              = icon 'fas', 'user', class: 'h1 mmb'
+              %h3.h6 Person Centered
+              %p.home--benefit-blurb I want you to feel at ease during this process so we will work organically and at your pace
+
+            .column.large-4.home--benefit
+              = icon 'fas', 'heart', class: 'h1 mmb'
+              %h3.h6 Compassion Focussed
+              %p.home--benefit-blurb I provide a genuine human encounter that is warm, empathic and non judgemental
+
+            .column.large-4.home--benefit.alt
+              = icon 'fas', 'expand', class: 'h1 mmb'
+              '
+              %h3.h6 Mindful Approach
+              %p.home--benefit-blurb Mindfulness can help us to lead much simpler, happier and more effective lives
+
+= render 'colophon'

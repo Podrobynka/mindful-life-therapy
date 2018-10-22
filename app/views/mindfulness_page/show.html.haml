@@ -2,13 +2,47 @@
 - provide :meta_description, t('seo.meta_description.mindfulness_page')
 - provide :canonical_url, mindfulness_page_url(protocol: 'https')
 
-
-.row.column
-  %h1.text-center.mpb Mindfulness Training in Glasgow
-
 .row
-  .column.medium-8.medium-offset-2.mplr-on-medium.xplr-on-large
-    %figure.text-center.lmb.mplr-on-medium.xplr-on-large
+  .column
+    %h1.page--title.alt Mindfulness Training in Glasgow
+
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %aside.text-center-on-medium-down.lmb
+      %h2.h4.mmb.show-for-large Mindful Life
+
+      %p
+        Zoe is an
+        %strong experienced meditator
+        who has practised Buddhist meditation for over twenty years.
+        She is a qualified
+        %strong secular
+        Mindfulness teacher, through Bangor University,
+        and has undertaken
+        %strong Mindfulness Practitioner Training
+        through the Mindfulness Association.
+
+  .column.medium-8.medium-offset-2.large-6.large-offset-0.end
+    %figure.text-center.lmb
       = photo_for @mindfulness_page
 
-    .lmb.trix-content.mplr-on-medium.xplr-on-large= sanitize @mindfulness_page.body
+    .trix-content= sanitize @mindfulness_page.body
+
+  .column.medium-8.medium-offset-2.large-3.large-offset-0.end
+    %aside.xmb
+      %h2.h4.mmb Mindful Therapy
+
+      %p.mmb.spb
+        Zoe incorporates
+        %strong Mindfulness
+        into her therapeutic work and hosts
+        %strong Mindfulness
+        classes, workshops and retreats in
+        %strong Glasgow
+        and beyond.
+
+      %p= link_to 'Contact to Book a Session', contact_path, class: button_css(color: 'success')
+
+    %aside.xmb
+      = render 'application/sidebar_map'
+
+= render 'colophon'
