@@ -97,7 +97,41 @@
 }
 
 
-#home--benefits {}
+#home--benefits {
+  background: $pale-green;
+  border-radius: $global-radius;
+  text-align: center;
+
+  @include breakpoint(medium down) {
+    padding: 3rem 1rem;
+  }
+
+  @include breakpoint(large up) {
+    padding: 3rem 2rem;
+  }
+}
+
+.home--benefit {
+  @include breakpoint(medium down) {
+    margin-bottom: 3rem;
+  }
+
+  &.alt {
+    @include breakpoint(medium down) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.home--benefit-blurb {
+  margin-bottom: 0;
+  
+  @include breakpoint(medium down) {
+    display: inline-block;
+    max-width: 250px;
+    text-align: center;
+  }
+}
 
 .jumbo {
   align-items: center;

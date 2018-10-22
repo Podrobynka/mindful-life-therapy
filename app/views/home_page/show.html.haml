@@ -1,7 +1,7 @@
 .row
   .column.large-10.large-offset-1
 
-    .row.text-center.collapse
+    .row.text-center.collapse.xmb
       .column
         %h1 Welcome to Mindful Life Therapy
         %p.xmb Counselling, Psychotherapy & Mindfulness Training in Glasgow
@@ -23,7 +23,6 @@
           %p.lmb.black Mindful Life Therapy offers individual counselling and psychotherapy services in Glasgow and further afield
           = link_to 'About Mindful Life Therapy', about_page_path, class: 'jumbo-button'
 
-    .row.xmb.text-center
       .column
         #home--cta
           %p.nmb.black= "Call Zoe on #{@settings.telephone}"
@@ -32,8 +31,8 @@
           %p.nmb= link_to 'Make an appointment', contact_path, id: 'home--cta-button', class: 'jumbo-button alt'
 
     .row.collapse.xmb
-      .column
-        %h2.xmb.text-center How can Mindful Life Therapy help you?
+      .column.text-center
+        %h2.xmb How can Mindful Life Therapy help you?
 
       .column.medium-6
         #home--support.jumbo.text-center
@@ -69,4 +68,27 @@
               to discuss and explore your particular counselling and psychotherapy requirements
 
 
-    #home--benefits
+    .row.text-center.xmb.xpb
+      .column
+        %h2.xmb Why Choose Mindful Life Therapy?
+
+      .column
+        #home--benefits
+          .row
+            .column.large-4.home--benefit
+              = icon 'fas', 'user', class: 'h1 mmb'
+              %h3.h6 Person Centered
+              %p.home--benefit-blurb I want you to feel at ease during this process so we will work organically and at your pace
+
+            .column.large-4.home--benefit
+              = icon 'fas', 'heart', class: 'h1 mmb'
+              %h3.h6 Compassion Focussed
+              %p.home--benefit-blurb I provide a genuine human encounter that is warm, empathic and non judgemental
+
+            .column.large-4.home--benefit.alt
+              = icon 'fas', 'expand', class: 'h1 mmb'
+              '
+              %h3.h6 Mindful Approach
+              %p.home--benefit-blurb Mindfulness can help us to lead much simpler, happier and more effective lives
+
+= render 'colophon'
