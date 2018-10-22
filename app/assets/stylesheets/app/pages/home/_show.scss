@@ -35,6 +35,8 @@
   display: flex;
   justify-content: space-between;
 
+  @include bottom-border(rgba($black, 0.1));
+
   @include breakpoint(medium down) {
     flex-flow: column wrap;
     padding: 1.5rem;
@@ -102,6 +104,8 @@
   border-radius: $global-radius;
   text-align: center;
 
+  @include bottom-border(rgba($black, 0.1));
+
   @include breakpoint(medium down) {
     padding: 3rem 1rem;
   }
@@ -125,7 +129,7 @@
 
 .home--benefit-blurb {
   margin-bottom: 0;
-  
+
   @include breakpoint(medium down) {
     display: inline-block;
     max-width: 250px;
