@@ -14,6 +14,9 @@ gem 'foundation-rails'
 gem 'font-awesome-sass', '~> 5.3.1'
 gem 'haml-rails'
 gem 'sucker_punch'
+gem 'geocoder'
+gem 'uk_postcode'
+gem 'google_sign_in'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
