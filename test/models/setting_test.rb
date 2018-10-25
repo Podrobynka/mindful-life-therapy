@@ -79,19 +79,19 @@ class SettingTest < ActiveSupport::TestCase
     end
   end
 
-  test "address_changed? is true if changed address attribute are staged prior to save" do
+  test "address_changed? is true if changes are staged prior to save" do
     @setting.office_address_line_2 = 'Top Floor'
     assert @setting.address_changed?
   end
 
-  test "address_changed? is false AFTER save, even if address attributes changed during the save" do
+  test "address_changed? is always false AFTER save" do
     VCR.use_cassette("update_office_address_line_2_to_top_floor") do
       @setting.update office_address_line_2: 'Top Floor'
       refute @setting.address_changed?
     end
   end
 
-  test "address_changed? is false if no address related attribute change" do
+  test "address_changed? is false if no address related attribute is due to change" do
     @setting.session_rate = '£5000 per 50 minute session'
     refute @setting.address_changed?
   end
