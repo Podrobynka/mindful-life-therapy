@@ -58,7 +58,26 @@ class SettingTest < ActiveSupport::TestCase
     assert_valid_length @setting, :session_rate, 50
   end
 
-  test "valid record" do
+  test "address rejects blanks" do
+    assert_equal '10 Newton Place, Glasgow, G3 7PR', @setting.address
+  end
+
+  test "address returns all address fields if present" do
+    @setting.update(office_address_line_2: 'Top Floor', office_address_line_3: 'Back Office')
+    assert_equal '10 Newton Place, Top Floor, Back Office, Glasgow, G3 7PR', @setting.address
+  end
+
+  test "address_changed? is true if any address related attribute changes" do
+    @setting.update(office_address_line_2: 'Top Floor')
+    assert @setting.address_changed?
+  end
+
+  test "address_changed? is false if no address related attribute changed" do
+    @setting.update(session_rate: '£5000 per 50 minute session')
+    refute @setting.address_changed?
+  end
+
+  test "create valid record" do
     attrs = {
       telephone: 'a' * 30,
       email: 'a' * 145 + '@b.co',
@@ -66,11 +85,27 @@ class SettingTest < ActiveSupport::TestCase
       office_address_line_2: 'a' * 50,
       office_address_line_3: 'a' * 50,
       office_address_city: 'a' * 50,
-      office_address_postcode: 'g3 7pr',
+      office_address_postcode: 'g1 1aa',
       session_rate: 'a' * 50
     }
 
     setting = Setting.create attrs
     assert setting.valid?
+  end
+
+  test "update valid record" do
+    attrs = {
+      telephone: 'a' * 30,
+      email: 'a' * 145 + '@b.co',
+      office_address_line_1: 'a' * 50,
+      office_address_line_2: 'a' * 50,
+      office_address_line_3: 'a' * 50,
+      office_address_city: 'a' * 50,
+      office_address_postcode: 'g1 1aa',
+      session_rate: 'a' * 50
+    }
+
+    @setting.update attrs
+    assert @setting.valid?
   end
 end
