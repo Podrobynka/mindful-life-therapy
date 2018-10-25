@@ -6,6 +6,13 @@ SimpleCov.start 'rails'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'mocha/minitest'
+# require 'vcr'
+#
+# VCR.config do |c|
+#   c.cassette_library_dir = 'test/vcr_cassettes'
+#   c.stub_with :fakeweb
+#   c.default_cassette_options = { :record => :once }
+# end
 
 class ActiveSupport::TestCase
   # allows us to perform enqueued jobs in controller tests

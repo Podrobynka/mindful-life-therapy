@@ -35,6 +35,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'simplecov', require: false
   gem 'mocha'
+  gem 'vcr'
 end
 
 group :production do

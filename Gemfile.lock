@@ -248,6 +248,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uk_postcode (2.1.3)
+    vcr (4.0.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -293,6 +294,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uk_postcode
+  vcr
   web-console (>= 3.3.0)
   webpacker
 
