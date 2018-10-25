@@ -19,11 +19,11 @@ class Setting < ApplicationRecord
   end
 
   def address_changed?
-    saved_change_to_office_address_line_1 ||
-    saved_change_to_office_address_line_2 ||
-    saved_change_to_office_address_line_3 ||
-    saved_change_to_office_address_city? ||
-    saved_change_to_office_address_postcode?
+    office_address_line_1_changed? ||
+    office_address_line_2_changed? ||
+    office_address_line_3_changed? ||
+    office_address_city_changed? ||
+    office_address_postcode_changed?
   end
 
   def address

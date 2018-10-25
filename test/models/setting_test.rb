@@ -67,13 +67,18 @@ class SettingTest < ActiveSupport::TestCase
     assert_equal '10 Newton Place, Top Floor, Back Office, Glasgow, G3 7PR', @setting.address
   end
 
-  test "address_changed? is true if any address related attribute changes" do
-    @setting.update(office_address_line_2: 'Top Floor')
+  test "address_changed? is true if address attribute change prior to save" do
+    @setting.office_address_line_2 = 'Top Floor'
     assert @setting.address_changed?
   end
 
-  test "address_changed? is false if no address related attribute changed" do
-    @setting.update(session_rate: '£5000 per 50 minute session')
+  test "address_changed? is false if address attribute change AFTER to save" do
+    @setting.update office_address_line_2: 'Top Floor'
+    refute @setting.address_changed?
+  end
+
+  test "address_changed? is false if no address related attribute change" do
+    @setting.session_rate = '£5000 per 50 minute session'
     refute @setting.address_changed?
   end
 
