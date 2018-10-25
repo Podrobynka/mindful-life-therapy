@@ -203,16 +203,6 @@ class ActiveSupport::TestCase
       assert_empty record.errors[:office_address_postcode]
     end
   end
-  # def assert_valid_postcode record
-  #   valid_postcode
-  #   tail = '@b.co'
-  #   head = 'a' * (length - tail.length)
-  #   record.update email: head + tail
-  #   assert record.valid?
-  #   assert_empty record.errors[:email]
-  #    @setting, 11
-  #    @setting, 10
-  # end
 
   def assert_has_one_attached_photo record
     attach_file_to record, photo_fixture

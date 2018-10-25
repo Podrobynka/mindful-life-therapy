@@ -6,6 +6,6 @@
   .column
     %h1.text-center.smb Office Location
     %p.text-center.lmb= footer_office_address(@settings)
-    #map.map-page--map.xmb
+    #map.map-page--map.xmb{ data: { latitude: @settings.latitude, longitude: @settings.longitude }}
 
 = render 'colophon'
