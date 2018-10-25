@@ -3,5 +3,5 @@
     %h1#contact--form-address-title Contact Details
     %p#contact--form-address-telephone= "Call Zoe on #{@settings.telephone}"
     %p#contact--form-address-office-location= footer_office_address(@settings)
-    #map.sidebar--map{ data: { latitude: @settings.latitude, longitude: @settings.longitude }}
+    = office_map @settings, 'sidebar--map'
     = link_to 'View larger map', map_page_url, id: 'contact--form-address-larger-map', class: 'black-link hover-text-decoration'

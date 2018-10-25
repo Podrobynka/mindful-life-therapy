@@ -3,9 +3,9 @@
 - provide :canonical_url, map_page_url(protocol: 'https')
 
 .row
-  .column
+  .column.xpb
     %h1.text-center.smb Office Location
     %p.text-center.lmb= footer_office_address(@settings)
-    #map.map-page--map.xmb{ data: { latitude: @settings.latitude, longitude: @settings.longitude }}
+    = office_map @settings, 'map-page--map xmb'
 
 = render 'colophon'

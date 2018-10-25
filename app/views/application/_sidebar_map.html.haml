@@ -2,5 +2,5 @@
 %p.nmb
   %strong The office address is:
 %p.mmb= footer_office_address(@settings)
-#map.sidebar--map{ data: { latitude: @settings.latitude, longitude: @settings.longitude }}
+= office_map @settings, 'sidebar--map'
 = link_to 'View larger map', map_page_url, class: 'black-link hover-text-decoration'
