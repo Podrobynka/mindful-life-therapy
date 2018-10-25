@@ -14,7 +14,7 @@ class Setting < ApplicationRecord
   validates :office_address_postcode, presence: true, length: { maximum: 10 }, postcode: true
   validates :session_rate, presence: true, length: { maximum: 50 }
 
-  after_validation :geocode, if: ->(record) { record.address_changed? }
+  before_save :geocode, if: ->(record) { record.address_changed? }
 
   def address_changed?
     office_address_line_1_changed? ||
