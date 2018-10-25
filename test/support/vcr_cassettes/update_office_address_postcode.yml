@@ -1,0 +1,2379 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:07:59 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:07:59 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:07:59 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20aaaaaaaaaaa&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:00 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:00 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '694'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.8665058,
+                       "lng" : -4.2746051
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86785478029149,
+                          "lng" : -4.273256119708497
+                       },
+                       "southwest" : {
+                          "lat" : 55.8651568197085,
+                          "lng" : -4.275954080291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJX87vliBEiEgR9O0O7qVaCTY",
+                 "plus_code" : {
+                    "compound_code" : "VP8G+J5 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8G+J5"
+                 },
+                 "types" : [ "establishment", "point_of_interest", "roofing_contractor" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.8664576,
+                       "lng" : -4.274830300000001
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481319708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179280291503
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJXVeE5CtEiEgRxWoiK00ATXo",
+                 "plus_code" : {
+                    "compound_code" : "VP8G+H3 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8G+H3"
+                 },
+                 "types" : [ "establishment", "point_of_interest" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:00 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%201&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:00 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:00 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '578'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.8664576,
+                       "lng" : -4.274830300000001
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481319708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179280291503
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJnSfdgYJGiEgRO0W03t5744w",
+                 "plus_code" : {
+                    "compound_code" : "VP8G+H3 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8G+H3"
+                 },
+                 "types" : [ "establishment", "point_of_interest" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:00 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%201&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:00 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:00 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '578'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.8664576,
+                       "lng" : -4.274830300000001
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481319708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179280291503
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJnSfdgYJGiEgRO0W03t5744w",
+                 "plus_code" : {
+                    "compound_code" : "VP8G+H3 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8G+H3"
+                 },
+                 "types" : [ "establishment", "point_of_interest" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:01 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20a&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:01 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:01 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:01 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20a&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:01 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:01 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:01 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20abc&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:02 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:02 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '787'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "300",
+                       "short_name" : "300",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Sauchiehall Street",
+                       "short_name" : "Sauchiehall St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G2 3JA",
+                       "short_name" : "G2 3JA",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "300 Sauchiehall St, Glasgow G2 3JA, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.86560859999999,
+                       "lng" : -4.2641838
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.8669575802915,
+                          "lng" : -4.262834819708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.8642596197085,
+                          "lng" : -4.265532780291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJu4G0RCZEiEgRina167VLhMs",
+                 "plus_code" : {
+                    "compound_code" : "VP8P+68 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8P+68"
+                 },
+                 "types" : [ "establishment", "night_club", "point_of_interest" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:02 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20abc&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:02 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:02 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '787'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "300",
+                       "short_name" : "300",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Sauchiehall Street",
+                       "short_name" : "Sauchiehall St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G2 3JA",
+                       "short_name" : "G2 3JA",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "300 Sauchiehall St, Glasgow G2 3JA, UK",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 55.86560859999999,
+                       "lng" : -4.2641838
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.8669575802915,
+                          "lng" : -4.262834819708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.8642596197085,
+                          "lng" : -4.265532780291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJu4G0RCZEiEgRina167VLhMs",
+                 "plus_code" : {
+                    "compound_code" : "VP8P+68 Glasgow, United Kingdom",
+                    "global_code" : "9C7QVP8P+68"
+                 },
+                 "types" : [ "establishment", "night_club", "point_of_interest" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:02 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20ab123&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:03 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '561'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:03 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20ab123&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:03 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:03 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '561'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:03 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20ab123%201aa&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:03 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '561'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:03 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20ab123%201aa&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:03 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:03 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '561'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '0'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:03 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g1%201aa&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:04 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:04 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '764'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "g1",
+                       "short_name" : "g1",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "g1, 10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "EiRnMSwgMTAgTmV3dG9uIFBsLCBHbGFzZ293IEczIDdQUiwgVUsiHhocChYKFAoSCf1_VeIrRIhIEcPmULZ4TjgYEgJnMQ",
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "1aa",
+                       "short_name" : "1aa",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1aa, 10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "EiUxYWEsIDEwIE5ld3RvbiBQbCwgR2xhc2dvdyBHMyA3UFIsIFVLIh8aHQoWChQKEgn9f1XiK0SISBHD5lC2eE44GBIDMWFh",
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:04 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g11aa&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:04 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:04 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:04 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g3%207pr&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:05 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:05 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:05 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g37pr&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:05 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:05 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:05 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g52%202qw&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:06 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:06 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:06 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=10%20Newton%20Place,%20Glasgow,%20g522qw&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:08:06 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:08:06 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '546'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "10",
+                       "short_name" : "10",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Newton Place",
+                       "short_name" : "Newton Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 7PR",
+                       "short_name" : "G3 7PR",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "10 Newton Pl, Glasgow G3 7PR, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8665234,
+                          "lng" : -4.2747461
+                       },
+                       "southwest" : {
+                          "lat" : 55.8663918,
+                          "lng" : -4.2749146
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8664365,
+                       "lng" : -4.2748123
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.86780658029149,
+                          "lng" : -4.273481369708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.86510861970849,
+                          "lng" : -4.276179330291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ_X9V4itEiEgRw-ZQtnhOOBg",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:08:06 GMT
+recorded_with: VCR 4.0.0

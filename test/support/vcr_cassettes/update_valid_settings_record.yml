@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=3%20Lynedoch%20Place,%20Top%20Floor,%20Red%20Door,%20Glasgow,%20G3%206AB&key=AIzaSyAt1zNd8L4eSXHVUJ246_8QzPROvPiA8Ck&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 25 Oct 2018 23:16:58 GMT
+      Expires:
+      - Fri, 26 Oct 2018 23:16:58 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '570'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "3",
+                       "short_name" : "3",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Lynedoch Place",
+                       "short_name" : "Lynedoch Pl",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Scotland",
+                       "short_name" : "Scotland",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "G3 6AB",
+                       "short_name" : "G3 6AB",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "3 Lynedoch Pl, Glasgow G3 6AB, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.86884569999999,
+                          "lng" : -4.2759956
+                       },
+                       "southwest" : {
+                          "lat" : 55.8686859,
+                          "lng" : -4.2762357
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8687866,
+                       "lng" : -4.276115799999999
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.87011478029149,
+                          "lng" : -4.274766669708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.8674168197085,
+                          "lng" : -4.277464630291503
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJMT0LPSxEiEgRiJQu6QCy2rA",
+                 "types" : [ "premise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 25 Oct 2018 23:16:58 GMT
+recorded_with: VCR 4.0.0
