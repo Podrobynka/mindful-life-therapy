@@ -16,8 +16,8 @@ function initMap() {
   if (!mapDiv) return
 
   const map = L.map(mapDiv)
-  const latitude  = mapDiv.dataset.latitude  || 55.866437
-  const longitude = mapDiv.dataset.longitude || -4.274812
+  const latitude  = mapDiv.dataset.latitude
+  const longitude = mapDiv.dataset.longitude
   const defaultCenter = [latitude, longitude]
   const defaultZoom = 15
   const basemap = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
