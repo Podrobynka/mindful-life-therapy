@@ -47,8 +47,9 @@ class SettingTest < ActiveSupport::TestCase
 
   test "office_address_postcode" do
     assert_required @setting, :office_address_postcode
-    assert_too_long @setting, :office_address_postcode, 51
-    assert_valid_length @setting, :office_address_postcode, 50
+    assert_too_long @setting, :office_address_postcode, 11
+    assert_invalid_postcodes_are_rejected @setting
+    assert_valid_postcodes_are_accepted @setting
   end
 
   test "session_rate is required" do
@@ -65,7 +66,7 @@ class SettingTest < ActiveSupport::TestCase
       office_address_line_2: 'a' * 50,
       office_address_line_3: 'a' * 50,
       office_address_city: 'a' * 50,
-      office_address_postcode: 'a' * 50,
+      office_address_postcode: 'g3 7pr',
       session_rate: 'a' * 50
     }
 

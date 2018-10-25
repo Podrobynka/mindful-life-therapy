@@ -182,6 +182,38 @@ class ActiveSupport::TestCase
     end
   end
 
+  def assert_postcode_too_long record
+    record.update office_address_postcode: 'ab123 123qw'
+    refute record.valid?
+    assert_match /too long/, record.errors[:office_address_postcode].to_s
+  end
+
+  def assert_invalid_postcodes_are_rejected record
+    ['1', 'a', 'abc', 'ab123', 'ab123 1aa'].each do |invalid_postcode|
+      record.update office_address_postcode: invalid_postcode
+      refute record.valid?
+      assert_match /is not a recognised UK postcode/, record.errors[:office_address_postcode].to_s
+    end
+  end
+
+  def assert_valid_postcodes_are_accepted record
+    ['g1 1aa', 'g11aa', 'g3 7pr', 'g37pr', 'g52 2qw', 'g522qw'].each do |valid_postcode|
+      record.update office_address_postcode: valid_postcode
+      assert record.valid?
+      assert_empty record.errors[:office_address_postcode]
+    end
+  end
+  # def assert_valid_postcode record
+  #   valid_postcode
+  #   tail = '@b.co'
+  #   head = 'a' * (length - tail.length)
+  #   record.update email: head + tail
+  #   assert record.valid?
+  #   assert_empty record.errors[:email]
+  #    @setting, 11
+  #    @setting, 10
+  # end
+
   def assert_has_one_attached_photo record
     attach_file_to record, photo_fixture
     assert record.valid?
