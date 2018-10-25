@@ -53,8 +53,8 @@
 
     .form--field{ data: { controller: 'errors', field: 'setting_office_address_postcode' } }
       = f.label :office_address_postcode, class: 'required', title: 'Office address postcode is required'
-      %p.smb 50 characters max
-      = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '50', required: true, tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
+      %p.smb 10 characters max
+      = f.text_field :office_address_postcode, placeholder: 'i.e. G3 7PR', maxlength: '10', required: true, tabindex: '8', data: { target: "form.field", action: "blur->form#validateFieldOnBlurOrKeyup keyup->form#validateFieldOnBlurOrKeyup" }
       = error_message target: 'errors.message'
 
     .form--actions= f.button t('form.button_text').html_safe, class: form_button_css(color: 'success'), tabindex: '9', data: { disable_with: t('form.disable_with_text').html_safe }
