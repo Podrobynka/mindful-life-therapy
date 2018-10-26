@@ -2,31 +2,23 @@ require 'test_helper'
 
 class SettingsControllerTest < ActionDispatch::IntegrationTest
 
-  setup do
-    @setting = settings(:one)
-  end
-
   test "should get edit" do
-    assert_gets edit_settings_url
+    assert_gets edit_settings_path, login_required: true
   end
 
-  test "should update setting" do
-    patch settings_url, params: { setting: { telephone: @setting.telephone, email: @setting.email, office_address_line_1: @setting.office_address_line_1, office_address_line_2: @setting.office_address_line_2, office_address_line_3: @setting.office_address_line_3, office_address_city: @setting.office_address_city, office_address_postcode: @setting.office_address_postcode, session_rate: @setting.session_rate } }
-    assert_redirected_to admin_url
+  test "should update settings" do
+    assert_updates settings_url, settings_params, xhr: false, login_required: true, expected_redirect: admin_url, check_active_storage_counts: false
   end
 
-  test "should update setting via :xhr" do
-    patch settings_url, xhr: true, params: { setting: { telephone: @setting.telephone, email: @setting.email, office_address_line_1: @setting.office_address_line_1, office_address_line_2: @setting.office_address_line_2, office_address_line_3: @setting.office_address_line_3, office_address_city: @setting.office_address_city, office_address_postcode: @setting.office_address_postcode, session_rate: @setting.session_rate } }
-    assert_match 'Turbolinks.visit("http://www.example.com/admin", {"action":"replace"})', response.body
+  test "should update settings via xhr" do
+    assert_updates settings_url, settings_params, xhr: true, login_required: true, expected_redirect: admin_url, check_active_storage_counts: false
   end
 
-  test "should show error message when update fails" do
-    patch settings_url, params: { setting: { telephone: '' } }
-    assert_match /The form contains 1 error:/, response.body
+  test "should not update settings if form contains errors" do
+    refute_updates settings_url, settings_params(telephone: '', email: ''), xhr: false, login_required: true
   end
 
-  test "should show error message when update via :xhr fails" do
-    patch settings_url, xhr: true, params: { setting: { telephone: '' } }
-    assert_match /The form contains 1 error:/, response.body
+  test "should not update settings via xhr if form contains errors" do
+    refute_updates settings_url, settings_params(telephone: '', email: ''), xhr: true, login_required: true
   end
 end

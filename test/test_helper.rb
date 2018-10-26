@@ -71,63 +71,64 @@ class ActiveSupport::TestCase
 
   # controller test helper methods
 
-  def assert_gets url
-    get url
+  def login user: users(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+  end
+
+  def assert_login_required verb, url, params, xhr: false
+    send verb, url, params: params, xhr: xhr
+    assert_redirect_or_turbolinks_response login_url, xhr: xhr
+    login
+  end
+
+  def assert_gets url, params: nil, xhr: false, login_required: false
+    assert_login_required(:get, url, params, xhr: xhr) if login_required
+    get url, xhr: xhr
     assert_response :success
   end
 
-  # def assert_login_required_when_trying_to_get url
-  #   get url
-  #   assert_redirected_to login_url
-  # end
-  #
-  # def assert_login_required_when_trying_to_update url
-  #   patch url
-  #   assert_redirected_to login_url
-  # end
+  def assert_updates url, params, xhr: false, login_required: true, expected_redirect: url, check_active_storage_counts: true
+    assert_login_required(:patch, url, params, xhr: xhr) if login_required
 
-  def assert_updates_page controller_name
-    assert_difference active_storage_counts do
-      path = url_for(controller_name)
-      patch path, params: params_for(controller_name, 'hello', 20.megabytes)
-      assert_redirected_to path
-    end
+    check_active_storage_counts ? perform_update_and_check_active_storage_counts(url, xhr, params, expected_redirect) : perform_update(url, xhr, params, expected_redirect)
   end
 
-  def assert_updates_page_via_xhr controller_name
-    assert_difference active_storage_counts do
-      path = url_for(controller_name)
-      patch path, xhr: true, params: params_for(controller_name, 'hello', 20.megabytes)
-      assert_match turbolinks_response_for(path), response.body
-    end
+  def perform_update url, xhr, params, expected_redirect
+    patch url, xhr: xhr, params: params
+    assert_redirect_or_turbolinks_response expected_redirect, xhr: xhr
   end
 
-  def assert_update_fails controller_name
+  def perform_update_and_check_active_storage_counts url, xhr, params, expected_redirect
+    assert_difference(active_storage_counts) { perform_update url, xhr, params, expected_redirect }
+  end
+
+  def refute_updates url, params, xhr: false, login_required: true
+    assert_login_required(:patch, url, params, xhr: xhr) if login_required
+
     assert_no_difference active_storage_counts do
-      path = url_for(controller_name)
-      patch path, params: params_for(controller_name, '', 21.megabytes)
+      patch url, xhr: xhr, params: params
       assert_match /The form contains 2 errors:/, response.body.to_s
     end
   end
 
-  def assert_update_fails_via_xhr controller_name
-    assert_no_difference active_storage_counts do
-      path = url_for(controller_name)
-      patch path, xhr: true, params: params_for(controller_name, '', 21.megabytes)
-      assert_match /The form contains 2 errors:/, response.body.to_s
-    end
+  def assert_redirect_or_turbolinks_response url, xhr: false
+    xhr ? assert_turbolinks_response_for(url) : assert_redirected_to(url)
   end
 
-  def turbolinks_response_for path
-    %Q{Turbolinks.visit("#{path}", {"action":"replace"})}
+  def assert_turbolinks_response_for url
+    assert_match %Q{Turbolinks.visit("#{url}", {"action":"replace"})}, response.body
+  end
+
+  def page_params controller_name, body: 'hi', size: 1.byte
+    { controller_name => { body: body, photo: stubbed_photo_fixture(size) } }
+  end
+
+  def settings_params setting: settings(:one), telephone: setting.telephone, email: setting.email
+    { setting: { telephone: telephone, email: email, office_address_line_1: setting.office_address_line_1, office_address_line_2: setting.office_address_line_2, office_address_line_3: setting.office_address_line_3, office_address_city: setting.office_address_city, office_address_postcode: setting.office_address_postcode, session_rate: setting.session_rate } }
   end
 
   def active_storage_counts
     ['ActiveStorage::Blob.count', 'ActiveStorage::Attachment.count']
-  end
-
-  def params_for controller_name, body, size
-    { controller_name => { body: body, photo: stubbed_photo_fixture(size) } }
   end
 
   # model test helper methods

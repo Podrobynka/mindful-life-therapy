@@ -2,8 +2,7 @@ require 'test_helper'
 
 class LoginsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get login_url
-    assert_response :success
+    assert_gets login_url
   end
 
 end
