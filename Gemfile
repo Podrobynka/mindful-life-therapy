@@ -11,7 +11,6 @@ gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'foundation-rails'
-gem 'font-awesome-sass', '~> 5.3.1'
 gem 'haml-rails'
 gem 'sucker_punch'
 gem 'geocoder'

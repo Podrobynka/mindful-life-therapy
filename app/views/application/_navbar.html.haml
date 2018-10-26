@@ -7,30 +7,30 @@
 
     %li.navbar--primary-nav-item
       = link_to root_path, class: active_link?('home_page') do
-        = icon 'fas', 'home', class: 'navbar--icon'
+        %i.icon-home.navbar--icon
         %span.navbar--primary-nav-item-text Home
 
     %li.navbar--primary-nav-item
       = link_to about_page_path, class: active_link?('about_page') do
-        = icon 'fas', 'info', class: 'navbar--icon'
+        %i.icon-info.navbar--icon
         %span.navbar--primary-nav-item-text About
 
     %li.navbar--primary-nav-item
       = link_to counselling_page_path, class: active_link?('counselling_page') do
-        = icon 'fas', 'list', class: 'navbar--icon'
+        %i.icon-th-large.navbar--icon
         %span.navbar--primary-nav-item-text Counselling
 
     %li.navbar--primary-nav-item
       = link_to mindfulness_page_path, class: active_link?('mindfulness_page') do
-        = icon 'fas', 'expand', class: 'navbar--icon'
+        %i.icon-star.navbar--icon
         %span.navbar--primary-nav-item-text Mindfulness
 
     %li.navbar--primary-nav-item
       = link_to contact_path, id: 'navbar--primary-nav-contact-button', class: active_link?('contact') do
-        = icon 'fas', 'envelope', class: 'navbar--icon'
+        %i.icon-envelope.navbar--icon
         %span.navbar--primary-nav-item-text Contact
 
     %li.navbar--primary-nav-item
       = link_to admin_path, id: 'navbar--primary-nav-contact-button', class: active_link?('admin') do
-        = icon 'fas', 'lock', class: 'navbar--icon'
+        %i.icon-cog.navbar--icon
         %span.navbar--primary-nav-item-text Admin

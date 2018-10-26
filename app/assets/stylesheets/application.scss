@@ -1,6 +1,4 @@
 @import 'foundation_and_overrides';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
 
 @import 'app/mixins/anchors';
 @import 'app/mixins/borders';
@@ -31,6 +29,7 @@
 @import 'app/utils/borders';
 @import 'app/utils/buttons';
 @import 'app/utils/callouts';
+@import 'app/utils/icons';
 @import 'app/utils/selection';
 @import 'app/utils/spacing';
 // @import 'app/utils/misc';
