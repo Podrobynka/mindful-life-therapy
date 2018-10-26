@@ -7,7 +7,7 @@ class LoginsController < ApplicationController
       cookies.signed[:user_id] = user.id
       redirect_to admin_url, notice: "Welcome #{user.name}"
     else
-      redirect_to login_url, alert: 'Authentication failed, please try again'
+      redirect_to login_url, alert: 'Authentication failed, are you a registered member of the site?'
     end
   end
 
