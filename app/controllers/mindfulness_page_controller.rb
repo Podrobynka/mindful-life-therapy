@@ -1,4 +1,5 @@
 class MindfulnessPageController < ApplicationController
+  before_action :login_required, only: [:edit, :update]
   before_action :set_mindfulness_page, only: [:show, :edit, :update]
 
   def show

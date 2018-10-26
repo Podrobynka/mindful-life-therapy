@@ -1,4 +1,5 @@
 class CounsellingPageController < ApplicationController
+  before_action :login_required, only: [:edit, :update]
   before_action :set_counselling_page, only: [:show, :edit, :update]
 
   def show

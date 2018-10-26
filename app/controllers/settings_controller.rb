@@ -1,4 +1,5 @@
 class SettingsController < ApplicationController
+  before_action :login_required
 
   def edit
   end
