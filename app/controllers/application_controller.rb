@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  include SiteSettings, Rescuer
+  include CurrentUser, SiteSettings, Rescuer
 end
