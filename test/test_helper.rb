@@ -12,6 +12,7 @@ require 'webmock/minitest'
 VCR.configure do |config|
   config.cassette_library_dir = 'test/support/vcr_cassettes'
   config.hook_into :webmock
+  config.filter_sensitive_data('<KEY>') { Rails.application.credentials.dig(:geocoder, :google_api_key) }
 end
 
 class ActiveSupport::TestCase
@@ -74,6 +75,16 @@ class ActiveSupport::TestCase
     get url
     assert_response :success
   end
+
+  # def assert_login_required_when_trying_to_get url
+  #   get url
+  #   assert_redirected_to login_url
+  # end
+  #
+  # def assert_login_required_when_trying_to_update url
+  #   patch url
+  #   assert_redirected_to login_url
+  # end
 
   def assert_updates_page controller_name
     assert_difference active_storage_counts do
