@@ -6,17 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.first_or_create({
-  name: 'Stephen',
-  email: 'stephen@murdo.ch',
-  google_id: Rails.application.credentials.dig(:users, :stephen, :google_id)
-})
+User.find_or_create_by(name: 'Stephen') do |user|
+  user.email = 'stephen@murdo.ch'
+  user.google_id = Rails.application.credentials.dig(:users, :stephen, :google_id)
+end
 
-User.first_or_create({
-  name: 'Zoe',
-  email: 'info@mindfullifetherapy.co.uk',
-  google_id: Rails.application.credentials.dig(:users, :zoe, :google_id)
-})
+User.find_or_create_by(name: 'Zoe') do |user|
+  user.email = 'info@mindfullifetherapy.co.uk'
+  user.google_id = Rails.application.credentials.dig(:users, :zoe, :google_id)
+end
 
 Setting.first_or_create({
   telephone: '07933446549',
