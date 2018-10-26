@@ -9,13 +9,13 @@
 User.first_or_create({
   name: 'Stephen',
   email: 'stephen@murdo.ch',
-  google_id: Rails.application.credentials.dig(:stephen, :google_id)
+  google_id: Rails.application.credentials.dig(:users, :stephen, :google_id)
 })
 
 User.first_or_create({
   name: 'Zoe',
   email: 'info@mindfullifetherapy.co.uk',
-  google_id: Rails.application.credentials.dig(:zoe, :google_id)
+  google_id: Rails.application.credentials.dig(:users, :zoe, :google_id)
 })
 
 Setting.first_or_create({
