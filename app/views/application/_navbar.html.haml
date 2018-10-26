@@ -30,7 +30,19 @@
         %i.icon-envelope.navbar--icon
         %span.navbar--primary-nav-item-text Contact
 
-    %li.navbar--primary-nav-item
-      = link_to admin_path, id: 'navbar--primary-nav-contact-button', class: active_link?('admin') do
-        %i.icon-cog.navbar--icon
-        %span.navbar--primary-nav-item-text Admin
+    - if current_user
+      %li.navbar--primary-nav-item
+        = link_to admin_path, id: 'navbar--primary-nav-contact-button', class: active_link?('admin') do
+          %i.icon-cog.navbar--icon
+          %span.navbar--primary-nav-item-text Admin
+
+      %li.navbar--primary-nav-item
+        = link_to logout_path, method: :delete, id: 'navbar--primary-nav-contact-button', class: 'inactive' do
+          %i.icon-sign-out.navbar--icon
+          %span.navbar--primary-nav-item-text Logout
+
+    - else
+      %li.navbar--primary-nav-item
+        = link_to login_path, id: 'navbar--primary-nav-contact-button', class: active_link?('login') do
+          %i.icon-sign-in.navbar--icon
+          %span.navbar--primary-nav-item-text Login
