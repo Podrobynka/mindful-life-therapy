@@ -18,10 +18,26 @@ class LoginsController < ApplicationController
 
   private
     def authenticate_with_google
-      if flash[:google_sign_in_token].present?
-        token = flash[:google_sign_in_token]
-        google_id = GoogleSignIn::Identity.new(token).user_id
-        User.find_by google_id: google_id
+      token = flash[:google_sign_in_token]
+
+      if token.present?
+        identity = GoogleSignIn::Identity.new token
+        update_zoe(identity)
+        User.find_by google_id: identity.user_id
+      end
+    end
+
+    # This will set zoe's google id to correct value the first time she logs in.
+    # This code will be removed once we have the correct user id for her.
+    def update_zoe identity
+      zoe = User.find_by name: 'Zoe'
+
+      if zoe.present?
+        if identity.email_address == zoe.email
+          if zoe.google_id == Rails.application.credentials.dig(:users, :zoe, :google_id)
+            zoe.update google_id: identity.user_id
+          end
+        end
       end
     end
 end
