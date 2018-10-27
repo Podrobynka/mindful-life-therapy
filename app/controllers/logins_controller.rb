@@ -1,5 +1,7 @@
 class LoginsController < ApplicationController
   def new
+    flash[:notice] = 'You are already logged in'
+    redirect_to root_url if current_user
   end
 
   def create
@@ -31,10 +33,18 @@ class LoginsController < ApplicationController
     # This code will be removed once we have the correct user id for her.
     def update_zoe identity
       zoe = User.find_by name: 'Zoe'
+      old_user_id = Rails.application.credentials.dig(:users, :zoe, :google_id)
 
+      # make sure zoe exists in db
       if zoe.present?
+
+        # make sure zoe has logged in with the correct account
         if identity.email_address == zoe.email
-          if zoe.google_id == Rails.application.credentials.dig(:users, :zoe, :google_id)
+
+          # make sure zoe's google_id is still set to the random string i used when initializing her account
+          if zoe.google_id == old_user_id.to_s
+
+            # update her google_id to the correct value
             zoe.update google_id: identity.user_id
           end
         end
