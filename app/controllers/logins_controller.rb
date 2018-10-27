@@ -1,7 +1,9 @@
 class LoginsController < ApplicationController
   def new
-    flash[:notice] = 'You are already logged in'
-    redirect_to root_url if current_user
+    if current_user
+      flash[:notice] = 'You are already logged in'
+      redirect_to root_url
+    end
   end
 
   def create
