@@ -44,7 +44,7 @@ If you have any questions or find any bugs then please just create an issue here
 
 ## License
 
-The license grant included with the Software is not for Mindful Life Threapy's trademarks, which include the logo designs. Mindful Life Thrapy reserves all trademark and copyright rights in and to all Mindful Life Therapy trademarks. Mindful Life Therapy's logos include, for instance, the stylized designs that include "logo" in the file title in the "logos" folder.
+The license grant included with the Software is not for Mindful Life Therapy's trademarks, which include the logo designs. Mindful Life Therapy reserves all trademark and copyright rights in and to all Mindful Life Therapy trademarks. Mindful Life Therapy's logos include, for instance, the stylized designs that include "logo" in the file title in the "logos" folder.
 
 The names Mindful Life Therapy, and related logos and/or stylized names are trademarks of Mindful Life Therapy. You agree not to display or use these trademarks in any manner without Mindful Life Therapy's prior, written permission.
 
