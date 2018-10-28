@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.find_or_create_by(name: 'Stephen') do |user|
-  user.email = 'stephen@murdo.ch'
+  user.email = Rails.application.credentials.dig(:users, :stephen, :email)
   user.google_id = Rails.application.credentials.dig(:users, :stephen, :google_id)
 end
 
 User.find_or_create_by(name: 'Zoe') do |user|
-  user.email = 'info@mindfullifetherapy.co.uk'
+  user.email = Rails.application.credentials.dig(:users, :zoe, :email)
   user.google_id = Rails.application.credentials.dig(:users, :zoe, :google_id)
 end
 
 Setting.first_or_create({
-  telephone: '07933446549',
-  email: 'info@mindfullifetherapy.co.uk',
+  telephone: Rails.application.credentials.dig(:settings, :telephone),
+  email: Rails.application.credentials.dig(:settings, :email),
   office_address_line_1: '10 Newton Place',
   office_address_line_2: '',
   office_address_line_3: '',
