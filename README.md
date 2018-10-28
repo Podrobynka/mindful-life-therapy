@@ -5,13 +5,38 @@ The site currently lives at https://mlt-staging.herokuapp.com
 
 ## Setup
 
-- Clone the repo
-- Create your own `config/master.key` file - it's probably easiest to just create another throwaway rails app (by running `rails new xyz`) and copying the file found at `config/master.key` from there into this repo
-- Setup your own encrypted credentials file - again it's probably easiest to just copy the encrypted credentials file from the the throwaway rails app you created in the step above this one 
-- Setup your encrypted credentials file to look like the credentials.yml.example file found in the config directory of this repo
-- Migrate and seed the database - `bin/rails db:create db:migrate db:seed`
-- Change the copy for the individual pages (about page, counselling page, mindfulness page), etc as it only really applies to Mindful Life Therapy.
-- Change the logo and all that stuff too as you probably want to use your own identity for your site.
+__Clone the repo__
+
+`git clone git@github.com:murdoch/mindful-life-therapy.git`
+
+
+__Create your own `config/master.key` file__
+
+It's probably easiest to just create another throwaway rails app (by running something along the lines of `rails new throwaway`) and copying the file found at `config/master.key` from there into this repo
+
+
+__Setup your own encrypted credentials file__ 
+
+Again it's probably easiest to just copy the encrypted credentials file from the throwaway rails app you created in the previous step above this one, and pasting it into the config folder of this repo 
+
+__Setup your encrypted credentials file__ 
+
+You can edit your `config/credentials.yml.enc` by running `EDITOR='nano' bin/rails credentials:edit`
+You need to make it look like the example credentials file found at `config/credentials.yml.example`
+
+__Migrate and seed the database__
+
+`bin/rails db:create db:migrate db:seed`
+
+__Run the tests__
+
+`bin/rails test`
+
+__Personalise your application__ 
+
+You probably want to use your own copy in your application, as the copy used in this repo only really applies to Mindful Life Therapy. So go ahead and change your copy to suit your project.
+
+Also change the logo and all that stuff too as you probably want to use your own identity for your site, and the logo included in this repo is trademarked copyrighted and owned by Zoe Zalavary, so please don't use it.
 
 ## Questions? Bugs?
 
