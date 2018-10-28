@@ -31,4 +31,3 @@ const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 
 import "../src/map"
-// const Trix = require("trix")
